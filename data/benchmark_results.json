@@ -1,0 +1,3474 @@
+{
+  "benchmark": "PatentBench-Mini v0.1.0",
+  "model": "Claude Opus 4.6",
+  "run_date": "2026-03-20T23:26:32.650Z",
+  "summary": {
+    "overall_accuracy": "92.3%",
+    "total_tests": 298,
+    "total_points": "941/1020",
+    "tests_with_errors": 45,
+    "tests_perfect": 253
+  },
+  "by_task_type": {
+    "deadline_calculation": {
+      "accuracy": "81.1%",
+      "tests": 125,
+      "points": "340/419"
+    },
+    "action_classification": {
+      "accuracy": "100.0%",
+      "tests": 82,
+      "points": "328/328"
+    },
+    "timeline_analysis": {
+      "accuracy": "100.0%",
+      "tests": 81,
+      "points": "243/243"
+    },
+    "fee_computation": {
+      "accuracy": "100.0%",
+      "tests": 10,
+      "points": "30/30"
+    }
+  },
+  "by_technology_center": {
+    "TC2400_Networking": {
+      "accuracy": "100.0%",
+      "tests": 10
+    },
+    "TC2800_Electrical": {
+      "accuracy": "100.0%",
+      "tests": 19
+    },
+    "TC3700_Mechanical": {
+      "accuracy": "100.0%",
+      "tests": 14
+    },
+    "TC3600_Business": {
+      "accuracy": "100.0%",
+      "tests": 11
+    },
+    "TC1700_Chemical": {
+      "accuracy": "100.0%",
+      "tests": 10
+    },
+    "TC2600_Communications": {
+      "accuracy": "100.0%",
+      "tests": 9
+    },
+    "TC1600_Biotech": {
+      "accuracy": "100.0%",
+      "tests": 6
+    },
+    "TC2100_Software": {
+      "accuracy": "100.0%",
+      "tests": 3
+    }
+  },
+  "detailed_results": [
+    {
+      "test_id": "deadline_nf_16100000",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16100000",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "50.0%",
+      "details": [
+        "shortened_deadline: WRONG (got 2021-04-06, expected 2021-04-05)",
+        "max_deadline: WRONG (got 2021-07-06, expected 2021-07-05)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100001",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16100001",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100002",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16100002",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "50.0%",
+      "details": [
+        "shortened_deadline: WRONG (got 2020-05-01, expected 2020-04-30)",
+        "max_deadline: WRONG (got 2020-07-31, expected 2020-07-30)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100003",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2019-04-08, expected 2019-04-07)",
+        "max_deadline: WRONG (got 2019-07-08, expected 2019-07-07)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16100003",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100006",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100007",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2019-03-12, expected 2019-03-11)",
+        "max_deadline: WRONG (got 2019-06-12, expected 2019-06-11)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100009",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2021-03-16, expected 2021-03-15)",
+        "max_deadline: WRONG (got 2021-06-16, expected 2021-06-15)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16100009",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100010",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100011",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2022-03-16, expected 2022-03-15)",
+        "max_deadline: WRONG (got 2022-06-16, expected 2022-06-15)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100012",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100013",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100014",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2021-12-01, expected 2021-12-02)",
+        "max_deadline: WRONG (got 2022-03-01, expected 2022-03-04)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16100014",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "50.0%",
+      "details": [
+        "shortened_deadline: WRONG (got 2021-06-08, expected 2021-06-07)",
+        "max_deadline: WRONG (got 2021-09-08, expected 2021-09-07)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100015",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100016",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100017",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16100017",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100018",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16100018",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100020",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2020-05-13, expected 2020-05-12)",
+        "max_deadline: WRONG (got 2020-08-13, expected 2020-08-12)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16100020",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100022",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2021-06-01, expected 2021-05-28)",
+        "max_deadline: WRONG (got 2021-09-01, expected 2021-08-28)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16100022",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100023",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16100024",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500000",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500000",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500001",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500002",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500002",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500003",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500003",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500004",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500004",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500005",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500006",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500007",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500007",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500008",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2021-04-04, expected 2021-04-03)",
+        "max_deadline: WRONG (got 2021-07-04, expected 2021-07-03)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500008",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "75.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: WRONG (got 2021-12-01, expected 2021-12-02)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500009",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500009",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "50.0%",
+      "details": [
+        "shortened_deadline: WRONG (got 2023-05-14, expected 2023-05-13)",
+        "max_deadline: WRONG (got 2023-08-14, expected 2023-08-13)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500011",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "66.7%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: WRONG (got 2021-05-12, expected 2021-05-11)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500011",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500012",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "66.7%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: WRONG (got 2023-05-21, expected 2023-05-20)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500012",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "50.0%",
+      "details": [
+        "shortened_deadline: WRONG (got 2022-03-24, expected 2022-03-23)",
+        "max_deadline: WRONG (got 2022-06-24, expected 2022-06-23)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500013",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500013",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500014",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500015",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500016",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500017",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2025-04-10, expected 2025-04-09)",
+        "max_deadline: WRONG (got 2025-07-10, expected 2025-07-09)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500017",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500018",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500019",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500019",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500021",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "66.7%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: WRONG (got 2023-06-09, expected 2023-06-08)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500021",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500023",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500023",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_16500024",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_16500024",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "75.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: WRONG (got 2023-05-23, expected 2023-05-22)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100000",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17100000",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100002",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100003",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2023-04-26, expected 2023-04-25)",
+        "max_deadline: WRONG (got 2023-07-26, expected 2023-07-25)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17100003",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100004",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100005",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17100005",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "50.0%",
+      "details": [
+        "shortened_deadline: WRONG (got 2025-05-05, expected 2025-05-04)",
+        "max_deadline: WRONG (got 2025-08-05, expected 2025-08-04)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100006",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2022-03-21, expected 2022-03-20)",
+        "max_deadline: WRONG (got 2022-06-21, expected 2022-06-20)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100008",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2023-08-01, expected 2023-07-31)",
+        "max_deadline: WRONG (got 2023-11-01, expected 2023-10-31)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17100008",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "50.0%",
+      "details": [
+        "shortened_deadline: WRONG (got 2023-04-18, expected 2023-04-17)",
+        "max_deadline: WRONG (got 2023-07-18, expected 2023-07-17)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100012",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "66.7%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: WRONG (got 2022-05-24, expected 2022-05-23)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100013",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100014",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2022-06-03, expected 2022-06-02)",
+        "max_deadline: WRONG (got 2022-09-03, expected 2022-09-02)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17100014",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100015",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2022-04-21, expected 2022-04-20)",
+        "max_deadline: WRONG (got 2022-07-21, expected 2022-07-20)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100016",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17100016",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "50.0%",
+      "details": [
+        "shortened_deadline: WRONG (got 2022-06-04, expected 2022-06-03)",
+        "max_deadline: WRONG (got 2022-09-04, expected 2022-09-03)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100017",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100019",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100021",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "66.7%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: WRONG (got 2025-05-18, expected 2025-05-17)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17100021",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100022",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17100022",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100023",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17100024",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2022-05-17, expected 2022-05-16)",
+        "max_deadline: WRONG (got 2022-08-17, expected 2022-08-16)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17100024",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500000",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2023-06-03, expected 2023-06-02)",
+        "max_deadline: WRONG (got 2023-09-03, expected 2023-09-02)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17500000",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500001",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2025-01-01, expected 2024-12-31)",
+        "max_deadline: WRONG (got 2025-04-01, expected 2025-03-31)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500002",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "66.7%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: WRONG (got 2023-06-06, expected 2023-06-05)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500004",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17500004",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "50.0%",
+      "details": [
+        "shortened_deadline: WRONG (got 2025-06-03, expected 2025-06-02)",
+        "max_deadline: WRONG (got 2025-09-03, expected 2025-09-02)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500006",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500007",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500009",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2023-05-14, expected 2023-05-13)",
+        "max_deadline: WRONG (got 2023-08-14, expected 2023-08-13)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500010",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2023-05-17, expected 2023-05-16)",
+        "max_deadline: WRONG (got 2023-08-17, expected 2023-08-16)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500011",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "66.7%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: WRONG (got 2025-01-01, expected 2024-12-31)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17500011",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500012",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2023-03-21, expected 2023-03-20)",
+        "max_deadline: WRONG (got 2023-06-21, expected 2023-06-20)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500013",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17500013",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500014",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "66.7%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: WRONG (got 2023-06-08, expected 2023-06-07)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17500014",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500015",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2024-07-01, expected 2024-07-02)",
+        "max_deadline: WRONG (got 2024-10-01, expected 2024-10-02)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17500015",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "50.0%",
+      "details": [
+        "shortened_deadline: WRONG (got 2025-04-13, expected 2025-04-12)",
+        "max_deadline: WRONG (got 2025-07-13, expected 2025-07-12)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500017",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17500017",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "50.0%",
+      "details": [
+        "shortened_deadline: WRONG (got 2024-05-05, expected 2024-05-04)",
+        "max_deadline: WRONG (got 2024-08-05, expected 2024-08-04)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500018",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500019",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500020",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "33.3%",
+      "details": [
+        "shortened_deadline: WRONG (got 2023-06-09, expected 2023-06-08)",
+        "max_deadline: WRONG (got 2023-09-09, expected 2023-09-08)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500021",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "66.7%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: WRONG (got 2025-05-04, expected 2025-05-03)",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500022",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17500022",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500023",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17500023",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "50.0%",
+      "details": [
+        "shortened_deadline: WRONG (got 2026-05-13, expected 2026-05-12)",
+        "max_deadline: WRONG (got 2026-08-13, expected 2026-08-12)",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "deadline_nf_17500024",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT"
+      ]
+    },
+    {
+      "test_id": "deadline_fr_17500024",
+      "task_type": "deadline_calculation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
+        "action_type: CORRECT",
+        "options: 100% coverage (5/5)"
+      ]
+    },
+    {
+      "test_id": "classify_16100000",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100001",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100002",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100003",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100006",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100007",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100009",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100010",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100011",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100012",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100013",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100014",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100015",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100016",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100017",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100018",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100020",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100022",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100023",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16100024",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500000",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500001",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500002",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500003",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500004",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500005",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500006",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500007",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500008",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500009",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500011",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500012",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500013",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500014",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500015",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500016",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500017",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500018",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500019",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500021",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500023",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_16500024",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100000",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100002",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100003",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100004",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100005",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100006",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100008",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100012",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100013",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100014",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100015",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100016",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100017",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100019",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100021",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100022",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100023",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17100024",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500000",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500001",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500002",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500004",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500006",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500007",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500009",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500010",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500011",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500012",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500013",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500014",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500015",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500016",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500017",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500018",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500019",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500020",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500021",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500022",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500023",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "classify_17500024",
+      "task_type": "action_classification",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "has_non_final: CORRECT",
+        "has_final: CORRECT",
+        "has_allowance: CORRECT",
+        "total_oa_rounds: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100000",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100001",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100002",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100003",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100006",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100007",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100009",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100010",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100011",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100012",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100013",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100014",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100015",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100016",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100017",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100018",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100020",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100022",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100023",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16100024",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500000",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500001",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500002",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500003",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500004",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500005",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500006",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500007",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500008",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500009",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500011",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500012",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500013",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500014",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500015",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500016",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500017",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500018",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500019",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500021",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500023",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_16500024",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100000",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100002",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100003",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100004",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100005",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100006",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100008",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100012",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100013",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100014",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100015",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100016",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100017",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100019",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100021",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100022",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100023",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17100024",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500000",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500001",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500002",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500004",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500006",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500007",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500009",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500010",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500011",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500012",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500013",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500014",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500015",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500017",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500018",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500019",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500020",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500021",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500022",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500023",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "timeline_17500024",
+      "task_type": "timeline_analysis",
+      "tier": 2,
+      "score": "100.0%",
+      "details": [
+        "total_events: CORRECT",
+        "first_event: CORRECT",
+        "duration: CORRECT"
+      ]
+    },
+    {
+      "test_id": "fee_16100000",
+      "task_type": "fee_computation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "extension_fee: CORRECT",
+        "rce_fee: CORRECT",
+        "issue_fee: CORRECT"
+      ]
+    },
+    {
+      "test_id": "fee_16100001",
+      "task_type": "fee_computation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "extension_fee: CORRECT",
+        "rce_fee: CORRECT",
+        "issue_fee: CORRECT"
+      ]
+    },
+    {
+      "test_id": "fee_16100002",
+      "task_type": "fee_computation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "extension_fee: CORRECT",
+        "rce_fee: CORRECT",
+        "issue_fee: CORRECT"
+      ]
+    },
+    {
+      "test_id": "fee_16100003",
+      "task_type": "fee_computation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "extension_fee: CORRECT",
+        "rce_fee: CORRECT",
+        "issue_fee: CORRECT"
+      ]
+    },
+    {
+      "test_id": "fee_16100006",
+      "task_type": "fee_computation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "extension_fee: CORRECT",
+        "rce_fee: CORRECT",
+        "issue_fee: CORRECT"
+      ]
+    },
+    {
+      "test_id": "fee_16100007",
+      "task_type": "fee_computation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "extension_fee: CORRECT",
+        "rce_fee: CORRECT",
+        "issue_fee: CORRECT"
+      ]
+    },
+    {
+      "test_id": "fee_16100009",
+      "task_type": "fee_computation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "extension_fee: CORRECT",
+        "rce_fee: CORRECT",
+        "issue_fee: CORRECT"
+      ]
+    },
+    {
+      "test_id": "fee_16100010",
+      "task_type": "fee_computation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "extension_fee: CORRECT",
+        "rce_fee: CORRECT",
+        "issue_fee: CORRECT"
+      ]
+    },
+    {
+      "test_id": "fee_16100011",
+      "task_type": "fee_computation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "extension_fee: CORRECT",
+        "rce_fee: CORRECT",
+        "issue_fee: CORRECT"
+      ]
+    },
+    {
+      "test_id": "fee_16100012",
+      "task_type": "fee_computation",
+      "tier": 1,
+      "score": "100.0%",
+      "details": [
+        "extension_fee: CORRECT",
+        "rce_fee: CORRECT",
+        "issue_fee: CORRECT"
+      ]
+    }
+  ]
+}
