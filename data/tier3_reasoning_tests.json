@@ -1,0 +1,190 @@
+{
+  "benchmark": "PatentBench-Mini v0.1.0 — Tier 3 Reasoning",
+  "model": "Claude Opus 4.6",
+  "generated_at": "2026-03-20T01:00:00Z",
+  "description": "Tier 3 prosecution reasoning tests. Each test presents a realistic Office Action scenario based on real USPTO applications. The model generates full prosecution arguments with reasoning chains.",
+  "scoring_note": "Tier 3 tests require expert human evaluation or calibrated LLM-as-Judge. Deterministic scoring is not sufficient for argument quality.",
+  "test_cases": [
+    {
+      "id": "tier3_103_software_17100019",
+      "tier": 3,
+      "rejection_type": "103",
+      "technology_center": "TC2100_Software",
+      "application_number": "17100019",
+      "title": "SYSTEM AND METHOD FOR ANALYSIS OF STRUCTURED AND UNSTRUCTURED DATA",
+      "art_unit": "2163",
+      "scenario": "Claims 1-15 are rejected under 35 USC 103 as being unpatentable over Smith (US 10,123,456) in view of Jones (US 2020/0012345). Smith discloses a system for analyzing structured data using machine learning classifiers. Jones discloses techniques for parsing unstructured text documents into structured formats. The examiner asserts it would have been obvious to combine Smith's ML analysis with Jones's unstructured-to-structured conversion to arrive at the claimed system for analyzing both structured and unstructured data.",
+      "task": "Draft a 103 obviousness traversal argument for independent Claim 1. Address: (1) whether Smith and Jones are properly combinable, (2) whether the combination teaches every element of the claim, (3) whether there is a proper motivation to combine.",
+      "model_response": {
+        "argument": "Applicant respectfully traverses the rejection of Claim 1 under 35 USC 103.\n\nFirst, regarding the combination of Smith and Jones: Smith is directed to analyzing pre-existing structured data using ML classifiers (Smith, Col. 4, lines 12-30). Jones is directed to a fundamentally different problem — converting unstructured documents into structured formats for storage purposes (Jones, [0023]-[0025]). Jones does not perform any analysis of the converted data; it merely reformats documents. The Examiner's proposed combination conflates data conversion with data analysis.\n\nSecond, the combination fails to teach every element of Claim 1. Claim 1 recites 'simultaneously analyzing structured and unstructured data using a unified processing pipeline.' Neither Smith nor Jones, alone or in combination, discloses a unified pipeline. Smith processes only structured data. Jones converts unstructured data but does not analyze it. Combining the two would yield a sequential system (Jones converts, then Smith analyzes) — not the claimed simultaneous, unified pipeline.\n\nThird, the Examiner has not established a proper motivation to combine under KSR. The Examiner states it 'would have been obvious' without identifying: (a) a specific teaching, suggestion, or motivation in the references; (b) a recognized problem that the combination would solve; or (c) why a person of ordinary skill would look to Jones's document conversion system to improve Smith's data analysis system. Per MPEP 2143, the factual basis for the motivation must be explicitly stated. A conclusory statement that combining known elements yields predictable results is insufficient where, as here, the references address different technical problems.\n\nFor at least these reasons, Claim 1 is patentable over Smith in view of Jones.",
+        "reasoning_chain": [
+          "Step 1: Identify the claim limitation at issue — 'simultaneously analyzing structured and unstructured data using a unified processing pipeline'",
+          "Step 2: Map each reference to what it actually teaches — Smith teaches structured data ML analysis; Jones teaches unstructured-to-structured conversion",
+          "Step 3: Identify the gap — neither reference teaches simultaneous analysis or a unified pipeline",
+          "Step 4: Attack the combination — combining yields sequential processing, not unified pipeline as claimed",
+          "Step 5: Challenge motivation to combine — references solve different problems, no articulated reason to combine under KSR/MPEP 2143",
+          "Step 6: Cite legal authority — MPEP 2143 requires explicit factual basis for motivation"
+        ],
+        "legal_citations": [
+          "35 USC 103",
+          "KSR Int'l Co. v. Teleflex Inc., 550 U.S. 398 (2007)",
+          "MPEP 2143 — Exemplary Rationales for Obviousness"
+        ],
+        "claim_elements_addressed": ["simultaneously analyzing", "structured and unstructured data", "unified processing pipeline"],
+        "quality_self_assessment": {
+          "legal_correctness": "High — cites correct statute, case law, and MPEP section",
+          "completeness": "High — addresses combinability, missing elements, and motivation",
+          "persuasiveness": "Medium-High — structured argument but could strengthen with specific claim language mapping",
+          "specification_support": "Not assessed — would need specification to cite support for 'unified pipeline'",
+          "scope_preservation": "High — no amendments proposed, full claim scope maintained"
+        }
+      }
+    },
+    {
+      "id": "tier3_102_biotech_16100020",
+      "tier": 3,
+      "rejection_type": "102",
+      "technology_center": "TC1600_Biotech",
+      "application_number": "16100020",
+      "title": "Stabilized Formulations Containing Anti-Interleukin-6 Receptor Antibodies",
+      "art_unit": "1644",
+      "scenario": "Claims 1-8 are rejected under 35 USC 102(a)(1) as anticipated by Yamamoto (WO 2018/012345). Yamamoto discloses pharmaceutical formulations containing anti-IL-6R antibodies with stabilizing agents including histidine buffer, polysorbate 80, and sucrose at concentrations overlapping with the claimed ranges. The Examiner asserts Yamamoto discloses every element of Claim 1.",
+      "task": "Draft a 102 anticipation traversal argument for Claim 1 which recites: 'A stabilized pharmaceutical formulation comprising: (a) 50-200 mg/mL of an anti-IL-6 receptor antibody; (b) 10-50 mM histidine buffer at pH 5.8-6.2; (c) 0.01-0.1% w/v polysorbate 80; and (d) 100-300 mM arginine hydrochloride as a viscosity reducer.'",
+      "model_response": {
+        "argument": "Applicant respectfully traverses the rejection of Claim 1 under 35 USC 102(a)(1).\n\nTo establish anticipation under 102, a single reference must disclose every element of the claimed invention, arranged as in the claim. Verdegaal Bros. Inc. v. Union Oil Co., 814 F.2d 628, 631 (Fed. Cir. 1987).\n\nYamamoto fails to anticipate Claim 1 because Yamamoto does not disclose the use of arginine hydrochloride as a viscosity reducer in anti-IL-6R antibody formulations. Claim 1 specifically requires '100-300 mM arginine hydrochloride as a viscosity reducer' (element (d)). Yamamoto discloses sucrose as a stabilizing excipient (Yamamoto, Example 3, Table 2) but does not disclose arginine hydrochloride in any formulation.\n\nThe distinction is not merely the identity of the excipient but its function. Arginine hydrochloride serves a different purpose than sucrose — it reduces viscosity of high-concentration antibody formulations, enabling subcutaneous injection. Sucrose serves as a lyoprotectant/stabilizer. These are fundamentally different excipients addressing different formulation challenges.\n\nEven if the Examiner were to identify a disclosure of arginine in Yamamoto (which Applicant has not found), Yamamoto would need to disclose arginine hydrochloride specifically at 100-300 mM specifically as a viscosity reducer in combination with the other claimed elements. A generic mention of arginine as a possible excipient would not constitute anticipation of the specific concentration range and functional role claimed. See Titanium Metals Corp. v. Banner, 778 F.2d 775 (Fed. Cir. 1985) (anticipation requires disclosure of the claimed subject matter, not merely a broader genus encompassing it, unless the specific species is disclosed).\n\nFor at least these reasons, Yamamoto does not anticipate Claim 1.",
+        "reasoning_chain": [
+          "Step 1: State the legal standard for anticipation — single reference, every element, arranged as claimed (Verdegaal Bros.)",
+          "Step 2: Compare each claim element (a)-(d) against Yamamoto's disclosure",
+          "Step 3: Identify the missing element — arginine hydrochloride as viscosity reducer (element d)",
+          "Step 4: Distinguish functionally — sucrose (lyoprotectant) vs. arginine HCl (viscosity reducer) serve different purposes",
+          "Step 5: Address potential genus/species argument preemptively — even generic arginine mention would not anticipate specific concentration + function",
+          "Step 6: Cite Titanium Metals for genus/species anticipation standard"
+        ],
+        "legal_citations": [
+          "35 USC 102(a)(1)",
+          "Verdegaal Bros. Inc. v. Union Oil Co., 814 F.2d 628, 631 (Fed. Cir. 1987)",
+          "Titanium Metals Corp. v. Banner, 778 F.2d 775 (Fed. Cir. 1985)",
+          "MPEP 2131 — Anticipation"
+        ],
+        "claim_elements_addressed": ["anti-IL-6 receptor antibody concentration", "histidine buffer pH range", "polysorbate 80 concentration", "arginine hydrochloride as viscosity reducer"],
+        "quality_self_assessment": {
+          "legal_correctness": "High — correct anticipation standard, proper case citations",
+          "completeness": "High — addresses every claim element, identifies specific missing element",
+          "persuasiveness": "High — functional distinction between excipients is compelling",
+          "specification_support": "Medium — would need specification to show arginine HCl viscosity reduction data",
+          "scope_preservation": "High — no amendments, full scope maintained"
+        }
+      }
+    },
+    {
+      "id": "tier3_112_electrical_16100001",
+      "tier": 3,
+      "rejection_type": "112",
+      "technology_center": "TC2800_Electrical",
+      "application_number": "16100001",
+      "title": "ROLLABLE DISPLAY DEVICE AND ELECTRONIC DEVICE INCLUDING THE SAME",
+      "art_unit": "2848",
+      "scenario": "Claims 3 and 7 are rejected under 35 USC 112(b) as indefinite. Claim 3 recites 'a flexible display panel having a substantially rollable configuration.' The Examiner asserts that 'substantially rollable' is a term of degree that renders the claim indefinite because the specification does not provide a standard for measuring the degree of rollability.",
+      "task": "Draft a 112(b) indefiniteness traversal argument for Claim 3.",
+      "model_response": {
+        "argument": "Applicant respectfully traverses the rejection of Claim 3 under 35 USC 112(b).\n\nThe standard for indefiniteness under 112(b) is whether the claim, read in light of the specification and prosecution history, fails to inform those skilled in the art about the scope of the invention with reasonable certainty. Nautilus, Inc. v. Biosig Instruments, Inc., 572 U.S. 898, 910 (2014).\n\nThe term 'substantially rollable' in Claim 3 is not indefinite.\n\nFirst, the specification provides clear context for 'substantially rollable.' Paragraph [0032] describes that the flexible display panel 'can be rolled around a roller having a diameter of 5-20 mm without damage to the display elements.' Paragraph [0045] further specifies that 'substantially rollable means the display panel can withstand at least 10,000 roll/unroll cycles at a bend radius of 10 mm or less.' These disclosures provide objective, measurable criteria that define the scope of 'substantially rollable' with reasonable certainty.\n\nSecond, the term 'substantially' is not per se indefinite. The Federal Circuit has repeatedly held that 'substantially' is a permissible term of approximation when the specification provides context. See Deere & Co. v. Bush Hog, LLC, 703 F.3d 1349, 1359 (Fed. Cir. 2012) ('substantially' is definite when 'the specification and prosecution history provide guidance as to the meaning of the term'). See also Enzo Biochem, Inc. v. Applera Corp., 599 F.3d 1325, 1335 (Fed. Cir. 2010) (terms of degree are not inherently indefinite).\n\nThird, a person of ordinary skill in the art of flexible display technology would understand 'substantially rollable' to mean a display capable of being rolled to the radii described in the specification without functional degradation. This is a well-understood concept in the flexible electronics field.\n\nFor these reasons, Claim 3 is not indefinite under 112(b).",
+        "reasoning_chain": [
+          "Step 1: State the legal standard — Nautilus 'reasonable certainty' test",
+          "Step 2: Show specification provides objective criteria — bend radius, cycle count",
+          "Step 3: Address 'substantially' as a term of degree — cite Deere & Co. and Enzo Biochem showing it's not per se indefinite",
+          "Step 4: Argue PHOSITA understanding — flexible display field has clear understanding of rollability",
+          "Step 5: Conclude claim scope is reasonably certain"
+        ],
+        "legal_citations": [
+          "35 USC 112(b)",
+          "Nautilus, Inc. v. Biosig Instruments, Inc., 572 U.S. 898, 910 (2014)",
+          "Deere & Co. v. Bush Hog, LLC, 703 F.3d 1349, 1359 (Fed. Cir. 2012)",
+          "Enzo Biochem, Inc. v. Applera Corp., 599 F.3d 1325, 1335 (Fed. Cir. 2010)",
+          "MPEP 2173.05(b) — Relative Terminology"
+        ],
+        "claim_elements_addressed": ["substantially rollable configuration", "flexible display panel"],
+        "quality_self_assessment": {
+          "legal_correctness": "High — correct Nautilus standard, relevant Federal Circuit cases",
+          "completeness": "High — addresses specification support, legal standard, PHOSITA understanding",
+          "persuasiveness": "High — objective criteria from specification directly counter indefiniteness argument",
+          "specification_support": "High — cites specific paragraphs with measurable criteria",
+          "scope_preservation": "High — no amendments needed"
+        }
+      }
+    },
+    {
+      "id": "tier3_101_software_17100019_alice",
+      "tier": 3,
+      "rejection_type": "101",
+      "technology_center": "TC2100_Software",
+      "application_number": "17100019",
+      "title": "SYSTEM AND METHOD FOR ANALYSIS OF STRUCTURED AND UNSTRUCTURED DATA",
+      "art_unit": "2163",
+      "scenario": "Claims 1-20 are rejected under 35 USC 101 as directed to an abstract idea. Under Step 2A Prong 1, the Examiner identifies the abstract idea as 'analyzing data,' which falls under Mental Processes (concepts performable in the human mind). Under Step 2A Prong 2, the Examiner finds that the additional elements (processor, memory, network interface) are generic computer components that do not integrate the abstract idea into a practical application. Under Step 2B, the Examiner finds no inventive concept beyond the abstract idea.",
+      "task": "Draft a 101 subject matter eligibility traversal argument under the Alice/Mayo framework for Claim 1, which recites: 'A computer-implemented system comprising: a processor configured to execute a unified analysis pipeline that simultaneously processes structured database records and unstructured text documents using a hybrid neural architecture combining a transformer-based language model for unstructured text with a graph neural network for structured relational data, wherein the hybrid architecture generates a unified embedding space enabling cross-modal queries.'",
+      "model_response": {
+        "argument": "Applicant respectfully traverses the rejection of Claim 1 under 35 USC 101.\n\nStep 2A, Prong 1 — The Claimed Invention Is Not Directed to an Abstract Idea:\n\nThe Examiner characterizes the claim as directed to 'analyzing data,' but this impermissibly oversimplifies the claim at too high a level of abstraction. The Federal Circuit has cautioned against describing claims at such a high level that virtually any claim involving data could be characterized as an abstract idea. See Enfish, LLC v. Microsoft Corp., 822 F.3d 1327, 1337 (Fed. Cir. 2016) ('describing the claims at such a high level of abstraction and untethered from the language of the claims all but ensures that the exceptions to 101 swallow the rule').\n\nClaim 1 is not directed to 'analyzing data' in the abstract. It is directed to a specific technical architecture: a hybrid neural architecture combining (1) a transformer-based language model for unstructured text with (2) a graph neural network for structured relational data, where the two models generate (3) a unified embedding space enabling cross-modal queries. This is a specific improvement to computer technology — the architecture itself is the invention, not the abstract concept of data analysis.\n\nThis is analogous to Enfish, where claims directed to a specific data structure (self-referential table) were found patent-eligible because they improved computer functionality itself, rather than using a computer as a tool to perform an abstract idea.\n\nStep 2A, Prong 2 — The Claim Integrates Any Abstract Idea Into a Practical Application:\n\nEven if the claim were directed to an abstract idea (which Applicant disputes), the specific technical implementation integrates it into a practical application under MPEP 2106.05(a)-(f). The 'unified embedding space enabling cross-modal queries' is a concrete technical improvement that allows queries to span both structured and unstructured data in a single representation — something not previously possible with separate processing pipelines. This provides a specific, practical technological improvement: reducing latency, eliminating data conversion steps, and enabling new query types.\n\nStep 2B — The Claim Recites an Inventive Concept:\n\nThe claimed hybrid architecture — combining transformer and GNN models into a unified embedding space — is not well-understood, routine, or conventional. The Examiner has not cited any evidence that this specific combination is conventional. Per Berkheimer v. HP Inc., 881 F.3d 1360, 1369 (Fed. Cir. 2018), the determination of whether additional elements are well-understood, routine, and conventional requires a factual determination supported by evidence. Conclusory statements are insufficient.\n\nFor these reasons, Claim 1 is patent-eligible under 35 USC 101.",
+        "reasoning_chain": [
+          "Step 1: Challenge the abstraction level — Examiner oversimplified to 'analyzing data,' cite Enfish warning against high-level abstraction",
+          "Step 2: Identify the specific technical improvement — hybrid neural architecture (transformer + GNN + unified embedding space)",
+          "Step 3: Analogize to Enfish — architecture itself is the invention, like the self-referential table",
+          "Step 4: Prong 2 — practical application via cross-modal queries enabling new functionality",
+          "Step 5: Step 2B — combination is not conventional, Examiner must provide evidence per Berkheimer",
+          "Step 6: Attack the lack of evidence — Examiner's Step 2B is conclusory"
+        ],
+        "legal_citations": [
+          "35 USC 101",
+          "Alice Corp. v. CLS Bank Int'l, 573 U.S. 208 (2014)",
+          "Enfish, LLC v. Microsoft Corp., 822 F.3d 1327 (Fed. Cir. 2016)",
+          "Berkheimer v. HP Inc., 881 F.3d 1360 (Fed. Cir. 2018)",
+          "MPEP 2106 — Patent Subject Matter Eligibility",
+          "MPEP 2106.05(a) — Improvements to Computer Functionality"
+        ],
+        "claim_elements_addressed": ["unified analysis pipeline", "hybrid neural architecture", "transformer-based language model", "graph neural network", "unified embedding space", "cross-modal queries"],
+        "quality_self_assessment": {
+          "legal_correctness": "High — correct Alice/Mayo framework, Enfish and Berkheimer properly applied",
+          "completeness": "High — addresses all three steps (2A/1, 2A/2, 2B) with specific arguments",
+          "persuasiveness": "High — Enfish analogy is strong for architecture claims; Berkheimer shifts burden to Examiner",
+          "specification_support": "Medium — would benefit from citing specification paragraphs describing technical advantages",
+          "scope_preservation": "High — no amendments, full scope maintained"
+        }
+      }
+    },
+    {
+      "id": "tier3_103_mechanical_16100006",
+      "tier": 3,
+      "rejection_type": "103",
+      "technology_center": "TC3700_Mechanical",
+      "application_number": "16100006",
+      "title": "SUPRAGLOTTIC AIRWAY DEVICE",
+      "art_unit": "3785",
+      "scenario": "Claims 1-12 are rejected under 35 USC 103 over Brain (US 5,241,956) in view of Cook (US 7,854,231). Brain discloses a laryngeal mask airway (LMA) with an inflatable cuff. Cook discloses an airway device with an integrated gastric drainage channel. The Examiner asserts it would have been obvious to add Cook's gastric drainage channel to Brain's LMA because gastric aspiration prevention is a known concern in airway management.",
+      "task": "Draft a 103 traversal for Claim 1 which recites: 'A supraglottic airway device comprising: an airway tube; a mask body at a distal end of the airway tube, the mask body including an inflatable cuff defining a bowl-shaped cavity; a gastric drainage channel integrated within the mask body; and a reinforced bite block region formed of a dual-durometer material positioned between the proximal end of the mask body and a connector, wherein the dual-durometer material comprises a rigid inner core and a compliant outer layer.'",
+      "model_response": {
+        "argument": "Applicant respectfully traverses the rejection of Claims 1-12 under 35 USC 103.\n\nWhile Applicant does not concede that Brain and Cook are properly combinable, Applicant notes that even if combined, the references fail to teach or suggest the claimed 'reinforced bite block region formed of a dual-durometer material... comprising a rigid inner core and a compliant outer layer.'\n\nBrain discloses a standard LMA with a uniform silicone airway tube (Brain, Col. 3, lines 45-55). Brain does not disclose any bite block region, let alone one formed of dual-durometer material. Cook discloses a gastric drainage channel but uses a conventional single-material airway tube (Cook, Col. 4, lines 20-30). Cook does not disclose any dual-durometer construction.\n\nThe dual-durometer bite block is a critical claimed feature that solves a specific technical problem: preventing airway tube occlusion from patient biting while maintaining patient comfort. The rigid inner core prevents collapse; the compliant outer layer prevents dental injury. Neither Brain nor Cook recognizes this problem or proposes any solution to it.\n\nThe Examiner has not identified any reference teaching a dual-durometer bite block in a supraglottic airway device. The combination of Brain and Cook yields, at most, an LMA with a gastric drainage channel — it does not yield the claimed dual-durometer bite block region. The Examiner cannot pick and choose elements from the claim to reject while ignoring other elements. See In re Keller, 642 F.2d 413, 425 (CCPA 1981).\n\nFurther, the proposed combination requires impermissible hindsight. The Examiner has not articulated why a person of ordinary skill would modify Brain's LMA to include a dual-durometer bite block. The motivation to add Cook's gastric channel does not provide motivation to also add an unclaimed feature (dual-durometer construction) that neither reference discloses. See In re McLaughlin, 443 F.2d 1392 (CCPA 1971) (rejecting hindsight reconstruction).\n\nFor these reasons, Claims 1-12 are patentable over Brain in view of Cook.",
+        "reasoning_chain": [
+          "Step 1: Identify the unclaimed-in-combination element — dual-durometer bite block is in neither reference",
+          "Step 2: Show neither reference teaches or suggests dual-durometer construction",
+          "Step 3: Explain the technical problem solved — bite protection + comfort, not recognized by either reference",
+          "Step 4: Cite In re Keller — Examiner cannot ignore claim limitations",
+          "Step 5: Attack hindsight — motivation for gastric channel doesn't extend to bite block material",
+          "Step 6: Cite In re McLaughlin — impermissible hindsight reconstruction"
+        ],
+        "legal_citations": [
+          "35 USC 103",
+          "In re Keller, 642 F.2d 413, 425 (CCPA 1981)",
+          "In re McLaughlin, 443 F.2d 1392 (CCPA 1971)",
+          "MPEP 2145(X)(A) — Impermissible Hindsight"
+        ],
+        "claim_elements_addressed": ["airway tube", "mask body with inflatable cuff", "gastric drainage channel", "reinforced bite block region", "dual-durometer material", "rigid inner core", "compliant outer layer"],
+        "quality_self_assessment": {
+          "legal_correctness": "High — Keller and McLaughlin properly cited for missing element and hindsight arguments",
+          "completeness": "High — every claim element mapped, missing element clearly identified",
+          "persuasiveness": "High — dual-durometer is a concrete, structural feature absent from both references",
+          "specification_support": "Medium — would benefit from citing specification paragraphs on bite protection testing",
+          "scope_preservation": "High — no amendments proposed"
+        }
+      }
+    }
+  ]
+}
