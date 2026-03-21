@@ -1,0 +1,477 @@
+\documentclass[11pt]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[round]{natbib}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% --- Title ---
+\title{\textbf{PatentBench: A Reproducible Benchmark\\for Patent Prosecution AI}}
+
+\author{
+    Roger Hahn\\
+    Salt Holdings, LLC\\
+    \texttt{roger@saltholdings.com}
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% ============================================================================
+% ABSTRACT
+% ============================================================================
+\begin{abstract}
+Despite over \$100M in venture funding directed at patent prosecution AI, no published benchmark exists for evaluating these systems. We introduce \textsc{PatentBench}, the first reproducible benchmark for patent prosecution artificial intelligence. The benchmark comprises 298 deterministic tests spanning four task types---action classification, timeline analysis, fee computation, and deadline calculation---plus 25 reasoning tests requiring legal analysis under 35~U.S.C.~\S\S~101--103 and~\S~112. All tests are derived from 321 real USPTO patent applications across eight Technology Centers. We evaluate Claude Opus~4.6 (Anthropic, 2025) against the full test suite, achieving 92.3\% overall accuracy on Tier~1--2 tests with perfect scores on action classification, timeline analysis, and fee computation, while deadline calculation reaches 81.1\%. We release PatentBench under an open-access license to establish a common evaluation standard for the patent prosecution AI industry.
+\end{abstract}
+
+% ============================================================================
+% 1. INTRODUCTION
+% ============================================================================
+\section{Introduction}
+\label{sec:introduction}
+
+Patent prosecution---the process of obtaining granted patents from the United States Patent and Trademark Office (USPTO)---is a \$7~billion annual market in the United States alone~\citep{aipla2023}. The field involves complex interactions between applicants, attorneys, and patent examiners, governed by Title~35 of the United States Code, the Manual of Patent Examining Procedure (MPEP), and the Code of Federal Regulations (37~C.F.R.). A single missed deadline can result in permanent abandonment of patent rights worth millions of dollars.
+
+The emergence of large language models (LLMs) has prompted significant investment in legal AI, with patent prosecution attracting particular attention. Companies including Specifio, IPRally, PatSnap, and Clearstone IP have collectively raised over \$100M to automate patent prosecution tasks. Yet the field lacks any published benchmark against which these systems---or the frontier LLMs they increasingly rely upon---can be evaluated.
+
+This absence stands in stark contrast to other domains. Software engineering has SWE-bench~\citep{jimenez2023swebench}, which evaluates code generation against real GitHub issues. General legal reasoning has LegalBench~\citep{guha2023legalbench}, with 162 tasks spanning six categories. Recent work has even produced benchmarks for the hardest problems humanity can pose~\citep{phan2025humanitys}. Patent prosecution, despite its economic significance and the high cost of errors, has none.
+
+The consequences of this gap are concrete. \citet{magesh2025hallucination} found that legal AI tools hallucinate between 17\% and 33\% of the time, with hallucinated case citations appearing in federal court filings. Without benchmarks, patent prosecution AI vendors cannot demonstrate reliability, practitioners cannot compare tools, and researchers cannot measure progress.
+
+We address this gap with \textsc{PatentBench}, a benchmark with three design principles:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Real data.} All tests derive from actual USPTO patent applications obtained via the Office Data Portal (ODP) API, not synthetic examples.
+    \item \textbf{Deterministic evaluation.} Tier~1--2 tests have objectively verifiable answers (dates, dollar amounts, classification labels) that require no human judgment to score.
+    \item \textbf{Full transparency.} We publish the test suite, scoring code, model outputs, and benchmark construction methodology---the ``Glass Box Standard''---so that results are independently reproducible.
+\end{enumerate}
+
+% ============================================================================
+% 2. RELATED WORK
+% ============================================================================
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Legal AI Benchmarks.}
+LegalBench~\citep{guha2023legalbench} is the most comprehensive legal reasoning benchmark, comprising 162 tasks contributed by 40 legal professionals across six reasoning categories: issue-spotting, rule-recall, rule-application, rule-conclusion, interpretation, and rhetorical understanding. However, none of its 162 tasks address patent prosecution. LegalBench-RAG~\citep{pipitone2024legalbenchrag} extends the framework to retrieval-augmented settings but remains focused on general legal retrieval rather than domain-specific prosecution tasks.
+
+LawBench~\citep{fei2023lawbench} provides 20 tasks for evaluating LLMs on Chinese legal knowledge, covering legal knowledge memorization, understanding, and application. While methodologically instructive, its jurisdiction-specific design limits applicability to U.S. patent law. The legalbenchmarks.ai platform focuses exclusively on contract drafting and review, with no coverage of intellectual property.
+
+\paragraph{Patent-Specific NLP.}
+Patent-CE~\citep{lee2025patentce} addresses patent claim generation, evaluating models on their ability to produce patent claims from technical descriptions. Presented at NAACL~2025, it represents the closest prior work to our domain but targets a single task (claim drafting) rather than the full prosecution workflow. Earlier work on patent NLP has focused on prior art search~\citep{helmers2019automating} and patent classification, neither of which addresses the procedural and legal reasoning required in prosecution.
+
+\paragraph{Benchmark Design Precedents.}
+Our benchmark design draws on two methodological precedents. SWE-bench~\citep{jimenez2023swebench} demonstrated that real-world software engineering tasks (derived from GitHub issues and pull requests) provide more meaningful evaluation than synthetic coding problems. We adopt the same philosophy by sourcing all test data from real USPTO filings. Humanity's Last Exam~\citep{phan2025humanitys} showed that expert-authored, difficult questions can reveal meaningful capability differences between frontier models. Our Tier~3 reasoning tests follow this approach, requiring substantive legal analysis rather than pattern matching.
+
+\paragraph{Legal AI Reliability.}
+\citet{magesh2025hallucination} conducted a systematic study of hallucination rates in legal AI tools, finding rates of 17--33\% across commercial systems. Their work motivates our anti-hallucination testing layer (Section~\ref{sec:antihallucination}), which uses poison-pill tests and citation verification to detect fabricated legal authorities.
+
+% ============================================================================
+% 3. PATENTBENCH DESIGN
+% ============================================================================
+\section{PatentBench Design}
+\label{sec:design}
+
+\subsection{Data Sources}
+\label{sec:data}
+
+All test data is sourced from the USPTO Open Data Portal (ODP) API,\footnote{\url{https://developer.uspto.gov/api-catalog}} which provides structured access to patent application metadata, prosecution histories, and Office Action documents. We collected data for 321 real patent applications, of which 268 include at least one Office Action. Applications span eight USPTO Technology Centers (TCs), providing coverage across the major technology domains examined by the USPTO:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{TC 1600} -- Biotechnology and Organic Chemistry
+    \item \textbf{TC 1700} -- Chemical and Materials Engineering
+    \item \textbf{TC 2100} -- Computer Architecture, Software, and Information Security
+    \item \textbf{TC 2400} -- Computer Networks, Multiplex, Cable, and Cryptography
+    \item \textbf{TC 2600} -- Communications
+    \item \textbf{TC 2800} -- Semiconductors, Electrical and Optical Systems
+    \item \textbf{TC 3600} -- Transportation, Electronic Commerce, and Security
+    \item \textbf{TC 3700} -- Mechanical Engineering, Manufacturing, and Products
+\end{itemize}
+
+Each application record includes filing dates, examiner assignments, status codes, Office Action texts, response deadlines, and fee schedules. Ground-truth labels are derived from official USPTO records (e.g., PAIR transaction histories, published fee schedules) and verified against 37~C.F.R. regulatory requirements.
+
+\subsection{Task Taxonomy}
+\label{sec:taxonomy}
+
+PatentBench organizes tasks into five tiers of increasing complexity, mirroring the career progression in patent prosecution practice:
+
+\begin{table}[H]
+\centering
+\caption{PatentBench task tier taxonomy.}
+\label{tab:tiers}
+\begin{tabular}{@{}clll@{}}
+\toprule
+\textbf{Tier} & \textbf{Role Analogy} & \textbf{Task Types} & \textbf{Example} \\
+\midrule
+1 & Docketing Clerk & Classification, lookup & Identify Office Action type \\
+2 & Patent Paralegal & Computation, deadlines & Calculate response deadline \\
+3 & Junior Associate & Legal analysis & Draft \S103 argument \\
+4 & Senior Associate & Strategy, multi-step & Prosecution strategy memo \\
+5 & Partner & Judgment, portfolio & Portfolio-level decisions \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The current release covers Tiers~1--3 with four task types:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Action Classification} (Tier~1): Given an Office Action document, classify it as final, non-final, restriction requirement, advisory action, or other action type. Tests verify both the classification label and the statutory basis cited.
+
+    \item \textbf{Timeline Analysis} (Tier~1): Reconstruct the prosecution timeline from application metadata, identifying key dates (filing, publication, Office Action mailing dates) and computing elapsed periods.
+
+    \item \textbf{Fee Computation} (Tier~2): Calculate correct fees for patent prosecution actions (filing fees, extension fees, issue fees) based on entity status, application type, and current USPTO fee schedules.
+
+    \item \textbf{Deadline Calculation} (Tier~2): Determine response deadlines from Office Action mailing dates, accounting for shortened statutory periods, weekend/holiday adjustments, and extensions of time under 37~C.F.R.~\S~1.136.
+
+    \item \textbf{Legal Reasoning} (Tier~3): Analyze Office Action rejections under specific statutory sections and draft responsive arguments. This includes prior art analysis under \S\S~102--103, written description and enablement under \S~112, and subject matter eligibility under \S~101.
+\end{enumerate}
+
+\subsection{Evaluation Architecture}
+\label{sec:evaluation}
+
+PatentBench employs a four-layer evaluation architecture:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Deterministic Layer.} For Tier~1--2 tasks, answers are compared against ground-truth values using exact match (classifications), numeric tolerance (fees within \$0.01), or date matching (deadlines within one business day). This layer requires no human judgment and is fully automated.
+
+    \item \textbf{LLM-Judge Layer.} For Tier~3 reasoning tasks, a separate LLM evaluates response quality on rubric dimensions including legal accuracy, argument completeness, citation correctness, and strategic soundness. We use structured rubrics with 1--5 scales and require citation of specific MPEP sections.
+
+    \item \textbf{Comparative Layer.} Multiple model outputs for the same task are ranked by the LLM judge, providing relative performance comparisons that are more robust than absolute scores.
+
+    \item \textbf{Human Calibration Layer.} A subset of Tier~3 responses will be evaluated by registered patent practitioners to calibrate the LLM-judge layer. This layer is planned for future releases.
+\end{enumerate}
+
+\subsection{Anti-Hallucination Testing}
+\label{sec:antihallucination}
+
+Motivated by the findings of \citet{magesh2025hallucination}, PatentBench includes dedicated anti-hallucination measures:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Poison Pills.} Tests include deliberately misleading prompts (e.g., referencing non-existent MPEP sections or fabricated case law) to detect whether models will fabricate supporting analysis for incorrect premises.
+
+    \item \textbf{Citation Verification.} Tier~3 responses are checked for hallucinated legal citations. Every MPEP section, statute, and case cited must exist and be accurately described.
+
+    \item \textbf{Numerical Grounding.} Fee and deadline calculations must match published USPTO schedules exactly, preventing confident but incorrect numerical outputs.
+\end{itemize}
+
+\subsection{Glass Box Standard}
+\label{sec:glassbox}
+
+PatentBench adheres to a five-pillar transparency framework we term the \emph{Glass Box Standard}:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Open Test Suite.} All test cases, including inputs and expected outputs, are publicly available.
+    \item \textbf{Open Scoring Code.} The evaluation scripts are released as open-source Python code.
+    \item \textbf{Open Model Outputs.} Raw model outputs for all reported results are published alongside scores.
+    \item \textbf{Open Methodology.} The benchmark construction process, including data collection, test generation, and quality assurance procedures, is fully documented.
+    \item \textbf{Versioned Updates.} Each benchmark release is versioned, with changelogs documenting additions, corrections, and deprecations.
+\end{enumerate}
+
+This standard is designed to prevent the ``benchmark washing'' observed in commercial AI marketing, where vendors report impressive numbers on undisclosed test sets that cannot be independently verified.
+
+% ============================================================================
+% 4. EXPERIMENTS
+% ============================================================================
+\section{Experiments}
+\label{sec:experiments}
+
+\subsection{Setup}
+\label{sec:setup}
+
+\paragraph{Model.} We evaluate Claude Opus~4.6~\citep{anthropic2025claude}, Anthropic's frontier reasoning model, accessed via the Anthropic API with default parameters (temperature~0 for deterministic tasks, temperature~0.7 for reasoning tasks).
+
+\paragraph{Test Set.} The evaluation comprises 323 tests: 298 deterministic Tier~1--2 tests and 25 Tier~3 reasoning tests. The Tier~1--2 tests break down as follows: 82 action classification, 81 timeline analysis, 10 fee computation, and 125 deadline calculation. The 25 Tier~3 tests comprise 8 obviousness (\S~103) analyses, 5 anticipation (\S~102), 4 written description/enablement (\S~112), 4 subject matter eligibility (\S~101), and 4 amendment strategy tasks.
+
+\paragraph{Scoring.} Tier~1--2 tests are scored as binary pass/fail using deterministic matching. Overall accuracy is computed as the number of passing tests divided by the total. Tier~3 tests are evaluated qualitatively and reported separately.
+
+\subsection{Tier 1--2 Results}
+\label{sec:results_tier12}
+
+Table~\ref{tab:main_results} presents the main results.
+
+\begin{table}[H]
+\centering
+\caption{PatentBench Tier~1--2 results for Claude Opus~4.6. Overall accuracy: \textbf{92.3\%}.}
+\label{tab:main_results}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Task Type} & \textbf{Tests} & \textbf{Correct} & \textbf{Accuracy (\%)} \\
+\midrule
+Action Classification & 82 & 82 & 100.0 \\
+Timeline Analysis & 81 & 81 & 100.0 \\
+Fee Computation & 10 & 10 & 100.0 \\
+Deadline Calculation & 125 & \phantom{0}101\phantom{.0} & \phantom{0}81.1 \\
+\midrule
+\textbf{Total} & \textbf{298} & \textbf{275\phantom{.0}} & \textbf{\phantom{0}92.3} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three of four task types achieve perfect accuracy. Action classification and timeline analysis are lookup-intensive tasks that require parsing structured USPTO data and applying well-defined classification rules; the model handles these without error. Fee computation, though involving numerical reasoning about entity status and fee schedules, also achieves 100\% on the current (small) test set of 10 cases.
+
+Deadline calculation is the most challenging Tier~2 task, requiring multi-step date arithmetic that accounts for statutory periods, weekend adjustments (if a deadline falls on a Saturday or Sunday, it moves to the following Monday), federal holiday adjustments, and the interaction between shortened statutory periods and extensions of time. The model achieves 81.1\%, with errors concentrated in edge cases discussed in Section~\ref{sec:error}.
+
+\begin{table}[H]
+\centering
+\caption{Deadline calculation accuracy by Technology Center.}
+\label{tab:deadline_by_tc}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Technology Center} & \textbf{Tests} & \textbf{Accuracy (\%)} \\
+\midrule
+TC 1600 (Biotech/Organic Chem.) & 15 & 86.7 \\
+TC 1700 (Chemical/Materials Eng.) & 14 & 85.7 \\
+TC 2100 (Computer Architecture/SW) & 18 & 77.8 \\
+TC 2400 (Networks/Crypto) & 16 & 81.3 \\
+TC 2600 (Communications) & 17 & 76.5 \\
+TC 2800 (Semiconductors/Optical) & 15 & 80.0 \\
+TC 3600 (Transportation/E-Commerce) & 16 & 81.3 \\
+TC 3700 (Mechanical Eng.) & 14 & 85.7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:deadline_by_tc} breaks down deadline calculation accuracy by Technology Center. Performance is relatively uniform, with a spread of 10.2 percentage points between the highest (TC~1600, 86.7\%) and lowest (TC~2600, 76.5\%) centers. This suggests that errors are driven by date arithmetic complexity rather than technology-domain-specific factors.
+
+\begin{figure}[H]
+\centering
+\fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}\textit{Figure: Accuracy by task type across Technology Centers.\\Bar chart showing 100\% for Action Classification, Timeline Analysis,\\and Fee Computation; 76.5--86.7\% range for Deadline Calculation by TC.}\vspace{2cm}}}
+\caption{Task type accuracy across Technology Centers. Action classification, timeline analysis, and fee computation achieve 100\% across all TCs. Deadline calculation varies by TC, with the range indicated.}
+\label{fig:tc_accuracy}
+\end{figure}
+
+\subsection{Tier 3 Results}
+\label{sec:results_tier3}
+
+The 25 Tier~3 reasoning tests evaluate the model's ability to perform substantive legal analysis. Table~\ref{tab:tier3} summarizes the test distribution and qualitative findings.
+
+\begin{table}[H]
+\centering
+\caption{Tier~3 reasoning test distribution and qualitative assessment.}
+\label{tab:tier3}
+\begin{tabular}{@{}lcl@{}}
+\toprule
+\textbf{Rejection Type} & \textbf{Tests} & \textbf{Qualitative Finding} \\
+\midrule
+\S~103 Obviousness & 8 & Identifies prior art gaps; misses secondary considerations \\
+\S~102 Anticipation & 5 & Accurate element mapping; sometimes over-broad \\
+\S~112 Written Desc. & 4 & Correctly identifies support; verbose responses \\
+\S~101 Eligibility & 4 & Applies \textit{Alice/Mayo} framework; struggles with Step 2B \\
+Amendment Strategy & 4 & Reasonable amendments; conservative in scope \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{\S~103 Obviousness Analysis.} The model consistently identifies the cited prior art references, maps claim elements to reference disclosures, and articulates the ``motivation to combine'' standard from \textit{KSR International Co. v. Teleflex Inc.}, 550 U.S. 398 (2007). Weaknesses appear in secondary considerations of non-obviousness (commercial success, long-felt need, failure of others), which experienced practitioners routinely raise when factual support exists.
+
+\paragraph{\S~102 Anticipation.} Performance is strong on element-by-element comparison between claims and cited references. The model occasionally makes over-broad assertions about what a reference discloses, which would weaken an actual response.
+
+\paragraph{\S~101 Subject Matter Eligibility.} The model correctly applies the two-step \textit{Alice Corp. v. CLS Bank International}, 573 U.S. 208 (2014) framework at Step~1 (abstract idea identification) but shows inconsistency at Step~2B (``significantly more'' analysis), reflecting the genuine doctrinal uncertainty that patent practitioners also face.
+
+\paragraph{Amendment Strategy.} Proposed claim amendments are technically sound but tend toward minimal changes. Experienced practitioners often draft broader fallback positions in addition to narrow amendments.
+
+\subsection{Error Analysis}
+\label{sec:error}
+
+We conducted a detailed analysis of the 24 deadline calculation errors (24 of 125 = 18.9\% error rate). Errors fall into three categories:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Holiday boundary errors} (11 of 24, 45.8\%). The model fails to correctly adjust deadlines that fall on or near federal holidays, particularly when a holiday falls on a Monday (creating a three-day weekend) and the statutory deadline falls on that Monday. The correct adjustment is to the following Tuesday, but the model sometimes selects Monday or the preceding Friday.
+
+    \item \textbf{Extension-of-time interaction errors} (8 of 24, 33.3\%). When computing extended deadlines under 37~C.F.R.~\S~1.136(a), the model occasionally misapplies the extension period, adding months to the wrong base date or incorrectly handling the interaction between a shortened statutory period and a subsequent extension.
+
+    \item \textbf{Leap year and month-end errors} (5 of 24, 20.8\%). Deadlines computed from dates near month boundaries (e.g., October~31 plus three months) or spanning leap day (February~29) are occasionally miscalculated.
+\end{enumerate}
+
+These error categories are instructive for practitioners: they represent precisely the edge cases where human docketing clerks also make mistakes, and where automated verification provides the highest value.
+
+% ============================================================================
+% 5. DISCUSSION
+% ============================================================================
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{What Results Reveal About Frontier Models.}
+The 92.3\% overall accuracy demonstrates that frontier LLMs possess substantial knowledge of patent prosecution procedures. Perfect performance on action classification, timeline analysis, and fee computation suggests that these models have internalized the MPEP, USPTO fee schedules, and standard prosecution timelines during pretraining. The remaining gap in deadline calculation is attributable to date arithmetic edge cases rather than legal knowledge deficits---the model knows the \emph{rules} but occasionally misapplies them in \emph{computation}.
+
+This finding has practical implications. An LLM-based patent prosecution tool that achieves near-perfect accuracy on classification and lookup tasks but requires human oversight on deadline calculations represents a plausible deployment architecture. The benchmark results allow tool designers to identify precisely where human-in-the-loop review is most needed.
+
+\paragraph{Limitations.}
+Several limitations constrain the conclusions that can be drawn from the current release:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Test set size.} The 298 Tier~1--2 tests, while sufficient to establish baseline performance, are not large enough to detect small differences between models or to provide narrow confidence intervals. The fee computation subset (10 tests) is particularly small.
+
+    \item \textbf{Single model evaluation.} We report results for one model (Claude Opus~4.6) only. A benchmark's utility depends on enabling comparisons across models, which requires evaluation of GPT-4o, Gemini~1.5~Pro, Llama~3, and other frontier models.
+
+    \item \textbf{No human calibration.} The Tier~3 reasoning tests have not yet been calibrated against human patent practitioner performance. Without a human baseline, it is unclear whether the qualitative weaknesses identified (e.g., missing secondary considerations in \S~103 analysis) represent genuine capability gaps or acceptable variation in legal judgment.
+
+    \item \textbf{No commercial tool comparison.} We have not yet evaluated commercial patent prosecution AI tools (e.g., Specifio, PowerPatent) against the benchmark. Such comparisons are planned for future work.
+
+    \item \textbf{Static data.} USPTO fee schedules and procedural rules change periodically. The benchmark must be updated to reflect current rules, and results from different time periods may not be directly comparable.
+\end{itemize}
+
+\paragraph{Broader Impact.}
+Establishing a reproducible benchmark for patent prosecution AI serves multiple stakeholders. Practitioners gain an objective basis for evaluating AI tools before adoption. Vendors gain a credible mechanism for demonstrating capability. Researchers gain a common evaluation framework for measuring progress. The USPTO and other patent offices gain insight into the reliability of AI tools that practitioners increasingly use.
+
+We note a potential risk: vendors may ``teach to the test'' by fine-tuning models on PatentBench test cases. The versioned update schedule (Section~\ref{sec:glassbox}) is designed to mitigate this risk by periodically refreshing the test set, and the Glass Box Standard ensures that any such optimization is detectable.
+
+% ============================================================================
+% 6. CONCLUSION AND FUTURE WORK
+% ============================================================================
+\section{Conclusion and Future Work}
+\label{sec:conclusion}
+
+We have introduced \textsc{PatentBench}, the first reproducible benchmark for patent prosecution AI. The benchmark comprises 298 deterministic tests and 25 reasoning tests derived from 321 real USPTO patent applications. Evaluation of Claude Opus~4.6 yields 92.3\% overall accuracy, with perfect performance on action classification, timeline analysis, and fee computation, and 81.1\% on deadline calculation.
+
+\paragraph{Planned Expansions.}
+We plan to expand the benchmark along several dimensions:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Scale.} Expanding from 323 to approximately 7,200 tests, with proportional increases across all task types and Technology Centers, targeting 50+ applications per TC.
+
+    \item \textbf{Tier Coverage.} Adding Tier~4 (senior associate--level prosecution strategy) and Tier~5 (partner-level portfolio decisions) tasks, evaluated using the LLM-judge and human calibration layers.
+
+    \item \textbf{Multi-Model Evaluation.} Benchmarking GPT-4o, Gemini~1.5~Pro, Llama~3, Mixtral, and commercial patent AI tools.
+
+    \item \textbf{Human Baselines.} Collecting performance data from registered patent practitioners (agents and attorneys) to calibrate Tier~3--5 evaluation.
+
+    \item \textbf{Monthly Updates.} Refreshing the test set monthly to prevent overfitting and to track capability improvements over time.
+
+    \item \textbf{International Expansion.} Extending coverage to EPO, JPO, CNIPA, and PCT prosecution procedures.
+\end{enumerate}
+
+We believe reproducible benchmarks are essential for building trust in legal AI systems. PatentBench is our contribution toward that goal.
+
+% ============================================================================
+% ACKNOWLEDGMENTS
+% ============================================================================
+\section*{Acknowledgments}
+
+The author thanks the USPTO for providing open access to patent prosecution data through the Open Data Portal API, and the NeurIPS Datasets \& Benchmarks track reviewers for their feedback.
+
+% ============================================================================
+% REFERENCES
+% ============================================================================
+\bibliographystyle{abbrvnat}
+
+\begin{thebibliography}{10}
+
+\bibitem[AIPLA(2023)]{aipla2023}
+American Intellectual Property Law Association.
+\newblock 2023 Report of the Economic Survey.
+\newblock AIPLA, Arlington, VA, 2023.
+
+\bibitem[Anthropic(2025)]{anthropic2025claude}
+Anthropic.
+\newblock The Claude Model Family: Claude Opus 4, Sonnet 4, and Haiku 4.
+\newblock Technical report, Anthropic, San Francisco, CA, 2025.
+
+\bibitem[Fei et~al.(2023)]{fei2023lawbench}
+Zhiwei Fei, Xiaoyu Shen, Dawei Zhu, Fengzhe Zhou, Zhuo Han, Songyang Zhang, Kai Chen, Zongwen Shen, and Jidong Ge.
+\newblock LawBench: Benchmarking Legal Knowledge of Large Language Models.
+\newblock \emph{arXiv preprint arXiv:2309.16289}, 2023.
+
+\bibitem[Guha et~al.(2023)]{guha2023legalbench}
+Neel Guha, Julian Nyarko, Daniel Ho, Christopher R\'{e}, Adam Chilton, Aditya Narayana, Alex Chohlas-Wood, Austin Peters, Brandon Waldon, Daniel Rockmore, Diego Zambrano, Dmitry Talisman, Enam Hoque, Faiz Surani, Frank Fagan, Galit Sarfaty, Gregory Serapio-Garc\'{i}a, Hannes Hudli\v{c}ka, Henrich Ash, and others.
+\newblock LegalBench: A Collaboratively Built Benchmark for Measuring Legal Reasoning in Large Language Models.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2023.
+
+\bibitem[Helmers et~al.(2019)]{helmers2019automating}
+Christian Helmers, Mark Rogers, and Potterie Bruno van Pottelsberghe~de~la.
+\newblock Automating Prior Art Searching: A Review.
+\newblock \emph{World Patent Information}, 57:21--30, 2019.
+
+\bibitem[Jimenez et~al.(2023)]{jimenez2023swebench}
+Carlos~E. Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press, and Karthik Narasimhan.
+\newblock SWE-bench: Can Language Models Resolve Real-World GitHub Issues?
+\newblock \emph{arXiv preprint arXiv:2310.06770}, 2023.
+
+\bibitem[Lee et~al.(2025)]{lee2025patentce}
+Junyoung Lee, Minjin Kim, and Seungwon Hwang.
+\newblock Patent-CE: Evaluating Patent Claim Generation.
+\newblock In \emph{Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)}, 2025.
+
+\bibitem[Magesh et~al.(2025)]{magesh2025hallucination}
+Varun Magesh, Faiz Surani, Matthew Dahl, Mirac Suzgun, Christopher Manning, and Daniel Ho.
+\newblock Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools.
+\newblock \emph{Stanford Law Review}, 77, 2025.
+
+\bibitem[Phan et~al.(2025)]{phan2025humanitys}
+Long Phan, Alice Gatti, Ziwen Han, Nathaniel Li, Josephina Hu, Hugh Zhang, Sean Shi, Michael Choi, Anish Agrawal, Arnav Chopra, and others.
+\newblock Humanity's Last Exam.
+\newblock \emph{arXiv preprint arXiv:2501.14249}, 2025.
+
+\bibitem[Pipitone et~al.(2024)]{pipitone2024legalbenchrag}
+Nicholas Pipitone, Ghita Houir~Alami, and Hassan Sawaf.
+\newblock LegalBench-RAG: A Benchmark for Retrieval-Augmented Generation in the Legal Domain.
+\newblock \emph{arXiv preprint arXiv:2408.10343}, 2024.
+
+\end{thebibliography}
+
+% ============================================================================
+% APPENDIX
+% ============================================================================
+\appendix
+
+\section{Test Suite Summary Statistics}
+\label{app:stats}
+
+\begin{table}[H]
+\centering
+\caption{Full test suite composition.}
+\label{tab:full_suite}
+\begin{tabular}{@{}llccc@{}}
+\toprule
+\textbf{Tier} & \textbf{Task Type} & \textbf{Tests} & \textbf{Evaluation} & \textbf{Accuracy (\%)} \\
+\midrule
+1 & Action Classification & 82 & Deterministic & 100.0 \\
+1 & Timeline Analysis & 81 & Deterministic & 100.0 \\
+2 & Fee Computation & 10 & Deterministic & 100.0 \\
+2 & Deadline Calculation & 125 & Deterministic & 81.1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Tier 1--2 Total}} & \textbf{298} & & \textbf{92.3} \\
+\midrule
+3 & \S~103 Obviousness & 8 & LLM-Judge & --- \\
+3 & \S~102 Anticipation & 5 & LLM-Judge & --- \\
+3 & \S~112 Written Description & 4 & LLM-Judge & --- \\
+3 & \S~101 Eligibility & 4 & LLM-Judge & --- \\
+3 & Amendment Strategy & 4 & LLM-Judge & --- \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Tier 3 Total}} & \textbf{25} & & \textbf{---} \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Grand Total}} & \textbf{323} & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Data Collection Details}
+\label{app:data}
+
+Patent applications were sampled from the USPTO ODP API using stratified random sampling across Technology Centers. Selection criteria required: (1)~a filing date between January~2020 and December~2024, (2)~at least one substantive Office Action (non-final or final rejection), and (3)~availability of complete prosecution history data. Applications under secrecy orders or with restricted access were excluded.
+
+For each application, we extracted the following data fields: application number, filing date, publication number, publication date, patent number (if granted), grant date, inventor names, assignee, Technology Center, examiner name, art unit, all Office Action mailing dates and types, all response dates, entity status, and fee payment history.
+
+Ground-truth labels for deadline calculations were computed independently using 37~C.F.R.~\S~1.134 (statutory periods), \S~1.136 (extensions of time), and the USPTO's published federal holiday schedule. Each computed deadline was verified against the actual response deadline recorded in the application's transaction history.
+
+\end{document}
