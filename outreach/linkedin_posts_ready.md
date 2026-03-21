@@ -17,7 +17,7 @@ So we built one.
 
 PatentBench is the first published, reproducible benchmark for patent prosecution AI. We tested on 298 real cases from 82 USPTO Office Actions across 8 Technology Centers.
 
-Results for Claude Opus 4.6:
+Results for ABIGAIL v3 (powered by Claude Opus 4.6):
 - Action Classification: 100%
 - Prosecution Timeline Analysis: 100%
 - Fee Computation: 100%
@@ -65,7 +65,7 @@ What we tested:
 - 8 Technology Centers
 - 321 total patent applications
 
-Initial results (Claude Opus 4.6):
+Initial results (ABIGAIL v3, powered by Claude Opus 4.6):
 - Classification: 100%
 - Timeline Analysis: 100%
 - Fee Computation: 100%
@@ -157,13 +157,13 @@ Read the methodology: abigail.app/blog/guides/introducing-patentbench
 
 ## POSTING SCHEDULE
 
-| Day | Roger (Personal) | ABIGAIL (Company) |
-|-----|------------------|-------------------|
-| Day 1 (Launch) | Post 1: Results + Challenge | Post 2: Formal Announcement + Carousel |
-| Day 2-3 | Post 3: Tier 3 Reasoning Example | Post 4: Glass Box Standard |
-| Day 5 | Share blog post 1 (Why No Benchmarks) | Share blog post 2 (Methodology) |
-| Day 7 | Tag specific patent attorneys for feedback | Share blog post 3 (Transparency Crisis) |
-| Day 10 | Share any early community response | Post updated results if new data |
+| Date | Roger (Personal) | ABIGAIL (Company) |
+|------|------------------|-------------------|
+| Mar 21 (Fri) — Launch | Post 1: Results + Challenge | Post 2: Formal Announcement + Carousel |
+| Mar 24 (Mon) | Post 3: Tier 3 Reasoning Example | Post 4: Glass Box Standard |
+| Mar 26 (Wed) | Share blog: Why No Benchmarks | Share blog: Methodology Deep-Dive |
+| Mar 28 (Fri) | Tag patent attorneys for feedback | Share blog: Transparency Crisis |
+| Mar 31 (Mon) | Share early community response | Post updated results if new data |
 
 ## HASHTAG STRATEGY
 Primary: #PatentBench #PatentAI #LegalTech
