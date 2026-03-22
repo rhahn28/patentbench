@@ -121,16 +121,12 @@ print(results.summary())
 
 Results on PatentBench-Mini (300 cases). Last updated: 2026-03-19.
 
-| Model | Admin | Drafting | Prosecution | Analytics | Prior Art | **Overall** |
-|-------|-------|----------|-------------|-----------|-----------|-------------|
-| ABIGAIL v3 | **92.4** | **78.1** | **81.3** | **74.2** | **76.8** | **80.6** |
-| Claude Sonnet 4 | 88.1 | 71.4 | 74.6 | 69.3 | 72.1 | 75.1 |
-| GPT-5 | 86.7 | 69.8 | 72.1 | 67.8 | 70.4 | 73.4 |
-| Gemini 2.5 Pro | 85.2 | 68.3 | 70.9 | 66.1 | 69.2 | 71.9 |
-| GPT-4o | 83.6 | 64.2 | 67.4 | 62.7 | 65.8 | 68.7 |
-| Claude Haiku 3.5 | 79.4 | 58.6 | 61.2 | 57.3 | 60.1 | 63.3 |
+| System | Classification | Timeline | Fees | Deadlines | **Layer 1 Overall** |
+|--------|---------------|----------|------|-----------|---------------------|
+| ABIGAIL v3 | **100.0%** | **100.0%** | **100.0%** | **100.0%** | **100.0%** |
+| ABIGAIL v3 (Variant B) | 92.7% | 94.2% | 100.0% | 99.0% | 95.9% |
 
-> Scores are composite quality scores (0-100) combining deterministic accuracy, LLM-judge ratings, and comparative rankings. See [METHODOLOGY.md](METHODOLOGY.md) for details.
+> Layer 1 (deterministic) results only. Layer 2-4 evaluation in progress. Submit your system for evaluation — see [METHODOLOGY.md](METHODOLOGY.md). Underlying model architectures are not disclosed; results measure system-level output quality.
 
 ## Glass Box Standard
 

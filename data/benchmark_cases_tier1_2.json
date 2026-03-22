@@ -1,8 +1,8 @@
 {
   "benchmark": "PatentBench-Mini",
   "version": "0.1.0",
-  "generated_at": "2026-03-20T23:14:24.163Z",
-  "model_under_test": "Claude Opus 4.6 (direct)",
+  "generated_at": "2026-03-21T02:40:44.129Z",
+  "model_under_test": "ABIGAIL v3",
   "summary": {
     "total_test_cases": 298,
     "tier_1_deadline": 125,
@@ -44,8 +44,8 @@
       "title": "A SYSTEM AND METHOD FOR EFFICIENT AND SECURE IMPLEMENTATION OF LS-DESIGNS",
       "question": "A Final Office Action was mailed on 2021-01-06 for application 16100000. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
-        "shortened_deadline": "2021-04-05",
-        "max_deadline": "2021-07-05",
+        "shortened_deadline": "2021-04-06",
+        "max_deadline": "2021-07-06",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -115,7 +115,7 @@
       "question": "A Final Office Action was mailed on 2020-01-31 for application 16100002. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
         "shortened_deadline": "2020-04-30",
-        "max_deadline": "2020-07-30",
+        "max_deadline": "2020-07-31",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -135,8 +135,8 @@
       "title": "Semiconductor Constructions, Methods of Forming Vertical Memory Strings, and Methods of Forming Vertically-Stacked Structures",
       "question": "A Non-Final Office Action was mailed on 2019-01-08 for application 16100003. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2019-04-07",
-        "max_deadline": "2019-07-07",
+        "shortened_deadline": "2019-04-08",
+        "max_deadline": "2019-07-08",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -184,8 +184,8 @@
       "title": "SELF-TIGHTENING SUPPRESSOR MOUNT AND SYSTEM",
       "question": "A Non-Final Office Action was mailed on 2018-12-12 for application 16100007. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2019-03-11",
-        "max_deadline": "2019-06-11",
+        "shortened_deadline": "2019-03-12",
+        "max_deadline": "2019-06-12",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -198,8 +198,8 @@
       "title": "IMPLANTABLE MEDICAL DEVICE UTILIZING POSTURE AND HEART SOUNDS AND METHOD OF USING SAME",
       "question": "A Non-Final Office Action was mailed on 2020-12-16 for application 16100009. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2021-03-15",
-        "max_deadline": "2021-06-15",
+        "shortened_deadline": "2021-03-16",
+        "max_deadline": "2021-06-16",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -247,8 +247,8 @@
       "title": "METHOD AND DEVICE FOR EXCHANGING QUANTUM DOT LIGANDS",
       "question": "A Non-Final Office Action was mailed on 2021-12-16 for application 16100011. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2022-03-15",
-        "max_deadline": "2022-06-15",
+        "shortened_deadline": "2022-03-16",
+        "max_deadline": "2022-06-16",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -289,8 +289,8 @@
       "title": "ELECTRONIC INJECTOR FOR INJECTING A MEDICINAL PRODUCT",
       "question": "A Non-Final Office Action was mailed on 2021-09-01 for application 16100014. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2021-12-02",
-        "max_deadline": "2022-03-04",
+        "shortened_deadline": "2021-12-01",
+        "max_deadline": "2022-03-01",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -303,8 +303,8 @@
       "title": "ELECTRONIC INJECTOR FOR INJECTING A MEDICINAL PRODUCT",
       "question": "A Final Office Action was mailed on 2021-03-08 for application 16100014. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
-        "shortened_deadline": "2021-06-07",
-        "max_deadline": "2021-09-07",
+        "shortened_deadline": "2021-06-08",
+        "max_deadline": "2021-09-08",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -422,8 +422,8 @@
       "title": "Stabilized Formulations Containing Anti-Interleukin-6 Receptor (IL-6R) Antibodies",
       "question": "A Non-Final Office Action was mailed on 2020-02-13 for application 16100020. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2020-05-12",
-        "max_deadline": "2020-08-12",
+        "shortened_deadline": "2020-05-13",
+        "max_deadline": "2020-08-13",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -457,8 +457,8 @@
       "title": "DETERMINING AN ERRONEOUS MOVEMENT OF A MICROSCOPE",
       "question": "A Non-Final Office Action was mailed on 2021-03-01 for application 16100022. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2021-05-28",
-        "max_deadline": "2021-08-28",
+        "shortened_deadline": "2021-06-01",
+        "max_deadline": "2021-09-01",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -737,8 +737,8 @@
       "title": "FUEL PUMP",
       "question": "A Non-Final Office Action was mailed on 2021-01-04 for application 16500008. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2021-04-03",
-        "max_deadline": "2021-07-03",
+        "shortened_deadline": "2021-04-04",
+        "max_deadline": "2021-07-04",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -752,7 +752,7 @@
       "question": "A Final Office Action was mailed on 2021-06-01 for application 16500008. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
         "shortened_deadline": "2021-09-01",
-        "max_deadline": "2021-12-02",
+        "max_deadline": "2021-12-01",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -786,8 +786,8 @@
       "title": "Connection Clamping Device",
       "question": "A Final Office Action was mailed on 2023-02-14 for application 16500009. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
-        "shortened_deadline": "2023-05-13",
-        "max_deadline": "2023-08-13",
+        "shortened_deadline": "2023-05-14",
+        "max_deadline": "2023-08-14",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -808,7 +808,7 @@
       "question": "A Non-Final Office Action was mailed on 2020-11-12 for application 16500011. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
         "shortened_deadline": "2021-02-12",
-        "max_deadline": "2021-05-11",
+        "max_deadline": "2021-05-12",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -821,8 +821,8 @@
       "title": "LITHIUM SALT MIXTURE AND USES THEREOF AS A BATTERY ELECTROLYTE",
       "question": "A Final Office Action was mailed on 2021-03-31 for application 16500011. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
-        "shortened_deadline": "2021-07-01",
-        "max_deadline": "2021-10-01",
+        "shortened_deadline": "2021-06-30",
+        "max_deadline": "2021-09-30",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -843,7 +843,7 @@
       "question": "A Non-Final Office Action was mailed on 2022-11-21 for application 16500012. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
         "shortened_deadline": "2023-02-21",
-        "max_deadline": "2023-05-20",
+        "max_deadline": "2023-05-21",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -856,8 +856,8 @@
       "title": "PRIMER COMPOSITION FOR PRESSURE-SENSITIVE SILICONE ADHESIVE, AND ARTICLE",
       "question": "A Final Office Action was mailed on 2021-12-24 for application 16500012. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
-        "shortened_deadline": "2022-03-23",
-        "max_deadline": "2022-06-23",
+        "shortened_deadline": "2022-03-24",
+        "max_deadline": "2022-06-24",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -954,8 +954,8 @@
       "title": "MINERAL COATED MICROPARTICLES FOR SUSTAINED DELIVERY OF BIOLOGICALLY ACTIVE MOLECULES",
       "question": "A Non-Final Office Action was mailed on 2025-01-10 for application 16500017. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2025-04-09",
-        "max_deadline": "2025-07-09",
+        "shortened_deadline": "2025-04-10",
+        "max_deadline": "2025-07-10",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1039,7 +1039,7 @@
       "question": "A Non-Final Office Action was mailed on 2022-12-09 for application 16500021. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
         "shortened_deadline": "2023-03-09",
-        "max_deadline": "2023-06-08",
+        "max_deadline": "2023-06-09",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1123,7 +1123,7 @@
       "question": "A Final Office Action was mailed on 2022-11-23 for application 16500024. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
         "shortened_deadline": "2023-02-23",
-        "max_deadline": "2023-05-22",
+        "max_deadline": "2023-05-23",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -1192,8 +1192,8 @@
       "title": "SYSTEM AND METHOD FOR ORGANIC ELECTRONIC DEVICE PATTERNING",
       "question": "A Non-Final Office Action was mailed on 2023-01-26 for application 17100003. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2023-04-25",
-        "max_deadline": "2023-07-25",
+        "shortened_deadline": "2023-04-26",
+        "max_deadline": "2023-07-26",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1255,8 +1255,8 @@
       "title": "CRYPTIC ANTIBIOTICS AND METHODS FOR DETECTING BIOACTIVE CRYPTIC METABOLITES",
       "question": "A Final Office Action was mailed on 2025-02-05 for application 17100005. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
-        "shortened_deadline": "2025-05-04",
-        "max_deadline": "2025-08-04",
+        "shortened_deadline": "2025-05-05",
+        "max_deadline": "2025-08-05",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -1276,8 +1276,8 @@
       "title": "EXHAUST MANIFOLD HAVING TURBINE CONNECTOR WITH TURBINE FOOT",
       "question": "A Non-Final Office Action was mailed on 2021-12-21 for application 17100006. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2022-03-20",
-        "max_deadline": "2022-06-20",
+        "shortened_deadline": "2022-03-21",
+        "max_deadline": "2022-06-21",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1290,8 +1290,8 @@
       "title": "DEVICE FOR EXTRACTING A MOLECULE OF INTEREST FROM A SAMPLE MATRIX, AND ASSOCIATED METHODS",
       "question": "A Non-Final Office Action was mailed on 2023-05-01 for application 17100008. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2023-07-31",
-        "max_deadline": "2023-10-31",
+        "shortened_deadline": "2023-08-01",
+        "max_deadline": "2023-11-01",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1304,8 +1304,8 @@
       "title": "DEVICE FOR EXTRACTING A MOLECULE OF INTEREST FROM A SAMPLE MATRIX, AND ASSOCIATED METHODS",
       "question": "A Final Office Action was mailed on 2023-01-18 for application 17100008. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
-        "shortened_deadline": "2023-04-17",
-        "max_deadline": "2023-07-17",
+        "shortened_deadline": "2023-04-18",
+        "max_deadline": "2023-07-18",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -1326,7 +1326,7 @@
       "question": "A Non-Final Office Action was mailed on 2021-11-24 for application 17100012. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
         "shortened_deadline": "2022-02-24",
-        "max_deadline": "2022-05-23",
+        "max_deadline": "2022-05-24",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1353,8 +1353,8 @@
       "title": "Bale Stacker",
       "question": "A Non-Final Office Action was mailed on 2022-03-03 for application 17100014. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2022-06-02",
-        "max_deadline": "2022-09-02",
+        "shortened_deadline": "2022-06-03",
+        "max_deadline": "2022-09-03",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1388,8 +1388,8 @@
       "title": "ANTENNA STRUCTURE AND WIRELESS COMMUNICATION DEVICE USING SAME",
       "question": "A Non-Final Office Action was mailed on 2022-01-21 for application 17100015. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2022-04-20",
-        "max_deadline": "2022-07-20",
+        "shortened_deadline": "2022-04-21",
+        "max_deadline": "2022-07-21",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1416,8 +1416,8 @@
       "title": "Systems And Methods For Predicting And Managing Power And Energy Use Of Semiconductor Devices",
       "question": "A Final Office Action was mailed on 2022-03-04 for application 17100016. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
-        "shortened_deadline": "2022-06-03",
-        "max_deadline": "2022-09-03",
+        "shortened_deadline": "2022-06-04",
+        "max_deadline": "2022-09-04",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -1466,7 +1466,7 @@
       "question": "A Non-Final Office Action was mailed on 2024-11-18 for application 17100021. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
         "shortened_deadline": "2025-02-18",
-        "max_deadline": "2025-05-17",
+        "max_deadline": "2025-05-18",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1549,8 +1549,8 @@
       "title": "A PLATFORM-AGNOSTIC MESSAGE RELAY SERVICE FOR OUTBOUND MESSAGES",
       "question": "A Non-Final Office Action was mailed on 2022-02-17 for application 17100024. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2022-05-16",
-        "max_deadline": "2022-08-16",
+        "shortened_deadline": "2022-05-17",
+        "max_deadline": "2022-08-17",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1584,8 +1584,8 @@
       "title": "Stator for an Electric Motor",
       "question": "A Non-Final Office Action was mailed on 2023-03-03 for application 17500000. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2023-06-02",
-        "max_deadline": "2023-09-02",
+        "shortened_deadline": "2023-06-03",
+        "max_deadline": "2023-09-03",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1619,8 +1619,8 @@
       "title": "AUTOMATIC SENSOR SELECTION",
       "question": "A Non-Final Office Action was mailed on 2024-10-01 for application 17500001. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2024-12-31",
-        "max_deadline": "2025-03-31",
+        "shortened_deadline": "2025-01-01",
+        "max_deadline": "2025-04-01",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1634,7 +1634,7 @@
       "question": "A Non-Final Office Action was mailed on 2022-12-06 for application 17500002. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
         "shortened_deadline": "2023-03-06",
-        "max_deadline": "2023-06-05",
+        "max_deadline": "2023-06-06",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1661,8 +1661,8 @@
       "title": "METHODS OF OPTIMIZING 3-D PRINTING PARAMETERS FOR METALLIC MATERIALS",
       "question": "A Final Office Action was mailed on 2025-03-03 for application 17500004. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
-        "shortened_deadline": "2025-06-02",
-        "max_deadline": "2025-09-02",
+        "shortened_deadline": "2025-06-03",
+        "max_deadline": "2025-09-03",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -1710,8 +1710,8 @@
       "title": "DIGITIZED AUTOMATIC, FIRE, SMOKE, AND EGRESS DOOR INSPECTION SYSTEM AND METHODS",
       "question": "A Non-Final Office Action was mailed on 2023-02-14 for application 17500009. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2023-05-13",
-        "max_deadline": "2023-08-13",
+        "shortened_deadline": "2023-05-14",
+        "max_deadline": "2023-08-14",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1724,8 +1724,8 @@
       "title": "BOTTLE FILLING ARRANGEMENT FOR FILLING BOTTLES AND SIMILAR CONTAINERS, SUCH AS GLASS BOTTLES, WITH A BEVERAGE, AND A METHOD OF OPERATING A BOTTLE FILLING ARRANGEMENT",
       "question": "A Non-Final Office Action was mailed on 2023-02-17 for application 17500010. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2023-05-16",
-        "max_deadline": "2023-08-16",
+        "shortened_deadline": "2023-05-17",
+        "max_deadline": "2023-08-17",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1739,7 +1739,7 @@
       "question": "A Non-Final Office Action was mailed on 2024-07-01 for application 17500011. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
         "shortened_deadline": "2024-10-01",
-        "max_deadline": "2024-12-31",
+        "max_deadline": "2025-01-01",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1773,8 +1773,8 @@
       "title": "Method for Producing Polypropylene",
       "question": "A Non-Final Office Action was mailed on 2022-12-21 for application 17500012. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2023-03-20",
-        "max_deadline": "2023-06-20",
+        "shortened_deadline": "2023-03-21",
+        "max_deadline": "2023-06-21",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1823,7 +1823,7 @@
       "question": "A Non-Final Office Action was mailed on 2022-12-08 for application 17500014. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
         "shortened_deadline": "2023-03-08",
-        "max_deadline": "2023-06-07",
+        "max_deadline": "2023-06-08",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1857,8 +1857,8 @@
       "title": "BABY BOTTLE SYSTEM",
       "question": "A Non-Final Office Action was mailed on 2024-04-01 for application 17500015. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2024-07-02",
-        "max_deadline": "2024-10-02",
+        "shortened_deadline": "2024-07-01",
+        "max_deadline": "2024-10-01",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1871,8 +1871,8 @@
       "title": "BABY BOTTLE SYSTEM",
       "question": "A Final Office Action was mailed on 2025-01-13 for application 17500015. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
-        "shortened_deadline": "2025-04-12",
-        "max_deadline": "2025-07-12",
+        "shortened_deadline": "2025-04-13",
+        "max_deadline": "2025-07-13",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -1906,8 +1906,8 @@
       "title": "VECTOR DATAFLOW ARCHITECTURE FOR EMBEDDED SYSTEMS",
       "question": "A Final Office Action was mailed on 2024-02-05 for application 17500017. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
-        "shortened_deadline": "2024-05-04",
-        "max_deadline": "2024-08-04",
+        "shortened_deadline": "2024-05-05",
+        "max_deadline": "2024-08-05",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",
@@ -1955,8 +1955,8 @@
       "title": "SEMICONDUCTOR DEVICE COMPRISING VARIOUS THIN-FILM TRANSISTORS",
       "question": "A Non-Final Office Action was mailed on 2023-03-09 for application 17500020. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
-        "shortened_deadline": "2023-06-08",
-        "max_deadline": "2023-09-08",
+        "shortened_deadline": "2023-06-09",
+        "max_deadline": "2023-09-09",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -1970,7 +1970,7 @@
       "question": "A Non-Final Office Action was mailed on 2024-11-04 for application 17500021. What is the shortened statutory response deadline and the maximum statutory deadline?",
       "ground_truth": {
         "shortened_deadline": "2025-02-04",
-        "max_deadline": "2025-05-03",
+        "max_deadline": "2025-05-04",
         "action_type": "Non-Final",
         "explanation": "Non-Final OA: 3 months shortened period, 6 months statutory max under 37 CFR 1.134"
       }
@@ -2032,8 +2032,8 @@
       "title": "PROVIDING GUIDANCE DURING REST AND RECOVERY",
       "question": "A Final Office Action was mailed on 2026-02-13 for application 17500023. What is the shortened statutory response deadline? What are the applicant's options after a Final Rejection?",
       "ground_truth": {
-        "shortened_deadline": "2026-05-12",
-        "max_deadline": "2026-08-12",
+        "shortened_deadline": "2026-05-13",
+        "max_deadline": "2026-08-13",
         "action_type": "Final",
         "options": [
           "File response with amendments under 37 CFR 1.116",

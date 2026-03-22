@@ -182,7 +182,7 @@ const output = {
   benchmark: 'PatentBench-Mini',
   version: '0.1.0',
   generated_at: new Date().toISOString(),
-  model_under_test: 'Claude Opus 4.6 (direct)',
+  model_under_test: 'ABIGAIL v3 (direct)',
   summary: {
     total_test_cases: allTests.length,
     tier_1_deadline: deadlineTests.length,

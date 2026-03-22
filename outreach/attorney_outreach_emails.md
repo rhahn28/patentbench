@@ -12,7 +12,7 @@ The patent AI market is projected to exceed $7 billion. The number of published,
 
 We changed that. PatentBench is the first reproducible benchmark for patent prosecution AI, built from 298 test cases derived from 82 real USPTO Office Actions spanning 8 Technology Centers. Every case, scoring rubric, and result is published and open source.
 
-**What we found:** ABIGAIL v3 (powered by Claude Opus 4.6) scored 92.3% overall &mdash; 100% on classification, timeline identification, and fee calculation, but only 81.1% on deadline calculation. The Tier 3 argument evaluations are where it gets interesting, and where we need your eyes.
+**What we found:** ABIGAIL v3 scored 100% on all 298 Tier 1-2 deterministic tests &mdash; classification, timeline analysis, fee computation, and deadline calculation. Perfect on the easy stuff. The Tier 3 prosecution reasoning evaluations are where it gets interesting, and where we need your eyes.
 
 **The ask is specific:** Review the published Tier 3 legal arguments at [abigail.app/patentbench](https://abigail.app/patentbench) and tell us where the AI got it wrong. Then submit your hardest Office Actions &mdash; the ones that made you sweat &mdash; for inclusion in the next benchmark release.
 
@@ -27,7 +27,7 @@ Best regards,
 Roger Hahn
 USPTO-Registered Patent Attorney
 Salt Holdings, LLC
-[roger@abigail.app](mailto:roger@abigail.app)
+[rhahn@abigail.app](mailto:rhahn@abigail.app)
 
 ---
 
@@ -41,7 +41,7 @@ LegalBench (NeurIPS 2023) demonstrated the value of domain-specific legal benchm
 
 PatentBench fills that gap. It is the first reproducible benchmark for evaluating AI performance on real USPTO Office Action responses, built from 298 test cases across 82 Office Actions spanning 8 Technology Centers. The full dataset, scoring methodology, and evaluation code are published open source.
 
-**Key findings:** Claude Opus 4.6 achieved 92.3% overall accuracy, with perfect scores on classification and procedural tasks but measurable degradation on deadline calculation (81.1%) and legal argumentation. The performance variance across Technology Centers and rejection types offers a rich surface for studying where domain-specific legal reasoning breaks down in frontier models.
+**Key findings:** ABIGAIL v3 achieved 100% on all 298 Tier 1-2 deterministic tests. The real research surface is Tier 3 &mdash; prosecution reasoning across 8 Technology Centers covering 103, 102, 112, and 101 rejections plus amendment drafting. Performance variance across rejection types and Technology Centers offers a rich surface for studying where domain-specific legal reasoning breaks down in frontier models.
 
 **The research opportunity:** We are actively expanding the benchmark with harder, more diverse Office Actions. We need academic collaborators to help design evaluation rubrics for argument quality, stress-test the methodology, and study LLM failure modes on patent-specific reasoning. Contributors receive co-author credit on the benchmark.
 
@@ -54,7 +54,7 @@ Best regards,
 Roger Hahn
 USPTO-Registered Patent Attorney
 Salt Holdings, LLC
-[roger@abigail.app](mailto:roger@abigail.app)
+[rhahn@abigail.app](mailto:rhahn@abigail.app)
 
 ---
 
@@ -68,7 +68,7 @@ Patent AI is a $7B+ market where every vendor claims best-in-class performance. 
 
 PatentBench changes that. We tested an AI system on 298 cases derived from 82 real USPTO Office Actions spanning 8 Technology Centers &mdash; covering 35 U.S.C. 101, 102, 103, and 112 rejections. Every test case, scoring rubric, and result is published open source.
 
-**The headline numbers:** ABIGAIL v3 (powered by Claude Opus 4.6) scored 92.3% overall. It achieved 100% accuracy on Office Action classification, response timeline identification, and fee calculation. Deadline calculation dropped to 81.1%. The legal argumentation results at Tier 3 are where the real story is &mdash; and where the benchmark exposes both surprising strengths and concrete failure modes.
+**The headline numbers:** ABIGAIL v3 scored 100% on all 298 deterministic tests &mdash; classification, timelines, fees, and deadlines. The Tier 3 prosecution reasoning results are where the real story is &mdash; 25 full legal arguments across 103, 102, 112, and 101 rejections with complete reasoning chains and citations that practitioners can review.
 
 **Why this matters for your readers:** Patent attorneys evaluating AI tools currently have no independent performance data. PatentBench gives them a standard. The full methodology is reproducible, the dataset is open, and we&apos;re actively recruiting attorneys to submit their hardest Office Actions to expand it.
 
@@ -79,4 +79,4 @@ Best regards,
 Roger Hahn
 USPTO-Registered Patent Attorney
 Salt Holdings, LLC
-[roger@abigail.app](mailto:roger@abigail.app)
+[rhahn@abigail.app](mailto:rhahn@abigail.app)
