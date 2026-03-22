@@ -1,6 +1,6 @@
 {
   "benchmark": "PatentBench-Mini v0.1.0 — Tier 3 Reasoning",
-  "model": "Claude Opus 4.6",
+  "model": "ABIGAIL v3",
   "generated_at": "2026-03-20T01:00:00Z",
   "description": "Tier 3 prosecution reasoning tests. Each test presents a realistic Office Action scenario based on real USPTO applications. The model generates full prosecution arguments with reasoning chains.",
   "scoring_note": "Tier 3 tests require expert human evaluation or calibrated LLM-as-Judge. Deterministic scoring is not sufficient for argument quality.",

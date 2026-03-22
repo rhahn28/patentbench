@@ -1,0 +1,3437 @@
+{
+  "benchmark": "PatentBench-Mini v0.1.0",
+  "model": "ABIGAIL v3 (Variant B)",
+  "run_date": "2026-03-21T04:26:26.591Z",
+  "summary": {
+    "overall_accuracy": "95.9%",
+    "total_tests": 298,
+    "total_points": "975.8/1018",
+    "parse_errors": 1
+  },
+  "by_task_type": {
+    "deadline_calculation": {
+      "accuracy": "99.0%",
+      "tests": 125,
+      "points": "414.8/419"
+    },
+    "action_classification": {
+      "accuracy": "92.7%",
+      "tests": 82,
+      "points": "304.0/328"
+    },
+    "timeline_analysis": {
+      "accuracy": "94.2%",
+      "tests": 81,
+      "points": "227.0/241"
+    },
+    "fee_computation": {
+      "accuracy": "100.0%",
+      "tests": 10,
+      "points": "30.0/30"
+    }
+  },
+  "detailed_results": [
+    {
+      "test_id": "deadline_nf_16100000",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-11-27\",\n  \"max_deadline\": \"2021-02-27\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16100000",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-04-06\",\n  \"max_deadline\": \"2021-07-06\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a three-month shortened statutory period for response to a Final Office Action, extendable to a maximum of six months from the mailing date.\",\n  \"options\": [\n    \"File an amendment and Request for Continued Examination (RCE) under 37 CFR 1.114\",\n    \"File a Notice of Appeal to the Patent Trial and Appeal Board under 37 CFR 41.31\",\n    \"File an After Final Amendment under 37 CFR 1.116 attempting to place the application in condition for allowance\",\n    \"File a continuation application under 35 U.S.C. 120 before abandonment or patent grant\",\n    \"Abandon the application by not timely responding\",\n    \"If eligible, file an After Final Consideration Pilot Program 2.0 (AFCP 2.0) request\",\n    \"Request an interview with the Examiner to resolve outstanding issues\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100001",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2019-08-07\",\n  \"max_deadline\": \"2019-11-07\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months with appropriate extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16100001",
+      "task_type": "deadline_calculation",
+      "score": "90.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 3/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2019-11-15\",\n  \"max_deadline\": \"2020-02-15\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\",\n  \"options\": [\n    \"File an amendment and/or arguments under 37 CFR 1.116\",\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114\",\n    \"File a Notice of Appeal under 37 CFR 41.31\",\n    \"Abandon the application\",\n    \"If allowable subject matter exists, request that claims be allowed by canceling non-allowable claims\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100002",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-01-21\",\n  \"max_deadline\": \"2020-04-21\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16100002",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-04-30\",\n  \"max_deadline\": \"2020-07-31\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide that the statutory period for response to a Final Office Action is three months from the mailing date, extendable up to six months maximum.\",\n  \"options\": [\n    \"File an amendment and/or arguments under 37 CFR 1.116 within the statutory period (three months, extendable to six months with fees)\",\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with appropriate fees to continue prosecution\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 35 USC 134 by filing a Notice of Appeal within the statutory period\",\n    \"File a continuation application under 35 USC 120 before abandonment or patenting of the parent application\",\n    \"File a divisional application under 35 USC 121 if a restriction requirement was made\",\n    \"Abandon the application by allowing the statutory period to expire without response\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100003",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2019-04-08\",\n  \"max_deadline\": \"2019-07-08\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16100003",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2019-06-14\",\n  \"max_deadline\": \"2019-09-14\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133. The shortened statutory period for response to a Final Office Action is three months from the mailing date. Extensions of time may be obtained under 37 CFR 1.136(a) up to a maximum of six months from the mailing date.\",\n  \"options\": [\n    \"File an amendment and Request for Continued Examination (RCE) under 37 CFR 1.114\",\n    \"File a Notice of Appeal under 37 CFR 41.31 and Appeal Brief under 37 CFR 41.37\",\n    \"File a continuation application under 35 USC 120 before abandonment or patent grant\",\n    \"Abandon the application\",\n    \"File an amendment after final to place the application in condition for allowance (37 CFR 1.116)\",\n    \"Request an interview with the examiner to resolve outstanding issues\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100006",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-08-11\",\n  \"max_deadline\": \"2020-11-11\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100007",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2019-03-12\",\n  \"max_deadline\": \"2019-06-12\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide for a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to six months from the mailing date upon payment of appropriate extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100009",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-03-16\",\n  \"max_deadline\": \"2021-06-16\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to six months from the mailing date upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16100009",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-07-23\",\n  \"max_deadline\": \"2021-10-23\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a three-month shortened statutory period for reply to a Final Office Action, extendable to a maximum of six months from the mailing date.\",\n  \"options\": [\n    \"File an amendment and Request for Continued Examination (RCE) under 37 CFR 1.114\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 35 U.S.C. 134 and 37 CFR 41.31\",\n    \"File a continuation application under 35 U.S.C. 120 before abandonment\",\n    \"File an amendment after final that places the application in condition for allowance\",\n    \"Request an interview with the Examiner to resolve outstanding rejections\",\n    \"Abandon the application if claims are not deemed patentable\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100010",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2019-09-14\",\n  \"max_deadline\": \"2019-12-14\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100011",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-03-16\",\n  \"max_deadline\": \"2022-06-16\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100012",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-08-27\",\n  \"max_deadline\": \"2020-11-27\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100013",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2019-08-02\",\n  \"max_deadline\": \"2019-11-02\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide for a statutory period of three months from the mailing date of a Non-Final Office Action, extendable up to six months from the mailing date upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100014",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-12-01\",\n  \"max_deadline\": \"2022-03-01\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16100014",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-06-08\",\n  \"max_deadline\": \"2021-09-08\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a three-month shortened statutory period to reply to a Final Office Action, extendable to a maximum of six months from the mailing date.\",\n  \"options\": [\n    \"File an amendment and/or arguments under 37 CFR 1.116 to place the application in condition for allowance\",\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with or without amendments\",\n    \"File a Notice of Appeal under 37 CFR 41.31 and Appeal Brief under 37 CFR 41.37\",\n    \"Abandon the application by failing to respond within the statutory period\",\n    \"File a continuation, divisional, or continuation-in-part application under 35 U.S.C. 120 or 121 before abandonment\",\n    \"Request an interview with the Examiner to attempt to resolve outstanding rejections\",\n    \"File an After Final Consideration Pilot Program (AFCP) request if eligible under 37 CFR 1.116\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100015",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-01-30\",\n  \"max_deadline\": \"2020-04-30\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100016",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-01-21\",\n  \"max_deadline\": \"2020-04-21\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100017",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-06-16\",\n  \"max_deadline\": \"2020-09-16\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16100017",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2019-12-19\",\n  \"max_deadline\": \"2020-03-19\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\",\n  \"options\": [\n    \"File an amendment and/or arguments in response to the Final Office Action under 37 CFR 1.116\",\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114\",\n    \"File a Notice of Appeal under 37 CFR 41.31 and Appeal Brief under 37 CFR 41.37\",\n    \"File a continuation application under 35 U.S.C. 120 before abandonment\",\n    \"Abandon the application\",\n    \"If amendment is after-final, file with petition to enter under 37 CFR 1.116 or convert response to RCE\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100018",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2019-08-07\",\n  \"max_deadline\": \"2019-11-07\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of six months from the mailing date of a Non-Final Office Action, with a shortened statutory period of three months.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16100018",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2019-11-15\",\n  \"max_deadline\": \"2020-02-15\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply and fee\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 35 USC 134 by filing a Notice of Appeal and Appeal Brief\",\n    \"File an amendment and arguments attempting to place the application in condition for allowance\",\n    \"Abandon the application\",\n    \"File a continuation application under 35 USC 120 before abandonment\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100020",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-05-13\",\n  \"max_deadline\": \"2020-08-13\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16100020",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-01-09\",\n  \"max_deadline\": \"2021-04-09\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\",\n  \"options\": [\n    \"File an Amendment and Request for Continued Examination (RCE) under 37 CFR 1.114\",\n    \"File a Notice of Appeal under 37 CFR 41.31 and Appeal Brief under 37 CFR 41.37\",\n    \"File an After Final Amendment under 37 CFR 1.116 (entry not guaranteed)\",\n    \"File a Request for Reconsideration with Amendment\",\n    \"Abandon the application\",\n    \"File a continuation application under 35 U.S.C. 120\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100022",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-06-01\",\n  \"max_deadline\": \"2021-09-01\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16100022",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-10-09\",\n  \"max_deadline\": \"2022-01-09\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply to outstanding rejections\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 37 CFR 41.31 by filing a Notice of Appeal and Appeal Brief\",\n    \"File an amendment under 37 CFR 1.116 that places the application in condition for allowance or better form for appeal\",\n    \"Abandon the application by failing to respond within the statutory period\",\n    \"File a continuation application under 35 USC 120 before abandonment and while maintaining priority claim\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100023",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-06-09\",\n  \"max_deadline\": \"2020-09-09\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide for a statutory period for reply of three months from the mailing date of a Non-Final Office Action, which may be extended up to a maximum of six months from the mailing date upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16100024",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-08-26\",\n  \"max_deadline\": \"2020-11-26\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500000",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-08-12\",\n  \"max_deadline\": \"2021-11-12\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500000",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-12-02\",\n  \"max_deadline\": \"2022-03-02\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a three-month shortened statutory period for reply to a Final Office Action, extendable to a maximum of six months from the mailing date.\",\n  \"options\": [\n    \"File an amendment and arguments under 37 CFR 1.116 attempting to place the application in condition for allowance\",\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with or without amendments\",\n    \"File a Notice of Appeal under 37 CFR 41.31 and Appeal Brief under 37 CFR 41.37\",\n    \"File a continuation application under 35 U.S.C. 120 before abandonment\",\n    \"Abandon the application by failing to timely respond\",\n    \"Request an interview with the Examiner under 37 CFR 1.133 to resolve outstanding issues\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500001",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-11-17\",\n  \"max_deadline\": \"2022-02-17\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to six months upon payment of extension fees\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500002",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-08-27\",\n  \"max_deadline\": \"2020-11-27\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500002",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-01-26\",\n  \"max_deadline\": \"2021-04-26\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133. Shortened statutory period is three months from the mailing date of the Final Office Action. Maximum statutory period is six months from the mailing date, with extensions of time available under 37 CFR 1.136.\",\n  \"options\": [\n    \"File an amendment and arguments under 37 CFR 1.116 to place the application in condition for allowance\",\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with or without amendment\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 35 U.S.C. 134 and 37 CFR 41.31\",\n    \"File a continuation application under 35 U.S.C. 120 before abandonment\",\n    \"File a divisional application under 35 U.S.C. 121 if restriction requirement exists\",\n    \"Abandon the application by failing to respond within the statutory period\",\n    \"Request an interview with the Examiner under 37 CFR 1.133 to resolve outstanding issues\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500003",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-01-28\",\n  \"max_deadline\": \"2021-04-28\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500003",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-07-23\",\n  \"max_deadline\": \"2021-10-23\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a three-month shortened statutory period for response to an Office Action, extendable to a maximum of six months from the mailing date.\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply and fee\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) under 35 U.S.C. 134 and 37 CFR 41.31\",\n    \"File an amendment under 37 CFR 1.116 that places the application in condition for allowance or better form for appeal\",\n    \"Request an interview with the Examiner under 37 CFR 1.133 to resolve outstanding issues\",\n    \"File a continuation application under 35 U.S.C. 120 before abandonment\",\n    \"Abandon the application by failing to respond within the statutory period\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500004",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-09-10\",\n  \"max_deadline\": \"2021-12-10\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months upon payment of extension fees\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500004",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-12-28\",\n  \"max_deadline\": \"2022-03-28\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 set a three-month shortened statutory period for reply to a Final Office Action, with a maximum extension to six months from the mailing date upon payment of extension fees under 37 CFR 1.136(a).\",\n  \"options\": [\n    \"File an amendment and/or arguments attempting to place the application in condition for allowance (37 CFR 1.116)\",\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply\",\n    \"File a Notice of Appeal under 37 CFR 41.31 and Appeal Brief under 37 CFR 41.37\",\n    \"File a continuation, continuation-in-part, or divisional application under 35 USC 120 or 121\",\n    \"Abandon the application by failing to timely respond\",\n    \"Request an interview with the Examiner to resolve outstanding issues\",\n    \"File a petition to withdraw the finality of the Office Action under 37 CFR 1.181 if appropriate\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500005",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-08-24\",\n  \"max_deadline\": \"2022-11-24\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, with the possibility of obtaining extensions of time up to six months total from the mailing date.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500006",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-07-29\",\n  \"max_deadline\": \"2021-10-29\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to six months from the mailing date upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500007",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-07-15\",\n  \"max_deadline\": \"2022-10-15\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500007",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-01-24\",\n  \"max_deadline\": \"2023-04-24\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) under 35 U.S.C. 134 and 37 CFR 41.31\",\n    \"File an amendment and argument under 37 CFR 1.116 (entry not guaranteed)\",\n    \"File a continuation application under 35 U.S.C. 120\",\n    \"Abandon the application\",\n    \"File an After Final Consideration Pilot (AFCP) 2.0 request if eligible\",\n    \"Request an interview with the examiner\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500008",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-04-04\",\n  \"max_deadline\": \"2021-07-04\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500008",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-09-01\",\n  \"max_deadline\": \"2021-12-01\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a three-month shortened statutory period for response to a Final Office Action, extendable to a maximum of six months from the mailing date.\",\n  \"options\": [\n    \"File an amendment and Request for Continued Examination (RCE) under 37 CFR 1.114\",\n    \"File a Notice of Appeal to the Patent Trial and Appeal Board (PTAB) under 37 CFR 41.31\",\n    \"File an amendment after final to place the application in condition for allowance, if examiner agrees to enter it\",\n    \"Abandon the application by failing to timely respond\",\n    \"File a continuation application under 35 U.S.C. 120 before abandonment\",\n    \"Request an interview with the examiner to resolve outstanding issues\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500009",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-11-23\",\n  \"max_deadline\": \"2023-02-23\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to six months from the mailing date upon payment of appropriate extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500009",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-05-14\",\n  \"max_deadline\": \"2023-08-14\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a three-month shortened statutory period for response to Office Actions, extendable up to six months from the mailing date\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply and fee\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) under 35 U.S.C. 134 and 37 CFR 41.31\",\n    \"File an amendment under 37 CFR 1.116 that places the application in condition for allowance or better form for appeal\",\n    \"File an After Final Consideration Pilot Program (AFCP 2.0) request under 37 CFR 1.129(a) if eligible\",\n    \"Abandon the application by allowing the deadline to expire\",\n    \"Request an interview with the examiner to attempt to resolve outstanding rejections\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500011",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-02-12\",\n  \"max_deadline\": \"2021-05-12\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500011",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-06-30\",\n  \"max_deadline\": \"2021-09-30\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a three-month shortened statutory period for response to a Final Office Action, extendable to a maximum of six months from the mailing date\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with amendment and/or arguments\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) by filing a Notice of Appeal under 37 CFR 41.31\",\n    \"File an Amendment after Final under 37 CFR 1.116 (may be entered at examiner's discretion)\",\n    \"Request an interview with the examiner to resolve outstanding issues\",\n    \"Abandon the application by not responding within the statutory period\",\n    \"File a continuation or divisional application under 35 U.S.C. 120 or 121 before abandonment\",\n    \"File a Petition to Make Special if applicable\",\n    \"Consider filing a Pre-Appeal Brief Conference Request under 37 CFR 41.39 before filing a Notice of Appeal\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500012",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-02-21\",\n  \"max_deadline\": \"2023-05-21\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500012",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-03-24\",\n  \"max_deadline\": \"2022-06-24\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply to outstanding rejections\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) by filing a Notice of Appeal under 37 CFR 41.31 and Appeal Brief under 37 CFR 41.37\",\n    \"File an After Final response under 37 CFR 1.116 presenting amendments that place the application in condition for allowance or require minimal further examination\",\n    \"Request an After Final Consideration Pilot Program 2.0 (AFCP 2.0) interview if eligible\",\n    \"Abandon the application by failing to timely respond\",\n    \"File a continuation, divisional, or continuation-in-part application under 35 U.S.C. 120 or 121 before abandonment\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500013",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-06-21\",\n  \"max_deadline\": \"2022-09-21\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of six months from the mailing date of a Non-Final Office Action, with a shortened statutory period of three months.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500013",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-10-19\",\n  \"max_deadline\": \"2023-01-19\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) under 35 U.S.C. 134 and 37 CFR 41.31\",\n    \"File an amendment that places the application in condition for allowance\",\n    \"File arguments and/or evidence to overcome all rejections without amending claims\",\n    \"Abandon the application\",\n    \"File a continuation application under 35 U.S.C. 120\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500014",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-10-26\",\n  \"max_deadline\": \"2022-01-26\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500015",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-12-08\",\n  \"max_deadline\": \"2022-03-08\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500016",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-07-29\",\n  \"max_deadline\": \"2021-10-29\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a non-final Office action, extendable to a maximum of six months upon payment of appropriate extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500017",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-04-10\",\n  \"max_deadline\": \"2025-07-10\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500017",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2024-08-24\",\n  \"max_deadline\": \"2024-11-24\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with response and fee\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 35 USC 134 by filing a Notice of Appeal within the statutory period\",\n    \"File an amendment under 37 CFR 1.116 that places the application in condition for allowance or better form for appeal\",\n    \"Abandon the application by failing to respond within the statutory period\",\n    \"File a continuation application under 35 USC 120 to preserve priority while pursuing different claims\",\n    \"Request an interview with the examiner under 37 CFR 1.133 to resolve outstanding issues\",\n    \"File an After Final Consideration Pilot Program 2.0 request if eligible\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500018",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-09-23\",\n  \"max_deadline\": \"2023-12-23\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500019",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-06-20\",\n  \"max_deadline\": \"2025-09-20\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide for a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500019",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-12-23\",\n  \"max_deadline\": \"2026-03-23\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply and fee\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) under 37 CFR 41.31\",\n    \"Request an interview with the examiner and file amendments/arguments after final under 37 CFR 1.116\",\n    \"File a continuation application under 35 U.S.C. 120\",\n    \"Abandon the application\",\n    \"File a petition to withdraw the finality of the rejection under 37 CFR 1.181 (if appropriate)\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500021",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-03-09\",\n  \"max_deadline\": \"2023-06-09\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500021",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-12-28\",\n  \"max_deadline\": \"2023-03-28\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 set the statutory period for response to a Final Office Action at 3 months from the mailing date, extendable to a maximum of 6 months with appropriate extension fees under 37 CFR 1.136(a).\",\n  \"options\": [\n    \"File an amendment and/or arguments under 37 CFR 1.116 to place the application in condition for allowance\",\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with or without amendment\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 35 USC 134 by filing a Notice of Appeal\",\n    \"File a continuation or divisional application under 35 USC 120 or 121 before abandonment\",\n    \"Allow the application to go abandoned if prosecution is not to be continued\",\n    \"Request an interview with the Examiner under 37 CFR 1.133 to discuss claim amendments\",\n    \"File an After Final Consideration Pilot Program 2.0 request if eligible\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500023",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-06-17\",\n  \"max_deadline\": \"2020-09-17\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide for a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to six months maximum\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500023",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2020-09-17\",\n  \"max_deadline\": \"2020-12-17\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\",\n  \"options\": [\n    \"File an amendment and Request for Continued Examination (RCE) under 37 CFR 1.114\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 35 USC 134\",\n    \"File a continuation application under 35 USC 120\",\n    \"Abandon the application\",\n    \"File an amendment after final to place the application in condition for allowance\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_16500024",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-10-07\",\n  \"max_deadline\": \"2023-01-07\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide that the applicant has a maximum of six months to reply to a Non-Final Office Action, with a shortened statutory period of three months from the mailing date. Extensions of time may be obtained by paying the appropriate fee under 37 CFR 1.136(a).\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_16500024",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-02-23\",\n  \"max_deadline\": \"2023-05-23\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for response of three months from the mailing date of a Final Office Action, extendable to a maximum of six months upon payment of extension fees under 37 CFR 1.136(a).\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with a submission or information disclosure statement\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) by filing a Notice of Appeal under 37 CFR 41.31 and an Appeal Brief under 37 CFR 41.37\",\n    \"File an amendment and/or arguments placing the application in condition for allowance if the Final rejection is not truly final (i.e., presents new grounds of rejection or new prior art)\",\n    \"Request an After Final Consideration Pilot Program 2.0 interview if eligible\",\n    \"Abandon the application by allowing the statutory deadline to expire without response\",\n    \"File a continuation, divisional, or continuation-in-part application under 35 U.S.C. 120 or 121 before abandonment or payment of the issue fee in the parent application\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100000",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-11-26\",\n  \"max_deadline\": \"2022-02-26\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to a maximum of six months.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17100000",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-07-19\",\n  \"max_deadline\": \"2022-10-19\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\",\n  \"options\": [\n    \"File an amendment and argue for reconsideration under 37 CFR 1.116\",\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114\",\n    \"File a Notice of Appeal to the Patent Trial and Appeal Board (PTAB) under 37 CFR 41.31\",\n    \"File a continuation application under 35 USC 120\",\n    \"Abandon the application\",\n    \"Request an interview with the Examiner to resolve outstanding issues\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100002",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-10-07\",\n  \"max_deadline\": \"2023-01-07\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100003",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-04-26\",\n  \"max_deadline\": \"2023-07-26\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17100003",
+      "task_type": "deadline_calculation",
+      "score": "90.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 3/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-08-04\",\n  \"max_deadline\": \"2023-11-04\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a three-month shortened statutory period to reply to a Final Office Action, extendable up to six months from the mailing date with proper extension fees under 37 CFR 1.136(a).\",\n  \"options\": [\n    \"File an amendment and/or arguments to place the application in condition for allowance\",\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with an amendment and/or new arguments\",\n    \"File a Notice of Appeal under 37 CFR 41.31 and Appeal Brief under 37 CFR 41.37\",\n    \"File an After Final Consideration Pilot Program (AFCP 2.0) request if eligible\",\n    \"Abandon the application by failing to respond within the maximum statutory period\",\n    \"If claims are allowable, pay issue fee if Notice of Allowance is issued\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100004",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-07-13\",\n  \"max_deadline\": \"2023-10-13\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for response of six months from the mailing date of a non-final Office action, with a shortened statutory period of three months.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100005",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2024-10-15\",\n  \"max_deadline\": \"2025-01-15\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to six months from the mailing date upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17100005",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-05-05\",\n  \"max_deadline\": \"2025-08-05\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for response of three months from the mailing date of an Office Action, extendable up to six months with payment of extension fees under 37 CFR 1.136(a).\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with a submission and fee\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) under 35 USC 134 and 37 CFR 41.31\",\n    \"File amendments under 37 CFR 1.116 and arguments to place the application in condition for allowance\",\n    \"File an After Final Consideration Pilot Program (AFCP) 2.0 request if eligible under the program requirements\",\n    \"Abandon the application by failing to timely respond\",\n    \"File a continuation, divisional, or continuation-in-part application under 35 USC 120/121\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100006",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-03-21\",\n  \"max_deadline\": \"2022-06-21\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period of 3 months from the mailing date of a Non-Final Office Action, extendable to a maximum of 6 months upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100008",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-08-01\",\n  \"max_deadline\": \"2023-11-01\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period of three months from the mailing date of a non-final Office action, extendable up to six months upon payment of extension fees\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17100008",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-04-18\",\n  \"max_deadline\": \"2023-07-18\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply and fee\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 37 CFR 41.31\",\n    \"File an After Final amendment under 37 CFR 1.116 placing the application in condition for allowance\",\n    \"Request an interview with the Examiner to resolve outstanding rejections\",\n    \"Abandon the application by allowing the deadline to expire\",\n    \"File a continuation, divisional, or continuation-in-part application before abandonment\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100012",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-02-24\",\n  \"max_deadline\": \"2022-05-24\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide for a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100013",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-12-09\",\n  \"max_deadline\": \"2023-03-09\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of six months from the mailing date of a non-final Office action, with a shortened statutory period of three months.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100014",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-06-03\",\n  \"max_deadline\": \"2022-09-03\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide for a statutory period of three months from the mailing date of a Non-Final Office Action, extendable up to six months upon payment of extension fees\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17100014",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-01-27\",\n  \"max_deadline\": \"2022-04-27\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply and fee\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 35 USC 134 by filing a Notice of Appeal within the statutory period\",\n    \"File an amendment under 37 CFR 1.116 that places the application in condition for allowance or better form for appeal\",\n    \"File an After Final Consideration Pilot (AFCP 2.0) request if eligible\",\n    \"Abandon the application by failing to respond within the statutory period\",\n    \"Request an interview with the Examiner to discuss amendments or claim interpretation\",\n    \"File a continuation, divisional, or continuation-in-part application to pursue additional claims\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100015",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-04-21\",\n  \"max_deadline\": \"2022-07-21\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months upon payment of extension fees\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100016",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-12-30\",\n  \"max_deadline\": \"2023-03-30\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17100016",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-06-04\",\n  \"max_deadline\": \"2022-09-04\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide that the period for response to a Final Office Action is set at three months from the mailing date, with the option to extend up to a maximum of six months upon payment of extension fees under 37 CFR 1.136(a).\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply or amendment\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 35 U.S.C. 134 by filing a Notice of Appeal within the statutory period\",\n    \"File an amendment under 37 CFR 1.116 to place the application in condition for allowance (after final amendment)\",\n    \"File an After Final Consideration Pilot Program (AFCP) 2.0 request under 37 CFR 1.129(a) with an amendment and/or evidence\",\n    \"Abandon the application by allowing it to go abandoned for failure to respond\",\n    \"File a continuation, divisional, or continuation-in-part application under 35 U.S.C. 120, 121, or 120 respectively before abandonment\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100017",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2021-12-02\",\n  \"max_deadline\": \"2022-03-02\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100019",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-06-17\",\n  \"max_deadline\": \"2022-09-17\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100021",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-02-18\",\n  \"max_deadline\": \"2025-05-18\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to six months from the mailing date upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17100021",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2024-10-08\",\n  \"max_deadline\": \"2025-01-08\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply and fee\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) under 37 CFR 41.31\",\n    \"File an amendment under 37 CFR 1.116 that places the application in condition for allowance or better form for appeal\",\n    \"Request an interview with the Examiner to resolve outstanding issues\",\n    \"File a continuation application under 35 U.S.C. 120 before abandonment\",\n    \"Abandon the application if claims are not deemed allowable\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100022",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-01-28\",\n  \"max_deadline\": \"2023-04-28\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for response of six months from the mailing date of an Office Action, with a shortened statutory period of three months\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17100022",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-07-24\",\n  \"max_deadline\": \"2023-10-24\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for response of three months from the mailing date of a Final Office Action, extendable to a maximum of six months upon payment of extension fees under 37 CFR 1.136(a).\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with amendment and/or arguments\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 35 U.S.C. 134 by filing a Notice of Appeal within the statutory period\",\n    \"File an amendment after final under 37 CFR 1.116 (subject to entry at examiner's discretion)\",\n    \"Request an interview with the examiner to resolve outstanding issues\",\n    \"Abandon the application by allowing the statutory period to expire without response\",\n    \"File a continuation or divisional application under 35 U.S.C. 120 or 121 before abandonment to preserve the priority date\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100023",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-06-17\",\n  \"max_deadline\": \"2022-09-17\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of six months from the mailing date of a Non-Final Office Action, with a shortened statutory period of three months.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17100024",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-05-17\",\n  \"max_deadline\": \"2022-08-17\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of six months from the mailing date of a Non-Final Office Action, with a shortened statutory period of three months\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17100024",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-09-06\",\n  \"max_deadline\": \"2022-12-06\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period of three months from the mailing date of an Office Action, extendable to a maximum of six months with payment of extension fees under 37 CFR 1.136(a).\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with a submission (amendment, information, or both) and the required fee\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) under 37 CFR 41.31, including a Notice of Appeal and Appeal Brief\",\n    \"File an amendment and arguments attempting to place the application in condition for allowance (after-final practice under 37 CFR 1.116)\",\n    \"Abandon the application by failing to respond within the statutory period or filing a written abandonment\",\n    \"File a continuing application (continuation, divisional, or continuation-in-part) to preserve the filing date and continue prosecution\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500000",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-06-03\",\n  \"max_deadline\": \"2023-09-03\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide for a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months with payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17500000",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-12-11\",\n  \"max_deadline\": \"2024-03-11\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for response of three months from the mailing date of an Office action, extendable up to six months upon payment of extension fees.\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with a submission and the required fee\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) by filing a Notice of Appeal under 37 CFR 41.31 within the statutory period\",\n    \"File a continuation application under 35 U.S.C. 120 before abandonment or patent grant\",\n    \"File amendments and arguments after final rejection, which may be entered if they place the application in condition for allowance or are limited to specific types of amendments\",\n    \"Request an interview with the examiner to discuss claim amendments or arguments\",\n    \"Abandon the application by failing to respond within the maximum six-month statutory period\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500001",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-01-01\",\n  \"max_deadline\": \"2025-04-01\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to six months with payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500002",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-03-06\",\n  \"max_deadline\": \"2023-06-06\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to six months from the mailing date upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500004",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2024-12-23\",\n  \"max_deadline\": \"2025-03-23\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide for a statutory period for reply of three months from the mailing date, extendable to a maximum of six months\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17500004",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-06-03\",\n  \"max_deadline\": \"2025-09-03\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period of three months from the mailing date of an Office Action, extendable to a maximum of six months upon payment of extension fees under 37 CFR 1.136(a).\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) under 37 CFR 41.31\",\n    \"File an After Final Amendment under 37 CFR 1.116 that places application in condition for allowance or raises new issues requiring further consideration\",\n    \"Request an interview with the Examiner under MPEP 713 to resolve outstanding rejections\",\n    \"Abandon the application\",\n    \"File a continuation or divisional application under 35 USC 120 or 121 while parent application is pending\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500006",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-12-29\",\n  \"max_deadline\": \"2023-03-29\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a non-final Office action, extendable to a maximum of six months upon payment of appropriate extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500007",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2022-08-11\",\n  \"max_deadline\": \"2022-11-11\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500009",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-05-14\",\n  \"max_deadline\": \"2023-08-14\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period of three months from the mailing date of a Non-Final Office Action, extendable up to six months with appropriate extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500010",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-05-17\",\n  \"max_deadline\": \"2023-08-17\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months upon payment of extension fees\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500011",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2024-10-01\",\n  \"max_deadline\": \"2025-01-01\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17500011",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-01-04\",\n  \"max_deadline\": \"2025-04-04\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with response and fee\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) under 35 U.S.C. 134 and 37 CFR 41.31\",\n    \"File an amendment under 37 CFR 1.116 that places the application in condition for allowance or is limited to canceling claims\",\n    \"File an After Final Consideration Pilot (AFCP) 2.0 request if eligible under the program requirements\",\n    \"Abandon the application\",\n    \"Request an interview with the Examiner to discuss claim amendments or evidence that may overcome rejections\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500012",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-03-21\",\n  \"max_deadline\": \"2023-06-21\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period of three months from the mailing date of a Non-Final Office Action, extendable up to six months upon payment of extension fees\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500013",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-10-28\",\n  \"max_deadline\": \"2026-01-28\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17500013",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-07-25\",\n  \"max_deadline\": \"2025-10-25\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133. The statutory period for response to a Final Office Action is set at three months from the mailing date, with extensions of time available up to a maximum of six months under 37 CFR 1.136(a).\",\n  \"options\": [\n    \"File an amendment and Request for Continued Examination (RCE) under 37 CFR 1.114\",\n    \"File a Notice of Appeal to the Patent Trial and Appeal Board (PTAB) under 37 CFR 41.31\",\n    \"File an amendment canceling or amending claims to place the application in condition for allowance\",\n    \"File an After Final Consideration Pilot Program (AFCP) 2.0 request if eligible under 37 CFR 1.115\",\n    \"Abandon the application\",\n    \"File a continuation, divisional, or continuation-in-part application before abandonment\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500014",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-03-08\",\n  \"max_deadline\": \"2023-06-08\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17500014",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-06-22\",\n  \"max_deadline\": \"2023-09-22\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide that the period for response to a Final Office Action is set at three months from the mailing date, with the possibility of extension up to a maximum of six months.\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply and fee\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) by filing a Notice of Appeal under 37 CFR 41.31 within the statutory period\",\n    \"File an Amendment After Final under 37 CFR 1.116 (entry not guaranteed; must place application in condition for allowance or better form for appeal)\",\n    \"Request an interview with the Examiner to attempt to resolve outstanding issues\",\n    \"File a continuation application under 35 USC 120 before abandonment or patenting of the parent application\",\n    \"Abandon the application by failing to respond within the maximum six-month period\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500015",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2024-07-01\",\n  \"max_deadline\": \"2024-10-01\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17500015",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-04-13\",\n  \"max_deadline\": \"2025-07-13\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply and fee\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) under 37 CFR 41.31\",\n    \"File an amendment under 37 CFR 1.116 that places the application in condition for allowance or better form for appeal\",\n    \"Request an interview with the Examiner under MPEP 713 to resolve issues\",\n    \"Abandon the application\",\n    \"File a continuation application under 35 U.S.C. 120 before abandonment\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500017",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-11-28\",\n  \"max_deadline\": \"2024-02-28\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17500017",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 5/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2024-05-05\",\n  \"max_deadline\": \"2024-08-05\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a three-month shortened statutory period for response to an Office Action, extendable to a maximum of six months from the mailing date.\",\n  \"options\": [\n    \"File an amendment and Request for Continued Examination (RCE) under 37 CFR 1.114 with fee\",\n    \"File a Notice of Appeal under 37 CFR 41.31 within the statutory period\",\n    \"File an amendment after final that places the application in condition for allowance, if examiner agrees to enter it\",\n    \"Request an interview with the examiner to resolve outstanding issues\",\n    \"File a continuation application under 35 U.S.C. 120 before abandonment\",\n    \"Abandon the application by failing to respond within the maximum six-month period\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500018",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2024-01-26\",\n  \"max_deadline\": \"2024-04-26\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months with appropriate extension fees under 37 CFR 1.136(a).\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500019",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-09-26\",\n  \"max_deadline\": \"2025-12-26\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable to a maximum of six months upon payment of extension fees.\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500020",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-06-09\",\n  \"max_deadline\": \"2023-09-09\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500021",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-02-04\",\n  \"max_deadline\": \"2025-05-04\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period of 3 months from the mailing date, extendable to a maximum of 6 months\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500022",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-07-04\",\n  \"max_deadline\": \"2023-10-04\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period of three months from the mailing date of a Non-Final Office Action, extendable up to six months upon payment of extension fees\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17500022",
+      "task_type": "deadline_calculation",
+      "score": "90.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 3/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2024-01-05\",\n  \"max_deadline\": \"2024-04-05\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 U.S.C. 133 provide a three-month shortened statutory period for reply to a Final Office Action, extendable to a maximum of six months from the mailing date.\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply or amendment\",\n    \"File an appeal to the Patent Trial and Appeal Board (PTAB) under 35 U.S.C. 134 and 37 CFR 41.31\",\n    \"File a Reply under 37 CFR 1.116 attempting to place the application in condition for allowance\",\n    \"File an After Final Consideration Pilot Program 2.0 request if eligible under the current pilot program\",\n    \"Abandon the application by failing to timely respond\",\n    \"If claims are allowable, pay issue fee if Notice of Allowance is subsequently issued\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500023",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2025-11-21\",\n  \"max_deadline\": \"2026-02-21\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to six months from the mailing date upon payment of extension fees\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17500023",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2026-05-13\",\n  \"max_deadline\": \"2026-08-13\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133\",\n  \"options\": [\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with reply and fee\",\n    \"Appeal to the Patent Trial and Appeal Board (PTAB) under 37 CFR 41.31\",\n    \"File an amendment under 37 CFR 1.116 to place the application in condition for allowance\",\n    \"File a continuation application under 35 USC 120 before abandonment\",\n    \"Abandon the application if no further prosecution is desired\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "deadline_nf_17500024",
+      "task_type": "deadline_calculation",
+      "score": "100.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2023-08-09\",\n  \"max_deadline\": \"2023-11-09\",\n  \"action_type\": \"Non-Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide a statutory period for reply of three months from the mailing date of a Non-Final Office Action, extendable up to six months upon payment of extension fees\"\n}\n```"
+    },
+    {
+      "test_id": "deadline_fr_17500024",
+      "task_type": "deadline_calculation",
+      "score": "95.0%",
+      "details": [
+        "shortened: OK",
+        "max: OK",
+        "type: OK",
+        "options: 4/5"
+      ],
+      "raw_response": "```json\n{\n  \"shortened_deadline\": \"2024-01-17\",\n  \"max_deadline\": \"2024-04-17\",\n  \"action_type\": \"Final\",\n  \"legal_basis\": \"37 CFR 1.134 and 35 USC 133 provide for a shortened statutory period of three months from the mailing date of an Office action, extendable to a maximum of six months upon payment of extension fees under 37 CFR 1.136(a).\",\n  \"options\": [\n    \"File an amendment and/or arguments under 37 CFR 1.116 to place the application in condition for allowance\",\n    \"File a Request for Continued Examination (RCE) under 37 CFR 1.114 with amendment and/or new evidence\",\n    \"File a Notice of Appeal under 37 CFR 41.31 and Appeal Brief under 37 CFR 41.37 to appeal the rejection to the Patent Trial and Appeal Board\",\n    \"File a continuation application under 35 USC 120 to continue prosecution of some or all claims\",\n    \"Abandon the application by failing to timely respond\",\n    \"If amendment is non-responsive or raises new issues, file an RCE to continue prosecution after Final Rejection\"\n  ]\n}\n```"
+    },
+    {
+      "test_id": "classify_16100000",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_16100001",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":true,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_16100002",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 2\n}\n```"
+    },
+    {
+      "test_id": "classify_16100003",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_16100006",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_16100007",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_16100009",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 2\n}\n```"
+    },
+    {
+      "test_id": "classify_16100010",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_16100011",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "{\"has_non_final\":true,\"has_final\":false,\"has_allowance\":false,\"total_oa_rounds\":1}"
+    },
+    {
+      "test_id": "classify_16100012",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_16100013",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_16100014",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 4 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":4}\n```"
+    },
+    {
+      "test_id": "classify_16100015",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 2 vs 1 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":false,\"has_allowance\":false,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_16100016",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_16100017",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 3 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":3}\n```"
+    },
+    {
+      "test_id": "classify_16100018",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_16100020",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 2\n}\n```"
+    },
+    {
+      "test_id": "classify_16100022",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_16100023",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_16100024",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 2 vs 1 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":false,\"has_allowance\":false,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_16500000",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 2\n}\n```"
+    },
+    {
+      "test_id": "classify_16500001",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 2 vs 1 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":false,\"has_allowance\":false,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_16500002",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":true,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_16500003",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 2\n}\n```"
+    },
+    {
+      "test_id": "classify_16500004",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_16500005",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":false,\"has_allowance\":true,\"total_oa_rounds\":1}\n```"
+    },
+    {
+      "test_id": "classify_16500006",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_16500007",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 4 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":4}\n```"
+    },
+    {
+      "test_id": "classify_16500008",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 2\n}\n```"
+    },
+    {
+      "test_id": "classify_16500009",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 4 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 4\n}\n```"
+    },
+    {
+      "test_id": "classify_16500011",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 2\n}\n```"
+    },
+    {
+      "test_id": "classify_16500012",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 3 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":3}\n```"
+    },
+    {
+      "test_id": "classify_16500013",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":true,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_16500014",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":false,\"has_allowance\":true,\"total_oa_rounds\":1}\n```"
+    },
+    {
+      "test_id": "classify_16500015",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_16500016",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": true,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_16500017",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 7 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":true,\"total_oa_rounds\":7}\n```"
+    },
+    {
+      "test_id": "classify_16500018",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_16500019",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 9 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":9}\n```"
+    },
+    {
+      "test_id": "classify_16500021",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 4 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":4}\n```"
+    },
+    {
+      "test_id": "classify_16500023",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 2\n}\n```"
+    },
+    {
+      "test_id": "classify_16500024",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 4 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":4}\n```"
+    },
+    {
+      "test_id": "classify_17100000",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_17100002",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":false,\"has_allowance\":true,\"total_oa_rounds\":1}\n```"
+    },
+    {
+      "test_id": "classify_17100003",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": true,\n  \"total_oa_rounds\": 2\n}\n```"
+    },
+    {
+      "test_id": "classify_17100004",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17100005",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 5 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":5}\n```"
+    },
+    {
+      "test_id": "classify_17100006",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": true,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17100008",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 3 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": true,\n  \"total_oa_rounds\": 3\n}\n```"
+    },
+    {
+      "test_id": "classify_17100012",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "{\"has_non_final\":true,\"has_final\":false,\"has_allowance\":false,\"total_oa_rounds\":1}"
+    },
+    {
+      "test_id": "classify_17100013",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17100014",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 3 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":3}\n```"
+    },
+    {
+      "test_id": "classify_17100015",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17100016",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 4 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":4}\n```"
+    },
+    {
+      "test_id": "classify_17100017",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17100019",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17100021",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 4 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":true,\"total_oa_rounds\":4}\n```"
+    },
+    {
+      "test_id": "classify_17100022",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 4 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": true,\n  \"total_oa_rounds\": 4\n}\n```"
+    },
+    {
+      "test_id": "classify_17100023",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17100024",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 4 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":4}\n```"
+    },
+    {
+      "test_id": "classify_17500000",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 2\n}\n```"
+    },
+    {
+      "test_id": "classify_17500001",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17500002",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17500004",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": true,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 2\n}\n```"
+    },
+    {
+      "test_id": "classify_17500006",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":false,\"has_allowance\":false,\"total_oa_rounds\":1}\n```"
+    },
+    {
+      "test_id": "classify_17500007",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":false,\"has_allowance\":true,\"total_oa_rounds\":1}\n```"
+    },
+    {
+      "test_id": "classify_17500009",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17500010",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17500011",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 4 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":true,\"total_oa_rounds\":4}\n```"
+    },
+    {
+      "test_id": "classify_17500012",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17500013",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 6 vs 2 WRONG"
+      ],
+      "raw_response": "{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":6}"
+    },
+    {
+      "test_id": "classify_17500014",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":true,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_17500015",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 4 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":4}\n```"
+    },
+    {
+      "test_id": "classify_17500016",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":false,\"has_final\":false,\"has_allowance\":false,\"total_oa_rounds\":0}\n```"
+    },
+    {
+      "test_id": "classify_17500017",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 4 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":4}\n```"
+    },
+    {
+      "test_id": "classify_17500018",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17500019",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\n  \"has_non_final\": true,\n  \"has_final\": false,\n  \"has_allowance\": false,\n  \"total_oa_rounds\": 1\n}\n```"
+    },
+    {
+      "test_id": "classify_17500020",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":false,\"has_allowance\":true,\"total_oa_rounds\":1}\n```"
+    },
+    {
+      "test_id": "classify_17500021",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":false,\"has_allowance\":false,\"total_oa_rounds\":1}\n```"
+    },
+    {
+      "test_id": "classify_17500022",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "classify_17500023",
+      "task_type": "action_classification",
+      "score": "75.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: 6 vs 2 WRONG"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":false,\"total_oa_rounds\":6}\n```"
+    },
+    {
+      "test_id": "classify_17500024",
+      "task_type": "action_classification",
+      "score": "100.0%",
+      "details": [
+        "nf: OK",
+        "f: OK",
+        "allow: OK",
+        "rounds: OK"
+      ],
+      "raw_response": "```json\n{\"has_non_final\":true,\"has_final\":true,\"has_allowance\":true,\"total_oa_rounds\":2}\n```"
+    },
+    {
+      "test_id": "timeline_16100000",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution timeline for this patent application and return the requested JSON format.\n\nLet me calculate the required fields:\n\n**Total Events**: 4 events listed\n- CTNF (Non-Final Rejection) - 2020-08-16\n- MCTNF (Mail Non-Final Rejection) - 2020-08-27\n- CTFR (Final Rejection) - 2020-12-31\n- MCTFR (Mail Final Rejection) - 2021-01-06\n\n**First Event Date**: 2020-08-16 (CTNF)\n\n**Last Event Date**: 2021-01-06 (MCTFR)\n\n**Prosecution Duration**: \nFrom 2020-08-16 to 2021-01-06\n= 143 days\n\n```json\n{\"total_events\":4,\"first_event_date\":\"2020-08-16\",\"last_event_date\":\"2021-01-06\",\"prosecution_duration_days\":143}\n```\n\n**Additional Analysis** (not in JSON response):\n- **OA Rounds**: 2 rounds (1 Non-Final Rejection, 1 Final Rejection)\n- **Outcome**: Based on the events shown, the application received a Final Rejection. The timeline ends with the mailing of the Final Rejection, so the ultimate outcome (allowance, abandonment, appeal, RCE, etc.) is not reflected in these events."
+    },
+    {
+      "test_id": "timeline_16100001",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 7,\n  \"first_event_date\": \"2019-04-30\",\n  \"last_event_date\": \"2020-06-18\",\n  \"prosecution_duration_days\": 415\n}\n```"
+    },
+    {
+      "test_id": "timeline_16100002",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 5,\n  \"first_event_date\": \"2019-10-15\",\n  \"last_event_date\": \"2020-04-03\",\n  \"prosecution_duration_days\": 171\n}\n```"
+    },
+    {
+      "test_id": "timeline_16100003",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze this patent prosecution timeline and provide the requested JSON response.\n\nLet me parse the events:\n1. 2019-01-04: Non-Final Rejection (CTNF)\n2. 2019-01-08: Mail Non-Final Rejection (MCTNF)\n3. 2019-03-13: Final Rejection (CTFR)\n4. 2019-03-14: Mail Final Rejection (MCTFR)\n5. 2019-03-27: Disposal for a RCE/CPA/R129 (ABN9)\n\n**Analysis:**\n- **Total events:** 5\n- **First event date:** 2019-01-04\n- **Last event date:** 2019-03-27\n- **Prosecution duration:** 82 days (from 2019-01-04 to 2019-03-27)\n\nTo answer your additional questions (though not in the JSON format):\n- **OA rounds:** 2 rounds (one non-final rejection, one final rejection)\n- **Outcome:** The ABN9 code indicates disposal for an RCE (Request for Continued Examination), CPA (Continued Prosecution Application), or R129 (a type of continuation). This means the application was likely abandoned or continued through one of these mechanisms after the final rejection.\n\nHere's the JSON response:\n\n```json\n{\"total_events\":5,\"first_event_date\":\"2019-01-04\",\"last_event_date\":\"2019-03-27\",\"prosecution_duration_days\":82}\n```"
+    },
+    {
+      "test_id": "timeline_16100006",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution timeline for this patent application and provide the answer in the specified JSON format.\n\nLet me examine the events:\n1. **CTNF** - Non-Final Rejection - 2020-05-08\n2. **MCTNF** - Mail Non-Final Rejection - 2020-05-11\n\n**Analysis:**\n\n- **Total events**: 2 events\n- **First event date**: 2020-05-08 (CTNF)\n- **Last event date**: 2020-05-11 (MCTNF)\n- **Prosecution duration**: 2020-05-11 minus 2020-05-08 = 3 days\n\n**Additional context requested** (though not part of the JSON output):\n- **OA rounds**: This appears to be 1 Office Action round (the CTNF is the creation of the non-final rejection, and MCTNF is the mailing of that same rejection - these are paired events for a single OA)\n- **Outcome**: Unknown from the provided data - the prosecution appears incomplete as there's no terminal event showing allowance, abandonment, or patent issuance\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2020-05-08\",\"last_event_date\":\"2020-05-11\",\"prosecution_duration_days\":3}\n```"
+    },
+    {
+      "test_id": "timeline_16100007",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "Based on the prosecution events provided, here is the analysis:\n\n```json\n{\n  \"total_events\": 2,\n  \"first_event_date\": \"2018-12-07\",\n  \"last_event_date\": \"2018-12-12\",\n  \"prosecution_duration_days\": 5\n}\n```\n\n**Analysis:**\n\n- **OA Rounds:** 1 Non-Final Office Action round (the CTNF event on 2018-12-07, mailed on 2018-12-12)\n- **Total Prosecution Duration:** 5 days (between the first event on 2018-12-07 and the last event on 2018-12-12)\n- **Outcome:** The prosecution record is incomplete. The events only show a Non-Final Rejection being issued and mailed. There is no indication of applicant response, allowance, abandonment, or any other final outcome. The application status cannot be determined from these two events alone."
+    },
+    {
+      "test_id": "timeline_16100009",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events and provide the requested JSON response, along with answering the additional questions about OA rounds and outcome.\n\nLet me analyze the data:\n\n**Events provided:**\n1. 2020-12-13: Non-Final Rejection (CTNF)\n2. 2020-12-16: Mail Non-Final Rejection (MCTNF)\n3. 2021-04-20: Final Rejection (CTFR)\n4. 2021-04-23: Mail Final Rejection (MCTFR)\n\n**Calculations:**\n- Total events: 4\n- First event date: 2020-12-13\n- Last event date: 2021-04-23\n- Prosecution duration: From 2020-12-13 to 2021-04-23\n  - Days = 131 days (December 13, 2020 to April 23, 2021)\n\n**JSON Response:**\n\n```json\n{\"total_events\":4,\"first_event_date\":\"2020-12-13\",\"last_event_date\":\"2021-04-23\",\"prosecution_duration_days\":131}\n```\n\n**Additional Analysis:**\n\n- **OA Rounds:** 2 rounds\n  - Round 1: Non-Final Rejection (CTNF/MCTNF) - December 2020\n  - Round 2: Final Rejection (CTFR/MCTFR) - April 2021\n\n- **Outcome:** The application received a Final Rejection. The provided events do not show the ultimate outcome (whether it was abandoned, allowed after RCE, appealed, etc.). The last recorded event is the mailing of the Final Rejection on 2021-04-23."
+    },
+    {
+      "test_id": "timeline_16100010",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events for this patent application and respond with the required JSON format.\n\nLet me parse the given information:\n- Application: 16100010\n- Title: \"PROCESSES AND APPARATUSES FOR METHYLATION OF AROMATICS IN AN AROMATICS COMPLEX\"\n- Filing date: 2018-08-09\n- Art unit: 1772\n- Events provided:\n  1. Non-Final Rejection (CTNF) - 2019-06-10\n  2. Mail Non-Final Rejection (MCTNF) - 2019-06-14\n\nBased on the events listed:\n- Total events: 2\n- First event date: 2019-06-10\n- Last event date: 2019-06-14\n- Duration: 2019-06-14 minus 2019-06-10 = 4 days\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2019-06-10\",\"last_event_date\":\"2019-06-14\",\"prosecution_duration_days\":4}\n```\n\nHowever, I should note that the questions asked (OA rounds, total prosecution duration, outcome) cannot be fully answered with only these two events shown, as they only represent the mailing of a single Non-Final Rejection. The prosecution history appears incomplete - there would typically be additional events showing applicant responses, examiner actions, and final disposition."
+    },
+    {
+      "test_id": "timeline_16100011",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution timeline for application 16100011 based on the provided events.\n\nLet me calculate the required information:\n\n**Events Analysis:**\n1. 2021-08-11: Restriction/Election Requirement (CTRS)\n2. 2021-12-11: Non-Final Rejection (CTNF)\n3. 2021-12-16: Mail Non-Final Rejection (MCTNF)\n\n**Calculations:**\n- Total events: 3\n- First event date: 2021-08-11\n- Last event date: 2021-12-16\n- Duration: From 2021-08-11 to 2021-12-16 = 127 days\n\n**Office Action Rounds:** \nThe restriction requirement (CTRS) counts as one examination action, and the non-final rejection (CTNF/MCTNF) counts as another. The MCTNF is just the mailing of the CTNF, so these represent one non-final rejection. Total: 2 examination rounds (1 restriction + 1 non-final rejection).\n\n**Outcome:** \nBased on the events provided, the application was still pending after the non-final rejection was mailed. There is no indication of allowance, abandonment, or issuance in these events.\n\n```json\n{\"total_events\":3,\"first_event_date\":\"2021-08-11\",\"last_event_date\":\"2021-12-16\",\"prosecution_duration_days\":127}\n```"
+    },
+    {
+      "test_id": "timeline_16100012",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events provided and respond with the requested JSON format.\n\nGiven events:\n1. CTNF - Non-Final Rejection - 2020-05-19\n2. MCTNF - Mail Non-Final Rejection - 2020-05-27\n\nCalculating the required fields:\n- **total_events**: 2 events\n- **first_event_date**: 2020-05-19 (earliest date)\n- **last_event_date**: 2020-05-27 (latest date)\n- **prosecution_duration_days**: May 27 - May 19 = 8 days\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2020-05-19\",\"last_event_date\":\"2020-05-27\",\"prosecution_duration_days\":8}\n```\n\n**Additional Analysis** (beyond the JSON response):\n\n- **OA Rounds**: 1 Office Action round (one Non-Final Rejection)\n- **Total Prosecution Duration**: 8 days (between the two recorded events)\n- **Outcome**: The prosecution appears incomplete/ongoing based on these events alone. The data shows only a Non-Final Rejection being issued (CTNF) and mailed (MCTNF), with no subsequent applicant response or examiner action recorded. This is likely just a partial snapshot of the prosecution history rather than the complete timeline.\n\n**Note**: The 8-day duration only covers the period between the rejection being entered and mailed, not the full prosecution from filing to disposition. A complete prosecution timeline would typically include the filing date (2018-08-09) and final outcome events (allowance, abandonment, or issuance)."
+    },
+    {
+      "test_id": "timeline_16100013",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I'll analyze the prosecution timeline for application 16100013.\n\nBased on the provided events:\n- **Total events**: 2\n- **First event date**: 2019-04-29 (Non-Final Rejection)\n- **Last event date**: 2019-05-02 (Mail Non-Final Rejection)\n- **Prosecution duration**: 3 days (2019-05-02 minus 2019-04-29)\n\n**Analysis**:\n- **OA rounds**: 1 (one non-final rejection was issued and mailed)\n- **Total prosecution duration**: 3 days (between the two events shown)\n- **Outcome**: Unknown/Pending (the data only shows a non-final rejection being issued and mailed, but no subsequent responses, final rejections, allowances, or abandonment)\n\n**Note**: The prosecution duration of 3 days only reflects the span between these two specific events. The actual prosecution duration from filing (2018-08-09) to the last shown event (2019-05-02) would be 266 days, but the data appears incomplete as it doesn't show the final outcome of the application.\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2019-04-29\",\"last_event_date\":\"2019-05-02\",\"prosecution_duration_days\":3}\n```"
+    },
+    {
+      "test_id": "timeline_16100014",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events for this patent application and provide a JSON response with the required timeline metrics.\n\nLet me examine the events:\n1. CTNF - Non-Final Rejection - 2020-10-01\n2. MCTNF - Mail Non-Final Rejection - 2020-10-05\n3. CTFR - Final Rejection - 2021-02-13\n4. MCTFR - Mail Final Rejection - 2021-03-08\n5. ABN9 - Disposal for a RCE / CPA / R129 - 2021-08-04\n6. CTNF - Non-Final Rejection - 2021-08-27\n7. MCTNF - Mail Non-Final Rejection - 2021-09-01\n\n**Calculations:**\n- Total events: 7\n- First event date: 2020-10-01\n- Last event date: 2021-09-01\n- Duration: From 2020-10-01 to 2021-09-01 = 335 days\n\n```json\n{\"total_events\":7,\"first_event_date\":\"2020-10-01\",\"last_event_date\":\"2021-09-01\",\"prosecution_duration_days\":335}\n```"
+    },
+    {
+      "test_id": "timeline_16100015",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events for application 16100015 and respond with the required JSON format.\n\nLet me examine the events:\n1. CTNF - Non-Final Rejection - 2019-08-30\n2. MCTNF - Mail Non-Final Rejection - 2019-10-30\n\nCalculations:\n- Total events: 2\n- First event date: 2019-08-30\n- Last event date: 2019-10-30\n- Prosecution duration: From 2019-08-30 to 2019-10-30 = 61 days\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2019-08-30\",\"last_event_date\":\"2019-10-30\",\"prosecution_duration_days\":61}\n```"
+    },
+    {
+      "test_id": "timeline_16100016",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 3,\n  \"first_event_date\": \"2019-05-27\",\n  \"last_event_date\": \"2019-10-21\",\n  \"prosecution_duration_days\": 147\n}\n```"
+    },
+    {
+      "test_id": "timeline_16100017",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "Looking at the prosecution events for application 16100017:\n\n**Event Analysis:**\n- Total events: 9\n- First event: 2018-11-30 (Restriction Requirement)\n- Last event: 2020-12-01 (Disposal for RCE)\n- Duration: 732 days (from 2018-11-30 to 2020-12-01)\n\n**Office Action Rounds:**\n1. Restriction Requirement (2018-11-30)\n2. Non-Final Rejection (2019-04-30)\n3. Final Rejection (2019-09-17)\n4. Non-Final Rejection after RCE (2020-03-11)\n\n**Outcome:** The application was still pending after the last RCE disposal (ABN9) on 2020-12-01. The prosecution had not concluded with a final disposition (allowance or abandonment) as of the last recorded event.\n\n```json\n{\"total_events\":9,\"first_event_date\":\"2018-11-30\",\"last_event_date\":\"2020-12-01\",\"prosecution_duration_days\":732}\n```"
+    },
+    {
+      "test_id": "timeline_16100018",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 4,\n  \"first_event_date\": \"2019-04-30\",\n  \"last_event_date\": \"2019-08-15\",\n  \"prosecution_duration_days\": 107\n}\n```"
+    },
+    {
+      "test_id": "timeline_16100020",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 4,\n  \"first_event_date\": \"2020-02-10\",\n  \"last_event_date\": \"2020-10-09\",\n  \"prosecution_duration_days\": 242\n}\n```"
+    },
+    {
+      "test_id": "timeline_16100022",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 4,\n  \"first_event_date\": \"2021-02-24\",\n  \"last_event_date\": \"2021-07-09\",\n  \"prosecution_duration_days\": 135\n}\n```"
+    },
+    {
+      "test_id": "timeline_16100023",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 2,\n  \"first_event_date\": \"2020-03-06\",\n  \"last_event_date\": \"2020-03-09\",\n  \"prosecution_duration_days\": 3\n}\n```"
+    },
+    {
+      "test_id": "timeline_16100024",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 5,\n  \"first_event_date\": \"2019-12-27\",\n  \"last_event_date\": \"2020-10-08\",\n  \"prosecution_duration_days\": 286\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500000",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 4,\n  \"first_event_date\": \"2021-05-07\",\n  \"last_event_date\": \"2021-09-02\",\n  \"prosecution_duration_days\": 118\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500001",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events and respond with the specified JSON format.\n\nLet me examine the events:\n1. CTNF - Non-Final Rejection - 2021-02-13\n2. MCTNF - Mail Non-Final Rejection - 2021-02-19\n3. CTNF - Non-Final Rejection - 2021-08-03\n4. MCTNF - Mail Non-Final Rejection - 2021-08-17\n\nCalculating:\n- Total events: 4\n- First event date: 2021-02-13\n- Last event date: 2021-08-17\n- Duration: 2021-08-17 minus 2021-02-13 = 185 days\n\n```json\n{\"total_events\":4,\"first_event_date\":\"2021-02-13\",\"last_event_date\":\"2021-08-17\",\"prosecution_duration_days\":185}\n```"
+    },
+    {
+      "test_id": "timeline_16500002",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 7,\n  \"first_event_date\": \"2020-05-21\",\n  \"last_event_date\": \"2021-03-24\",\n  \"prosecution_duration_days\": 307\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500003",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 272 vs 271 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 5,\n  \"first_event_date\": \"2020-10-23\",\n  \"last_event_date\": \"2021-07-21\",\n  \"prosecution_duration_days\": 272\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500004",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 605 vs 240 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 5,\n  \"first_event_date\": \"2021-06-05\",\n  \"last_event_date\": \"2022-01-31\",\n  \"prosecution_duration_days\": 605\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500005",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 8,\n  \"first_event_date\": \"2021-10-23\",\n  \"last_event_date\": \"2023-04-26\",\n  \"prosecution_duration_days\": 550\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500006",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events for this patent application and respond with the requested JSON format.\n\nLet me examine the provided information:\n- Application: 16500006\n- Title: \"COMMUNICATION SYSTEM\"\n- Filing date: 2019-10-01\n- Art unit: 2412\n- Events provided:\n  1. CTNF (Non-Final Rejection) - 2021-04-24\n  2. MCTNF (Mail Non-Final Rejection) - 2021-04-29\n\nBased on the events:\n- Total events: 2\n- First event date: 2021-04-24\n- Last event date: 2021-04-29\n- Prosecution duration: 2021-04-29 minus 2021-04-24 = 5 days\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2021-04-24\",\"last_event_date\":\"2021-04-29\",\"prosecution_duration_days\":5}\n```"
+    },
+    {
+      "test_id": "timeline_16500007",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 609 vs 608 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 10,\n  \"first_event_date\": \"2021-02-23\",\n  \"last_event_date\": \"2022-10-24\",\n  \"prosecution_duration_days\": 609\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500008",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 5,\n  \"first_event_date\": \"2020-12-29\",\n  \"last_event_date\": \"2021-10-06\",\n  \"prosecution_duration_days\": 281\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500009",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 543 vs 542 WRONG"
+      ],
+      "raw_response": "Based on the prosecution events provided, I will analyze the timeline and count the office action rounds.\n\nLet me first provide the required JSON response:\n\n```json\n{\"total_events\":11,\"first_event_date\":\"2021-11-22\",\"last_event_date\":\"2023-05-18\",\"prosecution_duration_days\":543}\n```\n\nNow addressing your additional questions:\n\n**Office Action Rounds:** 3 rounds\n- Round 1: Restriction Requirement (2021-11-22)\n- Round 2: Non-Final → Final Rejection (2022-01-20 → 2022-05-04), followed by RCE\n- Round 3: Non-Final → Final Rejection (2022-08-17 → 2023-02-09), followed by RCE\n\n**Total Prosecution Duration:** 543 days (from first event 2021-11-22 to last event 2023-05-18)\n\n**Outcome:** The application remained pending as of the last recorded event (2023-05-18). The final event was an ABN9 code indicating disposal for an RCE (Request for Continued Examination), meaning the applicant filed another RCE to continue prosecution after the second final rejection."
+    },
+    {
+      "test_id": "timeline_16500011",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 146 vs 145 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 4,\n  \"first_event_date\": \"2020-11-06\",\n  \"last_event_date\": \"2021-03-31\",\n  \"prosecution_duration_days\": 146\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500012",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 8,\n  \"first_event_date\": \"2021-07-07\",\n  \"last_event_date\": \"2022-11-21\",\n  \"prosecution_duration_days\": 502\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500013",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 6,\n  \"first_event_date\": \"2022-03-16\",\n  \"last_event_date\": \"2022-10-07\",\n  \"prosecution_duration_days\": 205\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500014",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 4,\n  \"first_event_date\": \"2021-07-17\",\n  \"last_event_date\": \"2022-01-18\",\n  \"prosecution_duration_days\": 185\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500015",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events and provide a JSON response with the timeline statistics.\n\nGiven events:\n1. CTNF (Non-Final Rejection) - 2021-09-02\n2. MCTNF (Mail Non-Final Rejection) - 2021-09-08\n\nCalculations:\n- Total events: 2\n- First event date: 2021-09-02\n- Last event date: 2021-09-08\n- Prosecution duration: 6 days (2021-09-08 minus 2021-09-02)\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2021-09-02\",\"last_event_date\":\"2021-09-08\",\"prosecution_duration_days\":6}\n```\n\n**Analysis:**\n- **OA Rounds**: 1 Office Action round (the CTNF/MCTNF pair represents a single Non-Final Rejection being issued and mailed)\n- **Total Prosecution Duration**: 6 days (between the two recorded events)\n- **Outcome**: The prosecution is incomplete/ongoing. Only a Non-Final Rejection has been issued with no response or final disposition recorded. The case remains pending."
+    },
+    {
+      "test_id": "timeline_16500016",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution timeline and provide the response in the exact JSON format specified.\n\nLet me calculate:\n- **Total events**: 4 events listed\n- **First event date**: 2021-04-24 (CTNF - Non-Final Rejection)\n- **Last event date**: 2021-11-16 (MCNOA - Mailing Corrected Notice of Allowability)\n- **Prosecution duration**: From 2021-04-24 to 2021-11-16\n  - Days between: 206 days\n\n```json\n{\"total_events\":4,\"first_event_date\":\"2021-04-24\",\"last_event_date\":\"2021-11-16\",\"prosecution_duration_days\":206}\n```"
+    },
+    {
+      "test_id": "timeline_16500017",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 23,\n  \"first_event_date\": \"2020-08-26\",\n  \"last_event_date\": \"2025-07-31\",\n  \"prosecution_duration_days\": 1800\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500018",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events and provide the required JSON response.\n\nGiven information:\n- Application: 16500018\n- Title: \"ORGANIC ELECTROLUMINESCENT ELEMENT AND ELECTRONIC DEVICE\"\n- Filing date: 2019-10-01\n- Art unit: 1759\n- Events:\n  1. CTNF (Non-Final Rejection) - 2023-06-17\n  2. MCTNF (Mail Non-Final Rejection) - 2023-06-23\n\nAnalysis:\n- **Total events**: 2 events listed\n- **First event date**: 2023-06-17 (CTNF)\n- **Last event date**: 2023-06-23 (MCTNF)\n- **Prosecution duration**: 2023-06-23 minus 2023-06-17 = 6 days\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2023-06-17\",\"last_event_date\":\"2023-06-23\",\"prosecution_duration_days\":6}\n```\n\n**Additional context** (answering the other questions):\n- **OA rounds**: 1 Office Action round (the CTNF is the non-final rejection, and MCTNF is just the mailing of that same rejection)\n- **Outcome**: The case appears to still be pending - there's no allowance, abandonment, or issuance event shown. Only a non-final rejection has been issued."
+    },
+    {
+      "test_id": "timeline_16500019",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 16,\n  \"first_event_date\": \"2021-06-23\",\n  \"last_event_date\": \"2025-09-23\",\n  \"prosecution_duration_days\": 1553\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500021",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 184 vs 188 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 7,\n  \"first_event_date\": \"2022-06-04\",\n  \"last_event_date\": \"2022-12-05\",\n  \"prosecution_duration_days\": 184\n}\n```"
+    },
+    {
+      "test_id": "timeline_16500023",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution timeline for this patent application and respond with the required JSON format.\n\nLet me calculate the required information:\n\n**Events Analysis:**\n1. CTNF (Non-Final Rejection) - 2020-03-13\n2. MCTNF (Mail Non-Final Rejection) - 2020-03-17\n3. CTFR (Final Rejection) - 2020-06-11\n4. MCTFR (Mail Final Rejection) - 2020-06-17\n\n**Calculations:**\n- Total events: 4\n- First event date: 2020-03-13\n- Last event date: 2020-06-17\n- Duration: From 2020-03-13 to 2020-06-17 = 96 days\n\n```json\n{\"total_events\":4,\"first_event_date\":\"2020-03-13\",\"last_event_date\":\"2020-06-17\",\"prosecution_duration_days\":96}\n```"
+    },
+    {
+      "test_id": "timeline_16500024",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 10,\n  \"first_event_date\": \"2021-07-23\",\n  \"last_event_date\": \"2022-11-23\",\n  \"prosecution_duration_days\": 488\n}\n```"
+    },
+    {
+      "test_id": "timeline_17100000",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 5,\n  \"first_event_date\": \"2021-05-07\",\n  \"last_event_date\": \"2022-04-19\",\n  \"prosecution_duration_days\": 347\n}\n```"
+    },
+    {
+      "test_id": "timeline_17100002",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 4,\n  \"first_event_date\": \"2022-06-30\",\n  \"last_event_date\": \"2023-03-01\",\n  \"prosecution_duration_days\": 244\n}\n```"
+    },
+    {
+      "test_id": "timeline_17100003",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 312 vs 311 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 7,\n  \"first_event_date\": \"2022-09-23\",\n  \"last_event_date\": \"2023-07-31\",\n  \"prosecution_duration_days\": 312\n}\n```"
+    },
+    {
+      "test_id": "timeline_17100004",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 3,\n  \"first_event_date\": \"2022-11-19\",\n  \"last_event_date\": \"2023-04-13\",\n  \"prosecution_duration_days\": 145\n}\n```"
+    },
+    {
+      "test_id": "timeline_17100005",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 1034 vs 1035 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 13,\n  \"first_event_date\": \"2022-07-07\",\n  \"last_event_date\": \"2025-05-07\",\n  \"prosecution_duration_days\": 1034\n}\n```"
+    },
+    {
+      "test_id": "timeline_17100006",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 4,\n  \"first_event_date\": \"2021-12-16\",\n  \"last_event_date\": \"2022-04-27\",\n  \"prosecution_duration_days\": 132\n}\n```"
+    },
+    {
+      "test_id": "timeline_17100008",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 9,\n  \"first_event_date\": \"2022-09-14\",\n  \"last_event_date\": \"2023-12-06\",\n  \"prosecution_duration_days\": 448\n}\n```"
+    },
+    {
+      "test_id": "timeline_17100012",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events and provide only the requested JSON output with the specific calculations.\n\nLet me parse the information:\n- Events provided: 2 events (both related to a single Non-Final Rejection)\n- First event date: 2021-11-20 (CTNF)\n- Last event date: 2021-11-24 (MCTNF)\n- Duration calculation: 2021-11-24 minus 2021-11-20 = 4 days\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2021-11-20\",\"last_event_date\":\"2021-11-24\",\"prosecution_duration_days\":4}\n```"
+    },
+    {
+      "test_id": "timeline_17100013",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events for this patent application and respond with the specific JSON format requested.\n\nLet me calculate:\n\n**Events:**\n1. CTNF (Non-Final Rejection) - 2022-08-31\n2. MCTNF (Mail Non-Final Rejection) - 2022-09-09\n\n**Calculations:**\n- Total events: 2\n- First event date: 2022-08-31\n- Last event date: 2022-09-09\n- Prosecution duration: 9 days (from 2022-08-31 to 2022-09-09)\n\n**Analysis:**\n- OA rounds: 1 (one non-final rejection)\n- Outcome: The data shows only the initial non-final rejection being mailed. There's no indication of a response, allowance, or abandonment in the provided events.\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2022-08-31\",\"last_event_date\":\"2022-09-09\",\"prosecution_duration_days\":9}\n```\n\n**Additional context:** This application shows 1 Office Action round (non-final rejection). The prosecution duration of 9 days only covers the period from when the rejection was generated to when it was mailed - this is an incomplete timeline that doesn't show the ultimate outcome. A complete prosecution history would show the applicant's response, any subsequent office actions, and the final disposition (allowance, abandonment, or appeal)."
+    },
+    {
+      "test_id": "timeline_17100014",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 7,\n  \"first_event_date\": \"2021-08-27\",\n  \"last_event_date\": \"2022-03-03\",\n  \"prosecution_duration_days\": 188\n}\n```"
+    },
+    {
+      "test_id": "timeline_17100015",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events for this patent application and provide a JSON response with the requested metrics.\n\nLet me calculate:\n- **Total events**: 2 events listed\n- **First event date**: 2022-01-15 (CTNF - Non-Final Rejection)\n- **Last event date**: 2022-01-21 (MCTNF - Mail Non-Final Rejection)\n- **Prosecution duration**: 2022-01-21 minus 2022-01-15 = 6 days\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2022-01-15\",\"last_event_date\":\"2022-01-21\",\"prosecution_duration_days\":6}\n```\n\n**Additional context** (not in JSON as requested):\n- **OA rounds**: 1 Office Action round (the CTNF/MCTNF pair represents a single Non-Final Rejection being created and then mailed)\n- **Outcome**: Cannot be determined from the events provided - this shows only the beginning of prosecution with a first non-final rejection. No allowance, abandonment, or final rejection events are included.\n- **Note**: The 6-day duration only reflects the time between creating and mailing the first office action, not the full prosecution timeline from filing to disposition."
+    },
+    {
+      "test_id": "timeline_17100016",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events for application 17100016 and respond with the required JSON format.\n\nLooking at the events:\n1. Non-Final Rejection (2021-08-14)\n2. Mail Non-Final Rejection (2021-08-19)\n3. Final Rejection (2022-02-26)\n4. Mail Final Rejection (2022-03-04)\n5. RCE Disposal (2022-09-02)\n6. Non-Final Rejection (2022-09-26)\n7. Mail Non-Final Rejection (2022-09-30)\n\nCalculations:\n- Total events: 7\n- First event date: 2021-08-14\n- Last event date: 2022-09-30\n- Duration: From 2021-08-14 to 2022-09-30 = 412 days\n\n```json\n{\"total_events\":7,\"first_event_date\":\"2021-08-14\",\"last_event_date\":\"2022-09-30\",\"prosecution_duration_days\":412}\n```"
+    },
+    {
+      "test_id": "timeline_17100017",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events for this patent application and respond with the required JSON format.\n\nLet me examine the provided data:\n- Application: 17100017\n- Title: \"DISPLAY DEVICE, TIMING CONTROLLER AND SOURCE DRIVER\"\n- Filing date: 2020-11-20\n- Art unit: 2627\n- Events:\n  1. CTNF (Non-Final Rejection) - 2021-08-28\n  2. MCTNF (Mail Non-Final Rejection) - 2021-09-02\n\nAnalysis:\n- **Total events**: 2 events listed\n- **First event date**: 2021-08-28 (CTNF)\n- **Last event date**: 2021-09-02 (MCTNF)\n- **Prosecution duration**: 2021-09-02 minus 2021-08-28 = 5 days\n\nHowever, I notice the question asks about OA rounds and outcome, which cannot be determined from only these two events (both related to the same Non-Final Rejection - one is the internal code and one is the mailing). The data appears incomplete as there's no final disposition event.\n\nBased strictly on the instruction to respond ONLY with the specified JSON format:\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2021-08-28\",\"last_event_date\":\"2021-09-02\",\"prosecution_duration_days\":5}\n```"
+    },
+    {
+      "test_id": "timeline_17100019",
+      "task_type": "timeline_analysis",
+      "score": "0.0%",
+      "details": [
+        "JSON parse error"
+      ],
+      "raw_response": "I need to analyze the prosecution events for this patent application and provide a structured response.\n\nLet me examine the data provided:\n- Application: 17100019\n- Title: \"SYSTEM AND METHOD FOR ANALYSIS OF STRUCTURED AND UNSTRUCTURED DATA\"\n- Filing date: 2020-11-20\n- Art unit: 2163\n- Events:\n  1. CTNF (Non-Final Rejection) - 2022-03-12\n  2. MCTNF (Mail Non-Final Rejection) - 2022-03-17\n\nBased on the instructions, I need to respond ONLY with JSON (no markdown, no code fences):\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2022-03-12\",\"last_event_date\":\"2022-03-17\",\"prosecution_duration_days\":5}\n```\n\nHowever, the user also asks questions about OA rounds and outcome that go beyond the strict JSON format requested. Let me provide the exact JSON response as instructed:\n\n{\"total_events\":2,\"first_event_date\":\"2022-03-12\",\"last_event_date\":\"2022-03-17\",\"prosecution_duration_days\":5}"
+    },
+    {
+      "test_id": "timeline_17100021",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 577 vs 578 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 9,\n  \"first_event_date\": \"2023-12-01\",\n  \"last_event_date\": \"2025-07-01\",\n  \"prosecution_duration_days\": 577\n}\n```"
+    },
+    {
+      "test_id": "timeline_17100022",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 11,\n  \"first_event_date\": \"2021-12-30\",\n  \"last_event_date\": \"2023-09-20\",\n  \"prosecution_duration_days\": 629\n}\n```"
+    },
+    {
+      "test_id": "timeline_17100023",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 2,\n  \"first_event_date\": \"2022-03-12\",\n  \"last_event_date\": \"2022-03-17\",\n  \"prosecution_duration_days\": 5\n}\n```"
+    },
+    {
+      "test_id": "timeline_17100024",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 11,\n  \"first_event_date\": \"2021-06-28\",\n  \"last_event_date\": \"2022-09-07\",\n  \"prosecution_duration_days\": 436\n}\n```"
+    },
+    {
+      "test_id": "timeline_17500000",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events for this patent application and provide a JSON response with the required metrics.\n\nLet me calculate:\n- **Total events**: 4 events listed\n- **First event date**: 2023-02-25 (CTNF - Non-Final Rejection)\n- **Last event date**: 2023-09-11 (MCTFR - Mail Final Rejection)\n- **Prosecution duration**: From 2023-02-25 to 2023-09-11\n  - Days calculation: September 11 - February 25 = 198 days\n\n```json\n{\"total_events\":4,\"first_event_date\":\"2023-02-25\",\"last_event_date\":\"2023-09-11\",\"prosecution_duration_days\":198}\n```"
+    },
+    {
+      "test_id": "timeline_17500001",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze this patent prosecution timeline and provide a JSON response with the specific metrics requested.\n\nLet me break down the events:\n- Event 1: CTNF (Non-Final Rejection) - 2024-09-28\n- Event 2: MCTNF (Mail Non-Final Rejection) - 2024-10-01\n\nCalculations:\n- Total events: 2\n- First event date: 2024-09-28\n- Last event date: 2024-10-01\n- Prosecution duration: Days between 2024-09-28 and 2024-10-01 = 3 days\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2024-09-28\",\"last_event_date\":\"2024-10-01\",\"prosecution_duration_days\":3}\n```"
+    },
+    {
+      "test_id": "timeline_17500002",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "Based on the prosecution events provided, here is the analysis:\n\n```json\n{\n  \"total_events\": 2,\n  \"first_event_date\": \"2022-12-01\",\n  \"last_event_date\": \"2022-12-06\",\n  \"prosecution_duration_days\": 5\n}\n```\n\n**Additional Analysis:**\n\n- **OA Rounds**: 1 Office Action round (one Non-Final Rejection)\n- **Total Prosecution Duration**: 5 days (between the two listed events)\n- **Outcome**: The prosecution appears to be **ongoing/incomplete** based on the limited event history provided. The last event is the mailing of a Non-Final Rejection on 2022-12-06, which means the application is awaiting applicant's response. There is no indication of allowance, abandonment, or issuance in the provided events.\n\n**Note**: The prosecution duration of 5 days only reflects the span between the two events listed. The actual prosecution duration from filing (2021-10-13) to the last event (2022-12-06) would be approximately 419 days. However, per your instructions, I calculated duration as days between first and last event dates in the provided list."
+    },
+    {
+      "test_id": "timeline_17500004",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 5,\n  \"first_event_date\": \"2024-09-23\",\n  \"last_event_date\": \"2025-06-08\",\n  \"prosecution_duration_days\": 258\n}\n```"
+    },
+    {
+      "test_id": "timeline_17500006",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events provided and respond with the requested JSON format.\n\nLet me parse the information:\n- Application: 17500006\n- Events provided:\n  1. CTNF - Non-Final Rejection - 2022-09-23\n  2. MCTNF - Mail Non-Final Rejection - 2022-09-29\n\nCalculating:\n- Total events: 2\n- First event date: 2022-09-23\n- Last event date: 2022-09-29\n- Duration: 6 days (from 2022-09-23 to 2022-09-29)\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2022-09-23\",\"last_event_date\":\"2022-09-29\",\"prosecution_duration_days\":6}\n```\n\nHowever, I should note that based on these events alone:\n- **OA rounds**: 1 non-final rejection round (CTNF/MCTNF are the same action - issuing and mailing)\n- **Outcome**: Unknown - the data only shows a non-final rejection was issued/mailed, but doesn't show the final outcome (allowance, abandonment, final rejection, etc.)\n- **Total prosecution duration**: Only 6 days between these two events, but this doesn't represent the full prosecution timeline since it only covers the issuance and mailing of one office action"
+    },
+    {
+      "test_id": "timeline_17500007",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 6,\n  \"first_event_date\": \"2022-05-09\",\n  \"last_event_date\": \"2023-01-20\",\n  \"prosecution_duration_days\": 256\n}\n```"
+    },
+    {
+      "test_id": "timeline_17500009",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "Based on the prosecution events provided, here is the analysis:\n\n```json\n{\n  \"total_events\": 2,\n  \"first_event_date\": \"2023-02-09\",\n  \"last_event_date\": \"2023-02-14\",\n  \"prosecution_duration_days\": 5\n}\n```\n\n**Additional Analysis:**\n\n- **OA Rounds**: 1 Office Action round (one Non-Final Rejection issued on 2023-02-09 and mailed on 2023-02-14)\n\n- **Total Prosecution Duration**: 5 days between the first and last events in the provided data. However, note that this only covers the period from when the Non-Final Rejection was issued to when it was mailed - not the full prosecution timeline from filing to disposition.\n\n- **Outcome**: The prosecution is still **pending**. The events show only a Non-Final Rejection has been issued. There is no final disposition event (allowance, abandonment, or final rejection) in the provided data.\n\n**Note**: The event list appears incomplete as it only shows the issuance and mailing of a single Non-Final Rejection. A complete prosecution timeline would typically include the filing date (2021-10-13), any responses filed by the applicant, and ultimately a final outcome event."
+    },
+    {
+      "test_id": "timeline_17500010",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "Based on the prosecution events provided:\n\n```json\n{\n  \"total_events\": 2,\n  \"first_event_date\": \"2023-02-11\",\n  \"last_event_date\": \"2023-02-17\",\n  \"prosecution_duration_days\": 6\n}\n```\n\n**Analysis:**\n\n- **OA Rounds:** 1 (one Non-Final Rejection was issued and mailed)\n- **Total Prosecution Duration:** 6 days (between the two event dates provided)\n- **Outcome:** The prosecution record is incomplete. The events only show a Non-Final Rejection being issued (2023-02-11) and mailed (2023-02-17). There is no indication of the final outcome (allowance, abandonment, continuation, etc.) in the provided data.\n\n**Note:** The 6-day duration only covers the period between these two administrative events. The actual prosecution duration from filing (2021-10-13) to the last event date (2023-02-17) would be approximately 492 days, but the question asks for duration between first and last event dates in the provided list."
+    },
+    {
+      "test_id": "timeline_17500011",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 435 vs 436 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 12,\n  \"first_event_date\": \"2023-11-18\",\n  \"last_event_date\": \"2025-01-27\",\n  \"prosecution_duration_days\": 435\n}\n```"
+    },
+    {
+      "test_id": "timeline_17500012",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events and provide the requested JSON response.\n\nLet me examine the data:\n- Application: 17500012\n- Filing date: 2021-10-13\n- Events:\n  1. CTNF (Non-Final Rejection) - 2022-12-15\n  2. MCTNF (Mail Non-Final Rejection) - 2022-12-21\n\nCalculating the required values:\n- **total_events**: 2 (both events listed)\n- **first_event_date**: 2022-12-15 (earliest event)\n- **last_event_date**: 2022-12-21 (latest event)\n- **prosecution_duration_days**: 6 days (2022-12-21 minus 2022-12-15)\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2022-12-15\",\"last_event_date\":\"2022-12-21\",\"prosecution_duration_days\":6}\n```"
+    },
+    {
+      "test_id": "timeline_17500013",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 605 vs 606 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 12,\n  \"first_event_date\": \"2023-11-30\",\n  \"last_event_date\": \"2025-07-28\",\n  \"prosecution_duration_days\": 605\n}\n```"
+    },
+    {
+      "test_id": "timeline_17500014",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 6,\n  \"first_event_date\": \"2022-12-03\",\n  \"last_event_date\": \"2023-06-15\",\n  \"prosecution_duration_days\": 194\n}\n```"
+    },
+    {
+      "test_id": "timeline_17500015",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 659 vs 660 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 9,\n  \"first_event_date\": \"2023-03-25\",\n  \"last_event_date\": \"2025-01-13\",\n  \"prosecution_duration_days\": 659\n}\n```"
+    },
+    {
+      "test_id": "timeline_17500017",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 10,\n  \"first_event_date\": \"2023-02-23\",\n  \"last_event_date\": \"2024-04-08\",\n  \"prosecution_duration_days\": 410\n}\n```"
+    },
+    {
+      "test_id": "timeline_17500018",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events as a patent attorney and respond with the requested JSON format.\n\nGiven events:\n1. CTNF - Non-Final Rejection - 2023-10-21\n2. MCTNF - Mail Non-Final Rejection - 2023-10-26\n\nLet me calculate:\n- **Total events**: 2\n- **First event date**: 2023-10-21 (CTNF)\n- **Last event date**: 2023-10-26 (MCTNF)\n- **Prosecution duration**: 2023-10-26 minus 2023-10-21 = 5 days\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2023-10-21\",\"last_event_date\":\"2023-10-26\",\"prosecution_duration_days\":5}\n```\n\n**Additional Analysis (as requested)**:\n\n**OA Rounds**: 1 Office Action round. The CTNF (Non-Final Rejection) represents the substantive office action, and MCTNF is the administrative mailing event for that same rejection.\n\n**Total Prosecution Duration**: 5 days (between the two logged events). However, this represents only the brief period between the rejection being issued and mailed, not the full prosecution timeline from filing to current status.\n\n**Outcome**: The application is currently pending with an outstanding Non-Final Rejection. No final disposition (allowance, abandonment, or issuance) has occurred based on the events provided. The applicant would have an opportunity to respond to this rejection."
+    },
+    {
+      "test_id": "timeline_17500019",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution timeline data provided and respond with the required JSON format.\n\nLet me parse the information:\n- Application: 17500019\n- Filed: 2021-10-13\n- Art Unit: 1686\n- Events provided:\n  1. CTNF (Non-Final Rejection) - 2025-06-24\n  2. MCTNF (Mail Non-Final Rejection) - 2025-06-26\n\nAnalysis:\n- **Total events**: 2 events listed\n- **First event date**: 2025-06-24 (CTNF)\n- **Last event date**: 2025-06-26 (MCTNF)\n- **Prosecution duration**: 2025-06-26 minus 2025-06-24 = 2 days\n\nHowever, I notice the user is also asking interpretive questions about \"How many OA rounds? What was the outcome?\" which go beyond the strict JSON response format requested. Based on the instruction to respond \"ONLY with JSON\", I'll provide the JSON format as specified:\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2025-06-24\",\"last_event_date\":\"2025-06-26\",\"prosecution_duration_days\":2}\n```"
+    },
+    {
+      "test_id": "timeline_17500020",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution events provided and respond with the required JSON format.\n\nLet me calculate:\n- **total_events**: 5 events listed\n- **first_event_date**: \"2023-03-04\" (CTNF - Non-Final Rejection)\n- **last_event_date**: \"2023-10-18\" (ABN9 - Disposal for a RCE / CPA / R129)\n- **prosecution_duration_days**: Days between 2023-03-04 and 2023-10-18\n\nDuration calculation:\n- From March 4, 2023 to October 18, 2023\n- March 4 to April 4 = 31 days\n- April 4 to May 4 = 30 days\n- May 4 to June 4 = 31 days\n- June 4 to July 4 = 30 days\n- July 4 to August 4 = 31 days\n- August 4 to September 4 = 31 days\n- September 4 to October 4 = 30 days\n- October 4 to October 18 = 14 days\n- Total: 31+30+31+30+31+31+30+14 = 228 days\n\n```json\n{\"total_events\":5,\"first_event_date\":\"2023-03-04\",\"last_event_date\":\"2023-10-18\",\"prosecution_duration_days\":228}\n```"
+    },
+    {
+      "test_id": "timeline_17500021",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze this prosecution timeline and provide a response in the specified JSON format.\n\nLet me break down the given information:\n- Application: 17500021 (\"Ratcheting Chain Binder\")\n- Filing date: 2021-10-13\n- Art unit: 3612\n- Events:\n  1. CTNF (Non-Final Rejection) - 2024-10-30\n  2. MCTNF (Mail Non-Final Rejection) - 2024-11-04\n\nAnalysis:\n- **Total events**: 2 events listed\n- **First event date**: 2024-10-30 (CTNF)\n- **Last event date**: 2024-11-04 (MCTNF)\n- **Duration**: 2024-11-04 minus 2024-10-30 = 5 days\n\nHowever, the question asks about OA rounds and outcome, which goes beyond the JSON format requested. The events shown represent a single Office Action (non-final rejection) with CTNF being the content event and MCTNF being the mailing event - these are part of the same OA round, not separate rounds.\n\nHere's the JSON response:\n\n```json\n{\"total_events\":2,\"first_event_date\":\"2024-10-30\",\"last_event_date\":\"2024-11-04\",\"prosecution_duration_days\":5}\n```\n\n**Additional context** (regarding the questions about OA rounds and outcome):\n- **OA rounds**: 1 round (one non-final rejection). The CTNF and MCTNF events are both part of the same Office Action - CTNF is when the action was created/entered, and MCTNF is when it was mailed.\n- **Outcome**: The application is still pending. There is no allowance or abandonment shown in these events. The prosecution is ongoing, awaiting applicant's response to the non-final rejection."
+    },
+    {
+      "test_id": "timeline_17500022",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "I need to analyze the prosecution timeline for this patent application and provide the requested JSON response.\n\nLet me examine the events:\n1. CTNF (Non-Final Rejection) - 2023-03-29\n2. MCTNF (Mail Non-Final Rejection) - 2023-04-04\n3. CTFR (Final Rejection) - 2023-10-01\n4. MCTFR (Mail Final Rejection) - 2023-10-05\n\nCalculations:\n- **Total events**: 4\n- **First event date**: 2023-03-29 (first non-final rejection)\n- **Last event date**: 2023-10-05 (mailing of final rejection)\n- **Prosecution duration**: From 2023-03-29 to 2023-10-05\n  - Days = 190 days (March 29 to October 5, 2023)\n\n```json\n{\"total_events\":4,\"first_event_date\":\"2023-03-29\",\"last_event_date\":\"2023-10-05\",\"prosecution_duration_days\":190}\n```\n\n**Additional Context** (as requested in the question):\n- **OA Rounds**: 2 rounds (1 Non-Final Rejection + 1 Final Rejection)\n- **Outcome**: Final Rejection issued - application appears to still be pending or abandoned (no allowance/issue events shown)"
+    },
+    {
+      "test_id": "timeline_17500023",
+      "task_type": "timeline_analysis",
+      "score": "66.7%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: 758 vs 759 WRONG"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 14,\n  \"first_event_date\": \"2024-01-16\",\n  \"last_event_date\": \"2026-02-13\",\n  \"prosecution_duration_days\": 758\n}\n```"
+    },
+    {
+      "test_id": "timeline_17500024",
+      "task_type": "timeline_analysis",
+      "score": "100.0%",
+      "details": [
+        "events: OK",
+        "first: OK",
+        "duration: OK"
+      ],
+      "raw_response": "```json\n{\n  \"total_events\": 10,\n  \"first_event_date\": \"2023-01-23\",\n  \"last_event_date\": \"2024-04-24\",\n  \"prosecution_duration_days\": 457\n}\n```"
+    },
+    {
+      "test_id": "fee_16100000",
+      "task_type": "fee_computation",
+      "score": "100.0%",
+      "details": [
+        "ext: OK",
+        "rce: OK",
+        "issue: OK"
+      ],
+      "raw_response": "{\"extension_1_month\":240,\"rce_fee\":2280,\"issue_fee\":1200}"
+    },
+    {
+      "test_id": "fee_16100001",
+      "task_type": "fee_computation",
+      "score": "100.0%",
+      "details": [
+        "ext: OK",
+        "rce: OK",
+        "issue: OK"
+      ],
+      "raw_response": "{\"extension_1_month\":240,\"rce_fee\":2280,\"issue_fee\":1200}"
+    },
+    {
+      "test_id": "fee_16100002",
+      "task_type": "fee_computation",
+      "score": "100.0%",
+      "details": [
+        "ext: OK",
+        "rce: OK",
+        "issue: OK"
+      ],
+      "raw_response": "{\"extension_1_month\":240,\"rce_fee\":2280,\"issue_fee\":1200}"
+    },
+    {
+      "test_id": "fee_16100003",
+      "task_type": "fee_computation",
+      "score": "100.0%",
+      "details": [
+        "ext: OK",
+        "rce: OK",
+        "issue: OK"
+      ],
+      "raw_response": "{\"extension_1_month\":240,\"rce_fee\":2280,\"issue_fee\":1200}"
+    },
+    {
+      "test_id": "fee_16100006",
+      "task_type": "fee_computation",
+      "score": "100.0%",
+      "details": [
+        "ext: OK",
+        "rce: OK",
+        "issue: OK"
+      ],
+      "raw_response": "{\"extension_1_month\":240,\"rce_fee\":2280,\"issue_fee\":1200}"
+    },
+    {
+      "test_id": "fee_16100007",
+      "task_type": "fee_computation",
+      "score": "100.0%",
+      "details": [
+        "ext: OK",
+        "rce: OK",
+        "issue: OK"
+      ],
+      "raw_response": "{\"extension_1_month\":240,\"rce_fee\":2280,\"issue_fee\":1200}"
+    },
+    {
+      "test_id": "fee_16100009",
+      "task_type": "fee_computation",
+      "score": "100.0%",
+      "details": [
+        "ext: OK",
+        "rce: OK",
+        "issue: OK"
+      ],
+      "raw_response": "{\"extension_1_month\":240,\"rce_fee\":2280,\"issue_fee\":1200}"
+    },
+    {
+      "test_id": "fee_16100010",
+      "task_type": "fee_computation",
+      "score": "100.0%",
+      "details": [
+        "ext: OK",
+        "rce: OK",
+        "issue: OK"
+      ],
+      "raw_response": "{\"extension_1_month\":240,\"rce_fee\":2280,\"issue_fee\":1200}"
+    },
+    {
+      "test_id": "fee_16100011",
+      "task_type": "fee_computation",
+      "score": "100.0%",
+      "details": [
+        "ext: OK",
+        "rce: OK",
+        "issue: OK"
+      ],
+      "raw_response": "{\"extension_1_month\":240,\"rce_fee\":2280,\"issue_fee\":1200}"
+    },
+    {
+      "test_id": "fee_16100012",
+      "task_type": "fee_computation",
+      "score": "100.0%",
+      "details": [
+        "ext: OK",
+        "rce: OK",
+        "issue: OK"
+      ],
+      "raw_response": "{\"extension_1_month\":240,\"rce_fee\":2280,\"issue_fee\":1200}"
+    }
+  ]
+}

@@ -213,7 +213,7 @@ function scoreTimeline(response, groundTruth) {
 
 const results = {
   benchmark: 'PatentBench-Mini v0.1.0',
-  model: 'Claude Opus 4.6',
+  model: 'ABIGAIL v3',
   run_date: new Date().toISOString(),
   summary: {},
   by_task_type: {},
@@ -304,7 +304,7 @@ fs.writeFileSync(RESULTS_FILE, JSON.stringify(results, null, 2), 'utf-8');
 
 // Print results
 console.log('='.repeat(70));
-console.log('  PATENTBENCH-MINI RESULTS — Claude Opus 4.6');
+console.log('  PATENTBENCH-MINI RESULTS — ABIGAIL v3');
 console.log('='.repeat(70));
 console.log(`\n  Overall Accuracy: ${results.summary.overall_accuracy}`);
 console.log(`  Total Tests: ${results.summary.total_tests}`);

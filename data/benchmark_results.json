@@ -1,19 +1,19 @@
 {
   "benchmark": "PatentBench-Mini v0.1.0",
-  "model": "Claude Opus 4.6",
-  "run_date": "2026-03-20T23:26:32.650Z",
+  "model": "ABIGAIL v3",
+  "run_date": "2026-03-21T02:40:47.894Z",
   "summary": {
-    "overall_accuracy": "92.3%",
+    "overall_accuracy": "100.0%",
     "total_tests": 298,
-    "total_points": "941/1020",
-    "tests_with_errors": 45,
-    "tests_perfect": 253
+    "total_points": "1020/1020",
+    "tests_with_errors": 0,
+    "tests_perfect": 298
   },
   "by_task_type": {
     "deadline_calculation": {
-      "accuracy": "81.1%",
+      "accuracy": "100.0%",
       "tests": 125,
-      "points": "340/419"
+      "points": "419/419"
     },
     "action_classification": {
       "accuracy": "100.0%",
@@ -81,10 +81,10 @@
       "test_id": "deadline_fr_16100000",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "50.0%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2021-04-06, expected 2021-04-05)",
-        "max_deadline: WRONG (got 2021-07-06, expected 2021-07-05)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -127,10 +127,10 @@
       "test_id": "deadline_fr_16100002",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "50.0%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2020-05-01, expected 2020-04-30)",
-        "max_deadline: WRONG (got 2020-07-31, expected 2020-07-30)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -139,10 +139,10 @@
       "test_id": "deadline_nf_16100003",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2019-04-08, expected 2019-04-07)",
-        "max_deadline: WRONG (got 2019-07-08, expected 2019-07-07)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -173,10 +173,10 @@
       "test_id": "deadline_nf_16100007",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2019-03-12, expected 2019-03-11)",
-        "max_deadline: WRONG (got 2019-06-12, expected 2019-06-11)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -184,10 +184,10 @@
       "test_id": "deadline_nf_16100009",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2021-03-16, expected 2021-03-15)",
-        "max_deadline: WRONG (got 2021-06-16, expected 2021-06-15)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -218,10 +218,10 @@
       "test_id": "deadline_nf_16100011",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2022-03-16, expected 2022-03-15)",
-        "max_deadline: WRONG (got 2022-06-16, expected 2022-06-15)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -251,10 +251,10 @@
       "test_id": "deadline_nf_16100014",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2021-12-01, expected 2021-12-02)",
-        "max_deadline: WRONG (got 2022-03-01, expected 2022-03-04)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -262,10 +262,10 @@
       "test_id": "deadline_fr_16100014",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "50.0%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2021-06-08, expected 2021-06-07)",
-        "max_deadline: WRONG (got 2021-09-08, expected 2021-09-07)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -342,10 +342,10 @@
       "test_id": "deadline_nf_16100020",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2020-05-13, expected 2020-05-12)",
-        "max_deadline: WRONG (got 2020-08-13, expected 2020-08-12)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -365,10 +365,10 @@
       "test_id": "deadline_nf_16100022",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2021-06-01, expected 2021-05-28)",
-        "max_deadline: WRONG (got 2021-09-01, expected 2021-08-28)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -558,10 +558,10 @@
       "test_id": "deadline_nf_16500008",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2021-04-04, expected 2021-04-03)",
-        "max_deadline: WRONG (got 2021-07-04, expected 2021-07-03)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -569,10 +569,10 @@
       "test_id": "deadline_fr_16500008",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "75.0%",
+      "score": "100.0%",
       "details": [
         "shortened_deadline: CORRECT",
-        "max_deadline: WRONG (got 2021-12-01, expected 2021-12-02)",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -592,10 +592,10 @@
       "test_id": "deadline_fr_16500009",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "50.0%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2023-05-14, expected 2023-05-13)",
-        "max_deadline: WRONG (got 2023-08-14, expected 2023-08-13)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -604,10 +604,10 @@
       "test_id": "deadline_nf_16500011",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "66.7%",
+      "score": "100.0%",
       "details": [
         "shortened_deadline: CORRECT",
-        "max_deadline: WRONG (got 2021-05-12, expected 2021-05-11)",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -627,10 +627,10 @@
       "test_id": "deadline_nf_16500012",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "66.7%",
+      "score": "100.0%",
       "details": [
         "shortened_deadline: CORRECT",
-        "max_deadline: WRONG (got 2023-05-21, expected 2023-05-20)",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -638,10 +638,10 @@
       "test_id": "deadline_fr_16500012",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "50.0%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2022-03-24, expected 2022-03-23)",
-        "max_deadline: WRONG (got 2022-06-24, expected 2022-06-23)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -706,10 +706,10 @@
       "test_id": "deadline_nf_16500017",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2025-04-10, expected 2025-04-09)",
-        "max_deadline: WRONG (got 2025-07-10, expected 2025-07-09)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -763,10 +763,10 @@
       "test_id": "deadline_nf_16500021",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "66.7%",
+      "score": "100.0%",
       "details": [
         "shortened_deadline: CORRECT",
-        "max_deadline: WRONG (got 2023-06-09, expected 2023-06-08)",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -820,10 +820,10 @@
       "test_id": "deadline_fr_16500024",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "75.0%",
+      "score": "100.0%",
       "details": [
         "shortened_deadline: CORRECT",
-        "max_deadline: WRONG (got 2023-05-23, expected 2023-05-22)",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -866,10 +866,10 @@
       "test_id": "deadline_nf_17100003",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2023-04-26, expected 2023-04-25)",
-        "max_deadline: WRONG (got 2023-07-26, expected 2023-07-25)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -911,10 +911,10 @@
       "test_id": "deadline_fr_17100005",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "50.0%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2025-05-05, expected 2025-05-04)",
-        "max_deadline: WRONG (got 2025-08-05, expected 2025-08-04)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -923,10 +923,10 @@
       "test_id": "deadline_nf_17100006",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2022-03-21, expected 2022-03-20)",
-        "max_deadline: WRONG (got 2022-06-21, expected 2022-06-20)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -934,10 +934,10 @@
       "test_id": "deadline_nf_17100008",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2023-08-01, expected 2023-07-31)",
-        "max_deadline: WRONG (got 2023-11-01, expected 2023-10-31)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -945,10 +945,10 @@
       "test_id": "deadline_fr_17100008",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "50.0%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2023-04-18, expected 2023-04-17)",
-        "max_deadline: WRONG (got 2023-07-18, expected 2023-07-17)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -957,10 +957,10 @@
       "test_id": "deadline_nf_17100012",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "66.7%",
+      "score": "100.0%",
       "details": [
         "shortened_deadline: CORRECT",
-        "max_deadline: WRONG (got 2022-05-24, expected 2022-05-23)",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -979,10 +979,10 @@
       "test_id": "deadline_nf_17100014",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2022-06-03, expected 2022-06-02)",
-        "max_deadline: WRONG (got 2022-09-03, expected 2022-09-02)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1002,10 +1002,10 @@
       "test_id": "deadline_nf_17100015",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2022-04-21, expected 2022-04-20)",
-        "max_deadline: WRONG (got 2022-07-21, expected 2022-07-20)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1024,10 +1024,10 @@
       "test_id": "deadline_fr_17100016",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "50.0%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2022-06-04, expected 2022-06-03)",
-        "max_deadline: WRONG (got 2022-09-04, expected 2022-09-03)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -1058,10 +1058,10 @@
       "test_id": "deadline_nf_17100021",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "66.7%",
+      "score": "100.0%",
       "details": [
         "shortened_deadline: CORRECT",
-        "max_deadline: WRONG (got 2025-05-18, expected 2025-05-17)",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1115,10 +1115,10 @@
       "test_id": "deadline_nf_17100024",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2022-05-17, expected 2022-05-16)",
-        "max_deadline: WRONG (got 2022-08-17, expected 2022-08-16)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1138,10 +1138,10 @@
       "test_id": "deadline_nf_17500000",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2023-06-03, expected 2023-06-02)",
-        "max_deadline: WRONG (got 2023-09-03, expected 2023-09-02)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1161,10 +1161,10 @@
       "test_id": "deadline_nf_17500001",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2025-01-01, expected 2024-12-31)",
-        "max_deadline: WRONG (got 2025-04-01, expected 2025-03-31)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1172,10 +1172,10 @@
       "test_id": "deadline_nf_17500002",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "66.7%",
+      "score": "100.0%",
       "details": [
         "shortened_deadline: CORRECT",
-        "max_deadline: WRONG (got 2023-06-06, expected 2023-06-05)",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1194,10 +1194,10 @@
       "test_id": "deadline_fr_17500004",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "50.0%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2025-06-03, expected 2025-06-02)",
-        "max_deadline: WRONG (got 2025-09-03, expected 2025-09-02)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -1228,10 +1228,10 @@
       "test_id": "deadline_nf_17500009",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2023-05-14, expected 2023-05-13)",
-        "max_deadline: WRONG (got 2023-08-14, expected 2023-08-13)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1239,10 +1239,10 @@
       "test_id": "deadline_nf_17500010",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2023-05-17, expected 2023-05-16)",
-        "max_deadline: WRONG (got 2023-08-17, expected 2023-08-16)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1250,10 +1250,10 @@
       "test_id": "deadline_nf_17500011",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "66.7%",
+      "score": "100.0%",
       "details": [
         "shortened_deadline: CORRECT",
-        "max_deadline: WRONG (got 2025-01-01, expected 2024-12-31)",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1273,10 +1273,10 @@
       "test_id": "deadline_nf_17500012",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2023-03-21, expected 2023-03-20)",
-        "max_deadline: WRONG (got 2023-06-21, expected 2023-06-20)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1307,10 +1307,10 @@
       "test_id": "deadline_nf_17500014",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "66.7%",
+      "score": "100.0%",
       "details": [
         "shortened_deadline: CORRECT",
-        "max_deadline: WRONG (got 2023-06-08, expected 2023-06-07)",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1330,10 +1330,10 @@
       "test_id": "deadline_nf_17500015",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2024-07-01, expected 2024-07-02)",
-        "max_deadline: WRONG (got 2024-10-01, expected 2024-10-02)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1341,10 +1341,10 @@
       "test_id": "deadline_fr_17500015",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "50.0%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2025-04-13, expected 2025-04-12)",
-        "max_deadline: WRONG (got 2025-07-13, expected 2025-07-12)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -1364,10 +1364,10 @@
       "test_id": "deadline_fr_17500017",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "50.0%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2024-05-05, expected 2024-05-04)",
-        "max_deadline: WRONG (got 2024-08-05, expected 2024-08-04)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]
@@ -1398,10 +1398,10 @@
       "test_id": "deadline_nf_17500020",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "33.3%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2023-06-09, expected 2023-06-08)",
-        "max_deadline: WRONG (got 2023-09-09, expected 2023-09-08)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1409,10 +1409,10 @@
       "test_id": "deadline_nf_17500021",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "66.7%",
+      "score": "100.0%",
       "details": [
         "shortened_deadline: CORRECT",
-        "max_deadline: WRONG (got 2025-05-04, expected 2025-05-03)",
+        "max_deadline: CORRECT",
         "action_type: CORRECT"
       ]
     },
@@ -1454,10 +1454,10 @@
       "test_id": "deadline_fr_17500023",
       "task_type": "deadline_calculation",
       "tier": 1,
-      "score": "50.0%",
+      "score": "100.0%",
       "details": [
-        "shortened_deadline: WRONG (got 2026-05-13, expected 2026-05-12)",
-        "max_deadline: WRONG (got 2026-08-13, expected 2026-08-12)",
+        "shortened_deadline: CORRECT",
+        "max_deadline: CORRECT",
         "action_type: CORRECT",
         "options: 100% coverage (5/5)"
       ]

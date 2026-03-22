@@ -17,7 +17,7 @@ So we built one.
 
 PatentBench is the first published, reproducible benchmark for patent prosecution AI. We tested on 298 real cases from 82 USPTO Office Actions across 8 Technology Centers.
 
-Results for ABIGAIL v3 (powered by Claude Opus 4.6):
+Results for ABIGAIL v3:
 - Action Classification: 100%
 - Prosecution Timeline Analysis: 100%
 - Fee Computation: 100%
@@ -65,7 +65,7 @@ What we tested:
 - 8 Technology Centers
 - 321 total patent applications
 
-Initial results (ABIGAIL v3, powered by Claude Opus 4.6):
+Initial results (ABIGAIL v3, ABIGAIL v3):
 - Classification: 100%
 - Timeline Analysis: 100%
 - Fee Computation: 100%
