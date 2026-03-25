@@ -1,8 +1,8 @@
 /**
  * PatentBench Multi-Model Benchmark Runner
  *
- * Runs Tier 1-2 benchmark test cases against Claude Sonnet, GPT-4o, or Gemini,
- * then scores responses using the same scoring logic as score_claude_benchmark.js.
+ * Runs Tier 1-2 benchmark test cases against multiple models (Sonnet, GPT-4o, Gemini),
+ * then scores responses using the same scoring logic as score_benchmark.js.
  *
  * Usage:
  *   node run_multi_model_benchmark.js --model=sonnet
@@ -278,7 +278,7 @@ function parseJsonResponse(rawText) {
   }
 }
 
-// ========== SCORING FUNCTIONS (from score_claude_benchmark.js) ==========
+// ========== SCORING FUNCTIONS (from score_benchmark.js) ==========
 
 function scoreDeadline(response, groundTruth) {
   let score = 0;

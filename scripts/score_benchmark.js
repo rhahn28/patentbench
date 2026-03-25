@@ -1,8 +1,8 @@
 /**
  * PatentBench Scoring Engine
- * Scores Claude's responses against ground truth for Tier 1-2 benchmark tasks.
+ * Scores model responses against ground truth for Tier 1-2 benchmark tasks.
  *
- * Claude's patent prosecution knowledge is tested against deterministic ground truth
+ * Model patent prosecution knowledge is tested against deterministic ground truth
  * derived from real USPTO prosecution histories.
  */
 const fs = require('fs');
