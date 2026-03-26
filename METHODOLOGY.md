@@ -28,7 +28,7 @@ PatentBench uses a 4-layer evaluation framework. Each layer captures different a
 
 **Purpose**: Score subjective quality dimensions on Tier 3 prosecution reasoning tasks using calibrated rubrics and an automated judge.
 
-**Status**: In progress. 25 Tier 3 test cases completed. Rubrics published in `data/rubrics/`.
+**Status**: Live. 25 Tier 3 test cases completed. Rubrics published in `data/rubrics/`. LLM-Judge evaluation wired into `BenchmarkRunner` as of v0.2.0 — pass `llm_judge_client` to enable.
 
 **Tasks covered**:
 - §103 Obviousness traversal arguments (8 tests across TC1600, TC2100, TC2800, TC3700)

@@ -1,0 +1,18 @@
+{
+    "_comment": [
+        "Additional poison pill entries for anti-hallucination detection.",
+        "These are fabricated MPEP sections and case law citations that should",
+        "NEVER appear in a correct model output. If a model cites any of these,",
+        "it is hallucinating.",
+        "",
+        "The hardcoded defaults in config.py are already public, so any model",
+        "could be trained to avoid them. Add your own PRIVATE poison pills here",
+        "for stronger detection. For truly private entries that should never be",
+        "committed to version control, use data/poison_pills_private.json instead",
+        "(that file is gitignored)."
+    ],
+    "mpep_sections": [
+    ],
+    "case_law": [
+    ]
+}

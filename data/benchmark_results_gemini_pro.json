@@ -1,9 +1,9 @@
 {
   "benchmark": "PatentBench",
   "version": "0.2.0",
-  "model": "claude-sonnet-4",
-  "run_id": "run_20260323_012327",
-  "timestamp": "2026-03-23T01:23:27.460432",
+  "model": "gemini-2.5-pro",
+  "run_id": "run_20260323_012953",
+  "timestamp": "2026-03-23T01:32:09.139521",
   "config": {
     "subset": "mini",
     "domains": null,
@@ -13,16 +13,16 @@
     "run_llm_judge": false
   },
   "summary": {
-    "overall_score": 99.1,
+    "overall_score": 88.7,
     "total_cases": 5,
     "pass_rate": 1.0,
-    "tests_perfect": 4,
+    "tests_perfect": 3,
     "tests_with_errors": 0
   },
   "scores": {
     "by_domain": {
       "prosecution": {
-        "score": 98.2,
+        "score": 77.4,
         "cases": 4
       },
       "administration": {
@@ -36,7 +36,7 @@
         "cases": 2
       },
       "2": {
-        "score": 96.4,
+        "score": 54.8,
         "cases": 2
       },
       "1": {
@@ -50,7 +50,7 @@
         "cases": 2
       },
       "oa_parsing": {
-        "score": 96.4,
+        "score": 54.8,
         "cases": 2
       },
       "deadline_calculation": {
@@ -60,7 +60,7 @@
     },
     "by_layer": {
       "deterministic": {
-        "score": 98.6,
+        "score": 81.9,
         "weight": 0.3
       }
     }
@@ -76,7 +76,7 @@
       "details": [
         "format_compliance: CORRECT"
       ],
-      "latency_ms": 0.0,
+      "latency_ms": 37597.9,
       "error": null
     },
     {
@@ -89,7 +89,7 @@
       "details": [
         "format_compliance: CORRECT"
       ],
-      "latency_ms": 0.0,
+      "latency_ms": 35017.1,
       "error": null
     },
     {
@@ -97,12 +97,12 @@
       "task_type": "oa_parsing",
       "tier": 2,
       "domain": "prosecution",
-      "score": 1.0,
+      "score": 0.5,
       "passed": true,
       "details": [
-        "oa_parsing_accuracy: CORRECT"
+        "oa_parsing_accuracy: 0.50"
       ],
-      "latency_ms": 0.0,
+      "latency_ms": 19779.0,
       "error": null
     },
     {
@@ -110,12 +110,12 @@
       "task_type": "oa_parsing",
       "tier": 2,
       "domain": "prosecution",
-      "score": 0.9286,
+      "score": 0.5952,
       "passed": true,
       "details": [
-        "oa_parsing_accuracy: 0.93"
+        "oa_parsing_accuracy: 0.60"
       ],
-      "latency_ms": 0.0,
+      "latency_ms": 19593.6,
       "error": null
     },
     {
@@ -128,12 +128,12 @@
       "details": [
         "deadline_accuracy: CORRECT"
       ],
-      "latency_ms": 0.0,
+      "latency_ms": 24132.2,
       "error": null
     }
   ],
   "metadata": {
-    "total_latency_ms": 0.0,
+    "total_latency_ms": 136119.9,
     "total_tokens": 0,
     "harness_version": "0.2.0"
   }

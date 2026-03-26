@@ -179,6 +179,202 @@ class MetricsCalculator:
         )
 
     @staticmethod
+    def bootstrap_ci(
+        scores: list[float],
+        n_bootstrap: int = 10000,
+        ci: float = 0.95,
+    ) -> MetricResult:
+        """Compute bootstrap confidence interval for a set of scores.
+
+        Args:
+            scores: List of scores to compute CI for.
+            n_bootstrap: Number of bootstrap resamples.
+            ci: Confidence level (default 0.95 for 95% CI).
+
+        Returns:
+            MetricResult with mean as value and CI bounds in details.
+        """
+        if not scores:
+            return MetricResult(name="bootstrap_ci", value=0.0, count=0)
+
+        arr = np.array(scores)
+        n = len(arr)
+        rng = np.random.default_rng(seed=42)  # Fixed seed for reproducibility
+
+        bootstrap_means = np.array([
+            rng.choice(arr, size=n, replace=True).mean()
+            for _ in range(n_bootstrap)
+        ])
+
+        alpha = 1.0 - ci
+        lower = float(np.percentile(bootstrap_means, 100 * alpha / 2))
+        upper = float(np.percentile(bootstrap_means, 100 * (1 - alpha / 2)))
+
+        return MetricResult(
+            name="bootstrap_ci",
+            value=float(arr.mean()),
+            count=n,
+            details={
+                "ci_lower": lower,
+                "ci_upper": upper,
+                "ci_level": ci,
+                "n_bootstrap": n_bootstrap,
+            },
+        )
+
+    @staticmethod
+    def wilcoxon_signed_rank(
+        scores_a: list[float], scores_b: list[float]
+    ) -> MetricResult:
+        """Compute Wilcoxon signed-rank test for paired model comparison.
+
+        Non-parametric test for whether two paired samples come from the
+        same distribution. Used to determine if one model is statistically
+        significantly better than another.
+
+        Args:
+            scores_a: Scores from model A (one per test case).
+            scores_b: Scores from model B (same test cases, same order).
+
+        Returns:
+            MetricResult with p-value as value.
+        """
+        if len(scores_a) != len(scores_b) or not scores_a:
+            return MetricResult(name="wilcoxon_signed_rank", value=1.0, count=0)
+
+        differences = np.array(scores_a) - np.array(scores_b)
+        # Remove zero differences
+        nonzero_mask = differences != 0
+        differences = differences[nonzero_mask]
+
+        if len(differences) == 0:
+            return MetricResult(
+                name="wilcoxon_signed_rank", value=1.0, count=len(scores_a),
+                details={"statistic": 0.0, "p_value": 1.0, "note": "no differences"},
+            )
+
+        # Rank absolute differences
+        abs_diff = np.abs(differences)
+        ranks = np.argsort(np.argsort(abs_diff)) + 1.0  # Simple ranking
+
+        # Sum ranks of positive and negative differences
+        w_plus = float(np.sum(ranks[differences > 0]))
+        w_minus = float(np.sum(ranks[differences < 0]))
+        w_stat = min(w_plus, w_minus)
+
+        n = len(differences)
+        # Normal approximation for n >= 10
+        if n >= 10:
+            mean_w = n * (n + 1) / 4
+            std_w = np.sqrt(n * (n + 1) * (2 * n + 1) / 24)
+            z = (w_stat - mean_w) / std_w if std_w > 0 else 0.0
+            # Two-tailed p-value using normal approximation
+            from scipy.stats import norm  # type: ignore[import-untyped]
+            p_value = float(2 * norm.cdf(-abs(z)))
+        else:
+            # For small samples, return the statistic without p-value
+            p_value = float("nan")
+
+        return MetricResult(
+            name="wilcoxon_signed_rank",
+            value=p_value,
+            count=len(scores_a),
+            details={
+                "statistic": w_stat,
+                "p_value": p_value,
+                "w_plus": w_plus,
+                "w_minus": w_minus,
+                "n_nonzero": n,
+            },
+        )
+
+    @staticmethod
+    def cohens_d(scores_a: list[float], scores_b: list[float]) -> MetricResult:
+        """Compute Cohen's d effect size between two sets of scores.
+
+        Measures the standardized difference between two means.
+        |d| < 0.2: negligible, 0.2-0.5: small, 0.5-0.8: medium, > 0.8: large.
+
+        Args:
+            scores_a: Scores from model A.
+            scores_b: Scores from model B.
+
+        Returns:
+            MetricResult with Cohen's d as value.
+        """
+        if not scores_a or not scores_b:
+            return MetricResult(name="cohens_d", value=0.0, count=0)
+
+        a = np.array(scores_a)
+        b = np.array(scores_b)
+
+        mean_diff = float(a.mean() - b.mean())
+        # Pooled standard deviation
+        n_a, n_b = len(a), len(b)
+        pooled_std = float(np.sqrt(
+            ((n_a - 1) * a.var(ddof=1) + (n_b - 1) * b.var(ddof=1))
+            / (n_a + n_b - 2)
+        )) if (n_a + n_b) > 2 else 1.0
+
+        d = mean_diff / pooled_std if pooled_std > 0 else 0.0
+
+        # Interpret effect size
+        abs_d = abs(d)
+        if abs_d < 0.2:
+            interpretation = "negligible"
+        elif abs_d < 0.5:
+            interpretation = "small"
+        elif abs_d < 0.8:
+            interpretation = "medium"
+        else:
+            interpretation = "large"
+
+        return MetricResult(
+            name="cohens_d",
+            value=d,
+            count=n_a + n_b,
+            details={
+                "mean_a": float(a.mean()),
+                "mean_b": float(b.mean()),
+                "pooled_std": pooled_std,
+                "interpretation": interpretation,
+            },
+        )
+
+    @staticmethod
+    def bonferroni_correction(p_values: list[float]) -> MetricResult:
+        """Apply Bonferroni correction for multiple comparisons.
+
+        Adjusts p-values to control family-wise error rate when making
+        multiple statistical comparisons (e.g., comparing many model pairs).
+
+        Args:
+            p_values: Raw p-values from individual tests.
+
+        Returns:
+            MetricResult with number of significant results (at alpha=0.05)
+            as value, adjusted p-values in details.
+        """
+        if not p_values:
+            return MetricResult(name="bonferroni_correction", value=0.0, count=0)
+
+        n = len(p_values)
+        adjusted = [min(p * n, 1.0) for p in p_values]
+        significant = sum(1 for p in adjusted if p < 0.05)
+
+        return MetricResult(
+            name="bonferroni_correction",
+            value=float(significant),
+            count=n,
+            details={
+                "raw_p_values": p_values,
+                "adjusted_p_values": adjusted,
+                "n_comparisons": n,
+                "significant_at_005": significant,
+            },
+        )
+
+    @staticmethod
     def composite_benchmark_score(
         layer_scores: dict[str, float],
         layer_weights: dict[str, float],

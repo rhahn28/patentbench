@@ -14,6 +14,7 @@ from patentbench.config import (
     MPEP_SECTIONS,
     POISON_PILL_MPEP_SECTIONS,
     POISON_PILL_CASE_LAW,
+    get_all_poison_pills,
 )
 
 
@@ -178,6 +179,7 @@ class AntiHallucinationChecker:
         self,
         additional_valid_mpep: list[str] | None = None,
         additional_valid_cases: list[str] | None = None,
+        poison_pill_files: list[str] | None = None,
     ) -> None:
         self.extractor = CitationExtractor()
 
@@ -191,8 +193,12 @@ class AntiHallucinationChecker:
         if additional_valid_cases:
             self.valid_cases.update(additional_valid_cases)
 
-        self.poison_mpep: set[str] = set(POISON_PILL_MPEP_SECTIONS)
-        self.poison_cases: set[str] = set(POISON_PILL_CASE_LAW)
+        # Merge hardcoded poison pills with any loaded from runtime files
+        merged_mpep, merged_cases = get_all_poison_pills(
+            extra_files=poison_pill_files,
+        )
+        self.poison_mpep: set[str] = set(merged_mpep)
+        self.poison_cases: set[str] = set(merged_cases)
 
     def check(self, text: str) -> HallucinationReport:
         """Run all anti-hallucination checks on model output text.

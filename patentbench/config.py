@@ -6,12 +6,17 @@ the benchmark framework.
 
 from __future__ import annotations
 
+import json
+import logging
 from dataclasses import dataclass, field
 from enum import Enum, IntEnum
+from pathlib import Path
 from typing import Any
 
+logger = logging.getLogger(__name__)
 
-BENCHMARK_VERSION = "0.1.0"
+
+BENCHMARK_VERSION = "0.2.0"
 BENCHMARK_NAME = "PatentBench"
 MINI_SUBSET_SIZE = 300
 FULL_BENCHMARK_SIZE = 7200
@@ -313,3 +318,83 @@ POISON_PILL_CASE_LAW: list[str] = [
     "TechCorp v. InnovateCo, 888 F.3d 222 (Fed. Cir. 2024)",
     "Digital Innovations LLC v. Patent Office, 777 F.3d 333 (Fed. Cir. 2023)",
 ]
+
+
+# ---- Runtime Poison Pill Loading ----
+
+_POISON_PILLS_FILE_PATHS: list[str] = [
+    "data/poison_pills.json",
+    "data/poison_pills_private.json",
+]
+
+
+def load_poison_pills_from_file(filepath: str | Path) -> tuple[list[str], list[str]]:
+    """Load additional poison pills from a JSON file.
+
+    Args:
+        filepath: Path to a JSON file with ``mpep_sections`` and/or
+            ``case_law`` keys, each containing a list of strings.
+
+    Returns:
+        Tuple of (mpep_sections, case_law) loaded from the file.
+        Returns empty lists for missing keys or if the file doesn't exist.
+    """
+    path = Path(filepath)
+    if not path.is_file():
+        return [], []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        mpep = data.get("mpep_sections", [])
+        cases = data.get("case_law", [])
+        if not isinstance(mpep, list) or not isinstance(cases, list):
+            logger.warning("Poison pill file %s has invalid format; expected lists", path)
+            return [], []
+        return mpep, cases
+    except (json.JSONDecodeError, OSError) as exc:
+        logger.warning("Failed to load poison pills from %s: %s", path, exc)
+        return [], []
+
+
+def get_all_poison_pills(
+    extra_files: list[str | Path] | None = None,
+) -> tuple[list[str], list[str]]:
+    """Return merged poison pills from hardcoded defaults and runtime files.
+
+    Reads from the default file paths (``data/poison_pills.json`` and
+    ``data/poison_pills_private.json``) plus any *extra_files* provided.
+    Deduplicates while preserving order (hardcoded entries first).
+
+    Args:
+        extra_files: Optional additional file paths to load from.
+
+    Returns:
+        Tuple of (mpep_sections, case_law) with duplicates removed.
+    """
+    all_mpep: list[str] = list(POISON_PILL_MPEP_SECTIONS)
+    all_cases: list[str] = list(POISON_PILL_CASE_LAW)
+
+    files_to_check = list(_POISON_PILLS_FILE_PATHS)
+    if extra_files:
+        files_to_check.extend(str(f) for f in extra_files)
+
+    for fpath in files_to_check:
+        mpep, cases = load_poison_pills_from_file(fpath)
+        all_mpep.extend(mpep)
+        all_cases.extend(cases)
+
+    # Deduplicate while preserving order
+    seen_mpep: set[str] = set()
+    deduped_mpep: list[str] = []
+    for item in all_mpep:
+        if item not in seen_mpep:
+            seen_mpep.add(item)
+            deduped_mpep.append(item)
+
+    seen_cases: set[str] = set()
+    deduped_cases: list[str] = []
+    for item in all_cases:
+        if item not in seen_cases:
+            seen_cases.add(item)
+            deduped_cases.append(item)
+
+    return deduped_mpep, deduped_cases

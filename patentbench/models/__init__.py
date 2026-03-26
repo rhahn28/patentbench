@@ -5,5 +5,6 @@ on patent prosecution tasks.
 """
 
 from patentbench.models.base import BaseModelAdapter
+from patentbench.models.huggingface_adapter import HuggingFaceAdapter
 
-__all__ = ["BaseModelAdapter"]
+__all__ = ["BaseModelAdapter", "HuggingFaceAdapter"]

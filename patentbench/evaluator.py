@@ -200,40 +200,96 @@ class DeterministicEvaluator(BaseEvaluator):
         )
 
     def _check_entity_status(self, case: TestCase, output: str) -> MetricResult:
-        """Verify entity status determination."""
+        """Verify entity status determination.
+
+        Uses negation-aware matching to avoid false positives like
+        "not a micro entity" being detected as "micro".
+        """
         expected = case.reference_answer.strip().lower()
         output_lower = output.lower()
 
+        # Try structured JSON extraction first
+        json_match = re.search(r'"entity_status"\s*:\s*"(\w+)"', output_lower)
+        if json_match:
+            found_status = json_match.group(1)
+            match = found_status == expected
+            return MetricResult(
+                name="entity_status_accuracy",
+                value=1.0 if match else 0.0,
+                count=1,
+                details={"expected": expected, "found": found_status, "method": "json"},
+            )
+
+        # Negation-aware regex matching: find statuses NOT preceded by negation
+        # Search in reverse priority order (large > small > micro) so we find
+        # the affirmatively stated status, not a negated mention.
         valid_statuses = ["micro", "small", "large"]
-        found_status = None
+        affirmed_status = None
+        negated_statuses: set[str] = set()
+
         for status in valid_statuses:
-            if status in output_lower:
-                found_status = status
+            # Check for negation patterns: "not a micro", "not micro", "no micro"
+            negation_pattern = rf'(?:not\s+(?:a\s+)?|no\s+)\b{status}\b'
+            if re.search(negation_pattern, output_lower):
+                negated_statuses.add(status)
+
+        # Now find affirmative mentions (present but not only in negated context)
+        for status in valid_statuses:
+            if re.search(rf'\b{status}\b', output_lower) and status not in negated_statuses:
+                affirmed_status = status
                 break
 
-        match = found_status == expected
+        # Fallback: if all mentions are negated, pick from non-negated statuses
+        if affirmed_status is None:
+            for status in valid_statuses:
+                if re.search(rf'\b{status}\b', output_lower):
+                    if status not in negated_statuses:
+                        affirmed_status = status
+                        break
+
+        match = affirmed_status == expected
         return MetricResult(
             name="entity_status_accuracy",
             value=1.0 if match else 0.0,
             count=1,
-            details={"expected": expected, "found": found_status},
+            details={
+                "expected": expected,
+                "found": affirmed_status,
+                "negated": list(negated_statuses),
+                "method": "negation_aware",
+            },
         )
 
     def _check_oa_parsing(self, case: TestCase, output: str) -> MetricResult:
         """Verify Office Action parsing accuracy.
 
         Checks extraction of rejection types, claim numbers, and grounds.
+        If the test case includes XML source data (in metadata.xml_source),
+        uses the reference XML parser for ground-truth comparison.
         """
         ref_data = json.loads(case.reference_answer) if isinstance(case.reference_answer, str) and case.reference_answer.startswith("{") else {}
 
         scores: list[float] = []
 
+        # If XML source is available, also parse it for enhanced comparison
+        xml_parsed = None
+        xml_source = case.metadata.get("xml_source", "")
+        if xml_source:
+            from patentbench.xml_parser import parse_oa_xml
+            xml_parsed = parse_oa_xml(xml_source)
+
         # Check rejection type extraction
         if "rejection_types" in ref_data:
             expected_types = set(ref_data["rejection_types"])
             found_types: set[str] = set()
+            output_lower = output.lower()
             for rt in RejectionType:
-                if rt.value in output or rt.display_name.lower() in output.lower():
+                # Use word-boundary regex to avoid matching "103" in page
+                # numbers, citation numbers, or other unrelated contexts.
+                # Also match statutory citation patterns like "§103", "35 U.S.C. 103"
+                value_escaped = re.escape(rt.value)
+                statutory_pattern = rf'(?:§\s*{value_escaped}|35\s+U\.?S\.?C\.?\s+§?\s*{value_escaped}|\b{value_escaped}\b)'
+                if re.search(statutory_pattern, output) or rt.display_name.lower() in output_lower:
                     found_types.add(rt.value)
             if expected_types:
                 overlap = expected_types & found_types
@@ -242,10 +298,11 @@ class DeterministicEvaluator(BaseEvaluator):
                 f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
                 scores.append(f1)
 
-        # Check claim number extraction
+        # Check claim number extraction (using range expansion from xml_parser)
         if "claims" in ref_data:
             expected_claims = set(ref_data["claims"])
-            found_claims = set(int(c) for c in re.findall(r"claim\s*(\d+)", output, re.IGNORECASE))
+            from patentbench.xml_parser import expand_claim_ranges
+            found_claims = set(expand_claim_ranges(output))
             if expected_claims:
                 overlap = expected_claims & found_claims
                 precision = len(overlap) / len(found_claims) if found_claims else 0.0

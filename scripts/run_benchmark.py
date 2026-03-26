@@ -11,6 +11,7 @@ Usage:
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -57,6 +58,9 @@ def _create_model_adapter(model_spec: str, api_key: str | None = None):
     elif provider == "google":
         from patentbench.models.google_adapter import GoogleAdapter
         return GoogleAdapter(model_name=model_name, api_key=api_key)
+    elif provider == "huggingface":
+        from patentbench.models.huggingface_adapter import HuggingFaceAdapter
+        return HuggingFaceAdapter(model_name=model_name, api_key=api_key)
     else:
         raise click.BadParameter(f"Unknown provider: {provider}")
 
@@ -185,8 +189,34 @@ def main(
     if not data_path.is_absolute():
         data_path = PROJECT_ROOT / data_path
 
+    # Create LLM judge client if Layer 2 is enabled
+    llm_judge_client = None
+    if not no_judge:
+        judge_api_key = api_key or os.environ.get("GOOGLE_API_KEY", "")
+        if judge_api_key:
+            try:
+                import google.generativeai as genai
+                genai.configure(api_key=judge_api_key)
+
+                class _GeminiJudge:
+                    def __init__(self):
+                        self._model = genai.GenerativeModel(
+                            model_name="gemini-2.5-flash",
+                            system_instruction="You are an expert patent attorney evaluating AI-generated patent prosecution arguments.",
+                        )
+                    def generate(self, prompt: str, max_tokens: int = 2048, temperature: float = 0.0) -> str:
+                        cfg = genai.types.GenerationConfig(max_output_tokens=max_tokens, temperature=temperature)
+                        return self._model.generate_content(prompt, generation_config=cfg).text or ""
+
+                llm_judge_client = _GeminiJudge()
+                if verbose:
+                    click.echo("LLM judge: gemini-2.5-flash (Layer 2 enabled)")
+            except ImportError:
+                if verbose:
+                    click.echo("Warning: google-generativeai not installed, Layer 2 disabled")
+
     # Run benchmark
-    runner = BenchmarkRunner(model=adapter, data_dir=data_path, config=config)
+    runner = BenchmarkRunner(model=adapter, data_dir=data_path, config=config, llm_judge_client=llm_judge_client)
 
     if verbose:
         click.echo("Loading test cases...")

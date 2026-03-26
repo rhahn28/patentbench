@@ -18,6 +18,7 @@ from patentbench.evaluator import (
 )
 from patentbench.harness import BenchmarkRunner
 from patentbench.metrics import MetricsCalculator
+from patentbench.xml_parser import parse_oa_xml, parse_claims_xml, expand_claim_ranges
 
 __version__ = BENCHMARK_VERSION
 __author__ = "Salt Holdings LLC"
@@ -35,4 +36,7 @@ __all__ = [
     "HumanCalibrationCollector",
     "BenchmarkRunner",
     "MetricsCalculator",
+    "parse_oa_xml",
+    "parse_claims_xml",
+    "expand_claim_ranges",
 ]

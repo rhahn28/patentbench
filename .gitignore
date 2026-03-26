@@ -17,5 +17,6 @@ results/
 data/raw_oa/
 .env
 *.log
+data/poison_pills_private.json
 .vscode/
 .idea/

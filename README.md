@@ -37,16 +37,16 @@ Patent prosecution has remained one of the last untouched domains for AI benchma
 | **Analytics** | Portfolio analysis, prior art landscape, claim mapping | Identify claim overlap across patent family |
 | **Prior Art** | Search strategy, reference analysis, relevance ranking | Evaluate novelty of claims against prior art set |
 
-### 7,200 Total Test Cases
+### Test Cases
 
-PatentBench contains 7,200 expert-curated test cases spanning all five domains. The initial release, **PatentBench-Mini**, includes 300 representative cases for rapid evaluation.
+The initial release includes real USPTO prosecution data across multiple tiers:
 
-| Subset | Cases | Purpose |
-|--------|-------|---------|
-| PatentBench-Full | 7,200 | Complete evaluation |
-| PatentBench-Mini | 300 | Quick iteration and development |
-| PatentBench-OA | 1,800 | Office Action response focus |
-| PatentBench-Draft | 1,200 | Drafting focus |
+| Subset | Cases | Status | Purpose |
+|--------|-------|--------|---------|
+| PatentBench-Mini | 5 | **Live** | Quick iteration and development |
+| Real OA Benchmark | 604 | **Live** | Full deterministic evaluation from USPTO PEDS |
+| Tier 3 Reasoning | 25 | **Live** | LLM-Judge evaluated prosecution arguments |
+| PatentBench-Full | 7,200 | Roadmap (18-week target) | Complete evaluation |
 
 ### 5 Difficulty Tiers
 
@@ -119,14 +119,29 @@ print(results.summary())
 
 ## Leaderboard
 
-Results on PatentBench-Mini (300 cases). Last updated: 2026-03-19.
+Results on PatentBench-Mini (5 cases). Last updated: 2026-03-25.
 
-| System | Classification | Timeline | Fees | Deadlines | **Layer 1 Overall** |
-|--------|---------------|----------|------|-----------|---------------------|
-| ABIGAIL v3 | **100.0%** | **100.0%** | **100.0%** | **100.0%** | **100.0%** |
-| ABIGAIL v3 (Variant B) | 92.7% | 94.2% | 100.0% | 99.0% | 95.9% |
+| System | Deadlines | OA Parsing | 103 Arguments | **Layer 1 Overall** |
+|--------|-----------|------------|---------------|---------------------|
+| ABIGAIL v3 | **100.0%** | **100.0%** | **100.0%** | **100.0%** |
+| Claude Sonnet 4 | **100.0%** | 96.4% | **100.0%** | 99.1% |
+| Gemini 2.5 Flash | **100.0%** | 96.4% | **100.0%** | 99.1% |
+| Gemini 2.5 Pro | **100.0%** | 58.6% | **100.0%** | 89.7% |
+| GPT-4o | — | — | — | *Submit results* |
 
-> Layer 1 (deterministic) results only. Layer 2-4 evaluation in progress. Submit your system for evaluation — see [METHODOLOGY.md](METHODOLOGY.md). Underlying model architectures are not disclosed; results measure system-level output quality.
+> **Conflict of Interest Disclosure**: PatentBench is developed by Salt Holdings LLC, which also develops [ABIGAIL](https://abigail.app), a patent prosecution AI system evaluated on this benchmark. ABIGAIL's 100% score on Layer 1 deterministic tasks reflects the overlap between benchmark creation and product development. We are actively seeking independent evaluators and external model submissions to validate benchmark fairness.
+
+### Layer 2: Prosecution Reasoning (Tier 3)
+
+22 complex reasoning cases scored by LLM-Judge across 4 dimensions (legal accuracy, factual accuracy, argument strength, completeness).
+
+| System | 103 Obvs | 102 Antic | 112 Indef | 101 Elig | Amend | **Layer 2 Overall** |
+|--------|----------|-----------|-----------|----------|-------|---------------------|
+| Gemini 2.5 Flash | 80.7% | 59.4% | 63.7% | 72.0% | 68.3% | **71.1%** (CI: 63.1–78.3%) |
+| Claude Sonnet 4 | — | — | — | — | — | *Pending* |
+| GPT-4o | — | — | — | — | — | *Submit results* |
+
+> Submit your system for evaluation — see [METHODOLOGY.md](METHODOLOGY.md).
 
 ## Glass Box Standard
 
