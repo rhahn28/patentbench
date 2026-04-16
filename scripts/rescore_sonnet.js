@@ -129,7 +129,7 @@ function main() {
   }
 
   console.log('='.repeat(60));
-  console.log('  CLAUDE SONNET 4.6 — PATENTBENCH RESULTS (Re-scored)');
+  console.log('  CLAUDE SONNET 4.6: PATENTBENCH RESULTS (Re-scored)');
   console.log('='.repeat(60));
   console.log(`  Overall: ${(totalScore/totalMax*100).toFixed(1)}%`);
   console.log(`  Tests: ${progress.results.length}/${tests.length}`);

@@ -5,7 +5,7 @@
 ## Subject Line Options
 
 1. **Research Collaboration: The First Benchmark for AI Patent Prosecution**
-2. **PatentBench — Filling a Critical Gap in Legal AI Evaluation (Collaboration Invitation)**
+2. **PatentBench. Filling a Critical Gap in Legal AI Evaluation (Collaboration Invitation)**
 3. **NeurIPS Submission Opportunity: Benchmarking LLMs on Patent Office Action Responses**
 
 ---
@@ -17,11 +17,11 @@
 
 Dear Professor [NAME],
 
-Your work on [PAPER TITLE / RESEARCH AREA — e.g., "AI-Assisted Legal Reasoning" / "Computational Approaches to Patent Analysis" / "Empirical Studies of Patent Prosecution Outcomes"] has been influential in framing how we think about [SPECIFIC CONTRIBUTION — e.g., the intersection of machine learning and patent law / empirical measurement of legal quality]. I am writing because I believe your research agenda aligns closely with a project I am building, and I would like to explore a collaboration.
+Your work on [PAPER TITLE / RESEARCH AREA, e.g., "AI-Assisted Legal Reasoning" / "Computational Approaches to Patent Analysis" / "Empirical Studies of Patent Prosecution Outcomes"] has been influential in framing how we think about [SPECIFIC CONTRIBUTION, e.g., the intersection of machine learning and patent law / empirical measurement of legal quality]. I am writing because I believe your research agenda aligns closely with a project I am building, and I would like to explore a collaboration.
 
 **The Gap**
 
-Legal AI benchmarks exist for contract review (ContractNLI), case prediction (CAIL), and statutory interpretation. But there is no benchmark for patent prosecution — the single most high-volume, economically consequential task in IP law. Every major AI company is building patent tools, and the profession has no rigorous way to evaluate them. This is a significant gap in the literature and in practice.
+Legal AI benchmarks exist for contract review (ContractNLI), case prediction (CAIL), and statutory interpretation. But there is no benchmark for patent prosecution, the single most high-volume, economically consequential task in IP law. Every major AI company is building patent tools, and the profession has no rigorous way to evaluate them. This is a significant gap in the literature and in practice.
 
 **What is PatentBench?**
 
@@ -36,7 +36,7 @@ This is, to my knowledge, the first attempt at a standardized, reproducible benc
 
 **Why your expertise matters:**
 
-The evaluation rubric is the heart of the benchmark. We need legal scholarship rigor in defining what "quality" means for an Office Action response. Your work on [SPECIFIC ASPECT OF THEIR RESEARCH] is directly relevant to [SPECIFIC RUBRIC DIMENSION — e.g., how we define and measure "strategic soundness" / "argument quality" / "legal reasoning accuracy"].
+The evaluation rubric is the heart of the benchmark. We need legal scholarship rigor in defining what "quality" means for an Office Action response. Your work on [SPECIFIC ASPECT OF THEIR RESEARCH] is directly relevant to [SPECIFIC RUBRIC DIMENSION, e.g., how we define and measure "strategic soundness" / "argument quality" / "legal reasoning accuracy"].
 
 **The collaboration:**
 
@@ -63,17 +63,17 @@ Creator, PatentBench
 
 Dear Professor [NAME],
 
-Your recent work on [PAPER TITLE / RESEARCH AREA — e.g., "Evaluating LLMs on Domain-Specific Professional Tasks" / "Benchmark Design for Reasoning-Intensive Applications" / "Retrieval-Augmented Generation for Specialized Knowledge Domains"] is highly relevant to a benchmark project I am building, and I wanted to explore whether a collaboration might interest you.
+Your recent work on [PAPER TITLE / RESEARCH AREA, e.g., "Evaluating LLMs on Domain-Specific Professional Tasks" / "Benchmark Design for Reasoning-Intensive Applications" / "Retrieval-Augmented Generation for Specialized Knowledge Domains"] is highly relevant to a benchmark project I am building, and I wanted to explore whether a collaboration might interest you.
 
 **The Problem**
 
-LLM benchmarks cover code generation (HumanEval), mathematical reasoning (MATH/GSM8K), medical knowledge (MedQA), and general legal tasks (LegalBench). But there is no benchmark for patent prosecution — a domain that combines complex legal reasoning, technical analysis, strategic argumentation, and strict procedural compliance. It is arguably one of the most demanding professional knowledge tasks an LLM can attempt, and it is completely unmeasured.
+LLM benchmarks cover code generation (HumanEval), mathematical reasoning (MATH/GSM8K), medical knowledge (MedQA), and general legal tasks (LegalBench). But there is no benchmark for patent prosecution, a domain that combines complex legal reasoning, technical analysis, strategic argumentation, and strict procedural compliance. It is arguably one of the most demanding professional knowledge tasks an LLM can attempt, and it is completely unmeasured.
 
 **What is PatentBench?**
 
 PatentBench is a benchmark and evaluation harness for measuring LLM performance on responding to USPTO patent Office Actions. Key characteristics:
 
-- **Task complexity:** Each instance requires reading a multi-page examiner rejection, analyzing cited prior art, constructing legal arguments, and drafting claim amendments — all under strict procedural rules
+- **Task complexity:** Each instance requires reading a multi-page examiner rejection, analyzing cited prior art, constructing legal arguments, and drafting claim amendments, all under strict procedural rules
 - **Ground truth:** Real attorney responses that resulted in patent allowance
 - **Multi-dimensional evaluation:** Not just "correct/incorrect" but rated across legal accuracy, strategic quality, technical understanding, and compliance
 - **Expert-validated:** Scoring by practicing USPTO-registered patent attorneys
@@ -114,9 +114,9 @@ Creator, PatentBench
 
 Dear Professor [NAME],
 
-Your interdisciplinary work bridging [LAW AREA] and [CS AREA] — particularly [SPECIFIC PAPER OR PROJECT] — is exactly the kind of perspective that a new benchmark project needs. I am building PatentBench, the first standardized benchmark for evaluating AI systems on patent prosecution tasks, and I believe a collaboration could be mutually productive.
+Your interdisciplinary work bridging [LAW AREA] and [CS AREA], particularly [SPECIFIC PAPER OR PROJECT], is exactly the kind of perspective that a new benchmark project needs. I am building PatentBench, the first standardized benchmark for evaluating AI systems on patent prosecution tasks, and I believe a collaboration could be mutually productive.
 
-Patent prosecution sits at the intersection of legal reasoning, technical analysis, and strategic communication — making it one of the richest domains for studying LLM capabilities in professional settings. Yet no benchmark exists. PatentBench fills that gap with a curated dataset of real Office Actions, expert-validated evaluation rubrics, and a reproducible evaluation harness.
+Patent prosecution sits at the intersection of legal reasoning, technical analysis, and strategic communication, making it one of the richest domains for studying LLM capabilities in professional settings. Yet no benchmark exists. PatentBench fills that gap with a curated dataset of real Office Actions, expert-validated evaluation rubrics, and a reproducible evaluation harness.
 
 **What makes this unique as a research contribution:**
 
@@ -144,7 +144,7 @@ Creator, PatentBench
 
 ## Follow-Up Template (All Versions)
 
-**Subject:** Re: [ORIGINAL SUBJECT] — Dataset Preview Available
+**Subject:** Re: [ORIGINAL SUBJECT]. Dataset Preview Available
 
 Dear Professor [NAME],
 

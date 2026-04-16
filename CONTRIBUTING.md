@@ -22,9 +22,9 @@ Test cases are the foundation of PatentBench. We welcome contributions of high-q
 2. Create test cases in JSONL format in the appropriate `data/` subdirectory
 3. Validate your test cases: `python -m patentbench.data_loader --validate your_file.jsonl`
 4. Submit a pull request with:
-   - The test case file
-   - A description of the technology area and difficulty tier
-   - Confirmation of expert review
+ - The test case file
+ - A description of the technology area and difficulty tier
+ - Confirmation of expert review
 
 ### Contributing Evaluation Rubrics
 
@@ -39,7 +39,7 @@ Rubrics define the scoring criteria for LLM-as-Judge evaluation.
 
 ### Contributing Model Adapters
 
-Model adapters connect new AI systems to the benchmark framework. For a complete guide — including how to integrate commercial tools (SOLV, PatSnap, etc.), CSV round-trip for no-API systems, and browser automation — see **[INTEGRATION.md](INTEGRATION.md)**.
+Model adapters connect new AI systems to the benchmark framework. For a complete guide, including how to integrate commercial tools (SOLV, PatSnap, etc.), CSV round-trip for no-API systems, and browser automation, see **[INTEGRATION.md](INTEGRATION.md)**.
 
 #### Requirements
 

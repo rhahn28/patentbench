@@ -378,7 +378,7 @@ function scoreTimeline(response, groundTruth) {
 
 function scoreResponse(taskType, response, groundTruth) {
   if (response._parse_error) {
-    // Couldn't parse JSON — score 0
+    // Couldn't parse JSON, score 0
     const maxScores = { deadline_calculation: 3, action_classification: 4, fee_computation: 3, timeline_analysis: 3 };
     const ms = maxScores[taskType] || 3;
     return { score: 0, maxScore: ms, percentage: '0.0', details: [`PARSE_ERROR: could not extract JSON from model response`] };

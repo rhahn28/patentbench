@@ -4,7 +4,7 @@ This document describes the evaluation methodology, scoring framework, contamina
 
 ## 1. Evaluation Framework
 
-PatentBench uses a 4-layer evaluation framework. Each layer captures different aspects of system quality, from objective correctness to subjective expert judgment. Systems are evaluated as black boxes — the underlying model architecture is irrelevant; only outputs are measured.
+PatentBench uses a 4-layer evaluation framework. Each layer captures different aspects of system quality, from objective correctness to subjective expert judgment. Systems are evaluated as black boxes, the underlying model architecture is irrelevant; only outputs are measured.
 
 ### Layer 1: Deterministic Evaluation
 
@@ -16,11 +16,11 @@ PatentBench uses a 4-layer evaluation framework. Each layer captures different a
 - **Deadline calculation** (125 tests): Response deadlines from OA mailing dates. Shortened statutory period (3 months) and maximum deadline (6 months) under 37 CFR 1.134 and 35 USC 133. Includes end-of-month clamping edge cases.
 - **Action classification** (82 tests): Parsing prosecution event codes (CTNF, CTFR, NOA, etc.) to identify Non-Final, Final, and Allowance actions plus total OA round count.
 - **Fee computation** (10 tests): USPTO fee lookups based on entity status (micro/small/large), including extension fees, RCE fees, and issue fees at current 2025 rates.
-- **Timeline analysis** (81 tests): Reconstructing prosecution timelines from event records — total events, first/last dates, prosecution duration in days.
+- **Timeline analysis** (81 tests): Reconstructing prosecution timelines from event records, total events, first/last dates, prosecution duration in days.
 
 **Scoring**: Binary (correct/incorrect) per field. Each test case has multiple scored fields (e.g., deadline tests score shortened_deadline, max_deadline, action_type, and options separately). Final score = correct fields / total fields.
 
-**Ground truth generation**: Ground truth is computed deterministically from USPTO Open Data Portal API data. No human annotation required — these are mathematical/lookup tasks with single correct answers. The ground truth generator and scorer are open-source in `scripts/`.
+**Ground truth generation**: Ground truth is computed deterministically from USPTO Open Data Portal API data. No human annotation required, these are mathematical/lookup tasks with single correct answers. The ground truth generator and scorer are open-source in `scripts/`.
 
 **Weight in composite score**: 30%
 
@@ -88,10 +88,10 @@ Each test provides: a rejection scenario, the specific claim at issue, cited pri
 2. Attorneys score the same dimensions as the automated judge (1-5 scale per dimension) using identical rubrics
 3. Attorneys also provide free-text feedback on argument quality, missed issues, and strategic concerns
 4. Inter-rater reliability is computed:
-   - Cohen's Kappa between each attorney pair
-   - Cohen's Kappa between each attorney and the automated judge
-   - Krippendorff's Alpha across all raters
-5. Results calibrate the automated judge — if judge systematically over/under-scores a dimension, a linear correction is applied
+ - Cohen's Kappa between each attorney pair
+ - Cohen's Kappa between each attorney and the automated judge
+ - Krippendorff's Alpha across all raters
+5. Results calibrate the automated judge, if judge systematically over/under-scores a dimension, a linear correction is applied
 
 **Inter-rater reliability target**: Cohen's Kappa >= 0.60 (substantial agreement). If below 0.60, rubrics are refined and re-calibrated.
 
@@ -146,7 +146,7 @@ Patent prosecution demands zero tolerance for fabricated legal authority. Patent
 Each Tier 3 test case embeds fabricated MPEP sections and case law citations in the context. If a system references these fabricated citations, it receives a 2x scoring penalty.
 
 **Examples of poison pills**:
-- MPEP 2199 (does not exist — MPEP 2100 series ends at 2190)
+- MPEP 2199 (does not exist. MPEP 2100 series ends at 2190)
 - "Smith v. USPTO, 999 F.3d 1 (Fed. Cir. 2025)" (fabricated case)
 - MPEP 714.19(c) (fabricated subsection)
 
@@ -178,7 +178,7 @@ This score is incorporated into the Layer 2 judge evaluation as a multiplier on 
 
 ### Canary Strings
 
-Select test cases contain unique canary strings — distinctive phrases that would be detectable if present in model training data. These serve as contamination detectors for future evaluations.
+Select test cases contain unique canary strings, distinctive phrases that would be detectable if present in model training data. These serve as contamination detectors for future evaluations.
 
 ### Temporal Controls
 

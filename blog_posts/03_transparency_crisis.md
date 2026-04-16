@@ -5,14 +5,14 @@ author: Roger Hahn
 category: insights
 meta_description: "Over $100M has been invested in patent AI tools, yet no company publishes reproducible accuracy data. We examine the transparency crisis and what patent attorneys should demand."
 tags:
-  - patent AI
-  - patent prosecution
-  - legal AI
-  - transparency
-  - hallucination
-  - AI benchmark
-  - due diligence
-  - PatentBench
+ - patent AI
+ - patent prosecution
+ - legal AI
+ - transparency
+ - hallucination
+ - AI benchmark
+ - due diligence
+ - PatentBench
 ---
 
 # The Transparency Crisis in Patent AI: $100M+ in Funding, Zero Published Accuracy Data
@@ -51,8 +51,8 @@ The absence of transparency in patent AI is especially concerning in light of wh
 
 In 2024, researchers at Stanford's Institute for Human-Centered AI conducted a systematic evaluation of AI-assisted legal research tools from the two largest legal information providers. The findings were sobering:
 
-- **LexisNexis AI** hallucinated on **17%** of legal research queries — citing cases that did not exist, mischaracterizing holdings, or fabricating legal principles.
-- **Westlaw AI (Thomson Reuters)** hallucinated on **33%** of queries — one in three responses contained material inaccuracies.
+- **LexisNexis AI** hallucinated on **17%** of legal research queries, citing cases that did not exist, mischaracterizing holdings, or fabricating legal principles.
+- **Westlaw AI (Thomson Reuters)** hallucinated on **33%** of queries, one in three responses contained material inaccuracies.
 
 These are not startup prototypes. These are tools from billion-dollar companies, deployed to thousands of law firms, built by teams with decades of legal technology experience. And they hallucinate at rates that would be considered a safety hazard in any other professional context.
 
@@ -68,15 +68,15 @@ The most common performance claim in patent AI marketing is some variant of prod
 
 These claims share a common deficiency: they measure speed without measuring accuracy.
 
-A system that generates an Office Action response in 30 minutes instead of 10 hours sounds impressive — until you discover that an attorney must spend 4 hours verifying and correcting the output. The net time savings may be real, but the marketed "50% more productive" figure obscures a critical question: how much of the AI's output was wrong?
+A system that generates an Office Action response in 30 minutes instead of 10 hours sounds impressive, until you discover that an attorney must spend 4 hours verifying and correcting the output. The net time savings may be real, but the marketed "50% more productive" figure obscures a critical question: how much of the AI's output was wrong?
 
 Productivity claims without accuracy methodology are meaningless for three reasons:
 
-**They conflate speed with quality.** An AI that generates a plausible-sounding but factually incorrect 103 argument in 5 minutes is not "productive" — it is dangerous. The attorney must now do the original work plus the additional work of identifying which parts of the AI output are wrong.
+**They conflate speed with quality.** An AI that generates a plausible-sounding but factually incorrect 103 argument in 5 minutes is not "productive", it is dangerous. The attorney must now do the original work plus the additional work of identifying which parts of the AI output are wrong.
 
 **They lack control conditions.** "50% faster" compared to what? Compared to the same attorney without the tool? Compared to a different attorney? Compared to the firm's historical average? Without a disclosed methodology, the number is unfalsifiable.
 
-**They select for favorable cases.** Vendors typically derive productivity numbers from self-selected customer surveys or internal testing on cherry-picked examples. The cases where the AI completely failed — generating unusable output that the attorney had to discard — are unlikely to appear in the sample.
+**They select for favorable cases.** Vendors typically derive productivity numbers from self-selected customer surveys or internal testing on cherry-picked examples. The cases where the AI completely failed, generating unusable output that the attorney had to discard, are unlikely to appear in the sample.
 
 The standard that patent attorneys should demand is simple: show me the accuracy data, not just the speed data.
 
@@ -88,7 +88,7 @@ If you are a patent attorney, law firm partner, or corporate IP counsel evaluati
 
 Ask the vendor: "What benchmark do you evaluate against, and can I run it independently?"
 
-If the answer is "we have internal benchmarks but they're proprietary," that tells you something important. Internal benchmarks are not benchmarks — they are QA tests designed by the same team that built the system. They are optimized to make the system look good.
+If the answer is "we have internal benchmarks but they're proprietary," that tells you something important. Internal benchmarks are not benchmarks, they are QA tests designed by the same team that built the system. They are optimized to make the system look good.
 
 A real benchmark is:
 - Publicly available
@@ -152,15 +152,15 @@ When PatentBench results are published, patent attorneys will be able to make in
 
 These are the questions that matter for purchasing decisions. Today, buyers have no data. After PatentBench, they will.
 
-We will publish ABIGAIL's own results, including areas where we underperform. We expect our numbers to be imperfect. Every system's numbers will be imperfect. The point is not perfection — it is transparency.
+We will publish ABIGAIL's own results, including areas where we underperform. We expect our numbers to be imperfect. Every system's numbers will be imperfect. The point is not perfection, it is transparency.
 
 ## The Cost of Opacity
 
 The transparency crisis in patent AI has real costs that are borne by practitioners and their clients.
 
-**Wasted attorney time.** When attorneys cannot evaluate AI accuracy before adoption, they learn the system's failure modes through experience — which means spending hours correcting AI-generated errors that a benchmark would have predicted.
+**Wasted attorney time.** When attorneys cannot evaluate AI accuracy before adoption, they learn the system's failure modes through experience, which means spending hours correcting AI-generated errors that a benchmark would have predicted.
 
-**Client risk.** A hallucinated prior art characterization that makes it into a USPTO filing can create prosecution history estoppel based on a distinction that does not exist. This is not a theoretical risk — it is the natural consequence of using tools with unknown hallucination rates on consequential legal documents.
+**Client risk.** A hallucinated prior art characterization that makes it into a USPTO filing can create prosecution history estoppel based on a distinction that does not exist. This is not a theoretical risk, it is the natural consequence of using tools with unknown hallucination rates on consequential legal documents.
 
 **Market inefficiency.** Without benchmark data, buyers cannot distinguish between genuinely superior tools and tools with superior marketing. Capital flows to companies with the best sales teams, not the best technology. This is bad for buyers, bad for innovation, and ultimately bad for the vendors who actually do have superior technology but cannot prove it.
 
