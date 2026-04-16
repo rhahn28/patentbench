@@ -99,14 +99,28 @@ class DeterministicEvaluator(BaseEvaluator):
     Handles:
     - Deadline calculation accuracy
     - Fee computation accuracy
-    - Format compliance checks
+    - Action classification accuracy
+    - Timeline analysis accuracy
     - Entity status determination
-    - Rejection type identification
-    - Claim number extraction
+    - Office Action parsing accuracy
+    - Generic field matching (fallback)
     """
 
     def layer(self) -> EvaluationLayer:
         return EvaluationLayer.DETERMINISTIC
+
+    def _parse_ref(self, case: TestCase) -> dict[str, Any]:
+        """Parse reference_answer as JSON dict or return raw wrapper."""
+        ref = case.reference_answer
+        if isinstance(ref, dict):
+            return ref
+        ref = ref.strip()
+        if ref.startswith("{"):
+            try:
+                return json.loads(ref)
+            except json.JSONDecodeError:
+                pass
+        return {"_raw": ref}
 
     def evaluate(self, case: TestCase, model_output: str) -> EvaluationResult:
         """Evaluate model output deterministically."""
@@ -117,91 +131,145 @@ class DeterministicEvaluator(BaseEvaluator):
         )
 
         task_type = case.task_type
-
-        if task_type == "deadline_calculation":
+        if task_type in ("deadline_calculation", "deadline_computation"):
             metric = self._check_deadline(case, model_output)
         elif task_type == "fee_computation":
             metric = self._check_fee(case, model_output)
+        elif task_type == "action_classification":
+            metric = self._check_action_classification(case, model_output)
+        elif task_type == "timeline_analysis":
+            metric = self._check_timeline(case, model_output)
         elif task_type == "entity_status":
             metric = self._check_entity_status(case, model_output)
         elif task_type == "oa_parsing":
             metric = self._check_oa_parsing(case, model_output)
         else:
-            metric = self._check_format_compliance(case, model_output)
+            metric = self._check_generic(case, model_output)
 
         result.add_metric(metric)
         result.layer_scores[EvaluationLayer.DETERMINISTIC.value] = metric.value
         result.passed = metric.value >= 0.5
         return result
 
-    def _check_deadline(self, case: TestCase, output: str) -> MetricResult:
-        """Verify deadline calculation accuracy."""
-        expected = case.reference_answer.strip()
-        # Extract date from model output -- look for ISO dates or common formats
-        date_patterns = [
-            r"\d{4}-\d{2}-\d{2}",
-            r"\d{1,2}/\d{1,2}/\d{4}",
-            r"(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}",
-        ]
-        extracted_dates: list[str] = []
-        for pattern in date_patterns:
-            extracted_dates.extend(re.findall(pattern, output))
+    # ---- date extraction helpers ----
 
-        if not extracted_dates:
-            return MetricResult(
-                name="deadline_accuracy",
-                value=0.0,
-                count=1,
-                details={"expected": expected, "found": None, "reason": "no date found in output"},
-            )
+    _DATE_PATTERNS = [
+        r"\d{4}-\d{2}-\d{2}",
+        r"\d{1,2}/\d{1,2}/\d{4}",
+        r"(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}",
+    ]
 
-        # Check if any extracted date matches expected
-        match = any(self._dates_match(d, expected) for d in extracted_dates)
-        return MetricResult(
-            name="deadline_accuracy",
-            value=1.0 if match else 0.0,
-            count=1,
-            details={"expected": expected, "found": extracted_dates},
-        )
+    def _extract_dates(self, text: str) -> list[str]:
+        dates: list[str] = []
+        for p in self._DATE_PATTERNS:
+            dates.extend(re.findall(p, text))
+        return dates
 
     def _dates_match(self, date_str: str, expected: str) -> bool:
-        """Compare two date strings for equivalence."""
         formats = ["%Y-%m-%d", "%m/%d/%Y", "%B %d, %Y", "%B %d %Y"]
-        parsed_date = None
-        parsed_expected = None
+        d1 = d2 = None
         for fmt in formats:
             try:
-                parsed_date = parsed_date or datetime.strptime(date_str.strip(), fmt)
+                d1 = d1 or datetime.strptime(date_str.strip(), fmt)
             except ValueError:
                 pass
             try:
-                parsed_expected = parsed_expected or datetime.strptime(expected.strip(), fmt)
+                d2 = d2 or datetime.strptime(expected.strip(), fmt)
             except ValueError:
                 pass
-        if parsed_date and parsed_expected:
-            return parsed_date.date() == parsed_expected.date()
+        if d1 and d2:
+            return d1.date() == d2.date()
         return date_str.strip() == expected.strip()
 
+    # ---- task checkers ----
+
+    def _check_deadline(self, case: TestCase, output: str) -> MetricResult:
+        ref = self._parse_ref(case)
+        extracted = self._extract_dates(output)
+        if not extracted:
+            return MetricResult(name="deadline_accuracy", value=0.0, count=1,
+                                details={"reason": "no date found"})
+
+        date_keys = [k for k in ref if "deadline" in k or "date" in k.lower()]
+        if not date_keys and "_raw" in ref:
+            matched = any(self._dates_match(d, ref["_raw"]) for d in extracted)
+            return MetricResult(name="deadline_accuracy", value=1.0 if matched else 0.0, count=1)
+
+        checks = hits = 0
+        details: dict[str, Any] = {"found": extracted}
+        for key in date_keys:
+            checks += 1
+            exp_val = str(ref[key])
+            ok = any(self._dates_match(d, exp_val) for d in extracted)
+            details[key] = {"expected": exp_val, "matched": ok}
+            if ok:
+                hits += 1
+
+        return MetricResult(name="deadline_accuracy",
+                            value=hits / checks if checks else 0.0,
+                            count=checks, details=details)
+
     def _check_fee(self, case: TestCase, output: str) -> MetricResult:
-        """Verify fee computation accuracy."""
-        expected = case.reference_answer.strip()
-        # Extract dollar amounts from output
-        amounts = re.findall(r"\$?([\d,]+(?:\.\d{2})?)", output)
-        amounts_clean = [a.replace(",", "") for a in amounts]
+        ref = self._parse_ref(case)
+        amounts = [a.replace(",", "") for a in re.findall(r"\$?([\d,]+(?:\.\d{2})?)", output)]
 
-        expected_clean = expected.replace("$", "").replace(",", "").strip()
+        fee_keys = [k for k in ref if k not in ("_raw", "explanation", "action_type")]
+        checks = hits = 0
+        for k in fee_keys:
+            val = str(ref[k]).replace("$", "").replace(",", "")
+            try:
+                float(val)
+            except ValueError:
+                continue
+            checks += 1
+            if val in amounts:
+                hits += 1
 
-        match = expected_clean in amounts_clean
-        return MetricResult(
-            name="fee_accuracy",
-            value=1.0 if match else 0.0,
-            count=1,
-            details={"expected": expected, "found": amounts},
-        )
+        if checks == 0 and "_raw" in ref:
+            raw = ref["_raw"].replace("$", "").replace(",", "")
+            return MetricResult(name="fee_accuracy", value=1.0 if raw in amounts else 0.0, count=1)
+
+        return MetricResult(name="fee_accuracy",
+                            value=hits / checks if checks else 0.0, count=checks)
+
+    def _check_action_classification(self, case: TestCase, output: str) -> MetricResult:
+        ref = self._parse_ref(case)
+        out_lower = output.lower()
+        checks = hits = 0
+        for key, val in ref.items():
+            if key in ("technology_center", "art_unit", "examiner", "explanation", "_raw"):
+                continue
+            checks += 1
+            sval = str(val).lower()
+            if sval in out_lower:
+                hits += 1
+        return MetricResult(name="classification_accuracy",
+                            value=hits / checks if checks else 0.0, count=checks)
+
+    def _check_timeline(self, case: TestCase, output: str) -> MetricResult:
+        ref = self._parse_ref(case)
+        checks = hits = 0
+        for key in ("total_events", "first_event_date", "last_event_date", "prosecution_days",
+                     "total_oa_count"):
+            if key not in ref:
+                continue
+            checks += 1
+            if str(ref[key]) in output:
+                hits += 1
+        return MetricResult(name="timeline_accuracy",
+                            value=hits / checks if checks else 0.0, count=checks)
 
     def _check_entity_status(self, case: TestCase, output: str) -> MetricResult:
-        """Verify entity status determination."""
-        expected = case.reference_answer.strip().lower()
+        """Verify entity status determination.
+
+        Handles both plain string and JSON reference_answers.
+        """
+        ref = self._parse_ref(case)
+        if "_raw" in ref:
+            expected = ref["_raw"].strip().lower()
+        else:
+            expected = str(ref.get("entity_status", ref.get("status", ""))).strip().lower()
+
         output_lower = output.lower()
 
         valid_statuses = ["micro", "small", "large"]
@@ -224,7 +292,7 @@ class DeterministicEvaluator(BaseEvaluator):
 
         Checks extraction of rejection types, claim numbers, and grounds.
         """
-        ref_data = json.loads(case.reference_answer) if isinstance(case.reference_answer, str) and case.reference_answer.startswith("{") else {}
+        ref_data = self._parse_ref(case)
 
         scores: list[float] = []
 
@@ -261,34 +329,23 @@ class DeterministicEvaluator(BaseEvaluator):
             details={"sub_scores": scores},
         )
 
-    def _check_format_compliance(self, case: TestCase, output: str) -> MetricResult:
-        """Generic format compliance check."""
-        checks_passed = 0
-        total_checks = 0
-
-        # Check minimum length
-        total_checks += 1
-        if len(output.strip()) >= 50:
-            checks_passed += 1
-
-        # Check for structure (paragraphs or sections)
-        total_checks += 1
-        if "\n" in output.strip():
-            checks_passed += 1
-
-        # Check for legal language indicators
-        total_checks += 1
-        legal_terms = ["claim", "rejection", "applicant", "examiner", "amendment", "argument"]
-        if any(term in output.lower() for term in legal_terms):
-            checks_passed += 1
-
-        value = checks_passed / total_checks if total_checks > 0 else 0.0
-        return MetricResult(
-            name="format_compliance",
-            value=value,
-            count=1,
-            details={"checks_passed": checks_passed, "total_checks": total_checks},
-        )
+    def _check_generic(self, case: TestCase, output: str) -> MetricResult:
+        """Generic field matching for task types without a dedicated checker."""
+        ref = self._parse_ref(case)
+        if "_raw" in ref:
+            return MetricResult(name="generic_accuracy",
+                                value=1.0 if ref["_raw"].lower() in output.lower() else 0.0,
+                                count=1)
+        checks = hits = 0
+        for k, v in ref.items():
+            sval = str(v)
+            if len(sval) <= 1:
+                continue
+            checks += 1
+            if sval.lower() in output.lower():
+                hits += 1
+        return MetricResult(name="generic_accuracy",
+                            value=hits / checks if checks else 0.0, count=checks)
 
 
 class LLMJudgeEvaluator(BaseEvaluator):

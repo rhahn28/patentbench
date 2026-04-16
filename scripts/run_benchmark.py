@@ -180,10 +180,22 @@ def main(
         run_llm_judge=not no_judge,
     )
 
-    # Resolve data directory
+    # Resolve data directory -- try several locations
     data_path = Path(data_dir)
     if not data_path.is_absolute():
-        data_path = PROJECT_ROOT / data_path
+        # Try relative to CWD first
+        if data_path.exists():
+            pass
+        # Then relative to project root
+        elif (PROJECT_ROOT / data_path).exists():
+            data_path = PROJECT_ROOT / data_path
+        # Then relative to the patentbench package
+        else:
+            pkg_data = Path(__file__).resolve().parent.parent / "patentbench" / "data"
+            if pkg_data.exists():
+                data_path = pkg_data
+            else:
+                data_path = PROJECT_ROOT / data_path
 
     # Run benchmark
     runner = BenchmarkRunner(model=adapter, data_dir=data_path, config=config)
