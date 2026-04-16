@@ -166,6 +166,16 @@ PatentBench includes dedicated anti-hallucination checks:
 - **Leaderboard**: [abigail.app/patentbench](https://abigail.app/patentbench)
 - **ABIGAIL Patent AI**: [abigail.app](https://abigail.app)
 
+## Integrating Your System
+
+To benchmark a commercial tool (SOLV, PatSnap, etc.), a proprietary system, or a tool without an API, see **[INTEGRATION.md](INTEGRATION.md)**. It covers:
+
+- Writing custom adapters for direct-API systems
+- CSV round-trip workflow for tools with no API
+- Browser automation for UI-only systems
+- Schema translation — how the evaluator reads text output
+- Submitting results to the leaderboard
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on contributing test cases, rubrics, and model adapters.

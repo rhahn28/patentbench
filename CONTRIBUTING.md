@@ -39,7 +39,7 @@ Rubrics define the scoring criteria for LLM-as-Judge evaluation.
 
 ### Contributing Model Adapters
 
-Model adapters connect new AI systems to the benchmark framework.
+Model adapters connect new AI systems to the benchmark framework. For a complete guide — including how to integrate commercial tools (SOLV, PatSnap, etc.), CSV round-trip for no-API systems, and browser automation — see **[INTEGRATION.md](INTEGRATION.md)**.
 
 #### Requirements
 
@@ -71,7 +71,7 @@ class MyModelAdapter(BaseModelAdapter):
 ## Development Setup
 
 ```bash
-git clone https://github.com/salt-holdings/patentbench.git
+git clone https://github.com/rhahn28/patentbench.git
 cd patentbench
 pip install -e ".[dev]"
 ```
