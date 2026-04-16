@@ -4,7 +4,7 @@
 
 ## Subject Line Options
 
-1. **Submit Your Hardest Office Action — Help Build the Patent AI Benchmark**
+1. **Submit Your Hardest Office Action. Help Build the Patent AI Benchmark**
 2. **Can AI Handle Your Toughest Rejections? Help Us Find Out.**
 3. **Your Most Difficult Office Action Could Define How Patent AI Is Measured**
 
@@ -21,7 +21,7 @@ Here is a challenge: **submit your hardest Office Action.**
 
 The one with the complex double-patenting rejection. The 103 combination with six references. The Alice rejection you somehow overcame. The one your associates dread.
 
-I am building **PatentBench** — the first open benchmark for measuring how well AI handles patent prosecution — and I need the cases that separate competent attorneys from great ones. Easy cases tell us nothing. The hard ones tell us everything.
+I am building **PatentBench**, the first open benchmark for measuring how well AI handles patent prosecution, and I need the cases that separate competent attorneys from great ones. Easy cases tell us nothing. The hard ones tell us everything.
 
 ---
 
@@ -29,9 +29,9 @@ I am building **PatentBench** — the first open benchmark for measuring how wel
 
 For each test case, we need three things:
 
-1. **The Office Action** — The examiner's rejection (non-final or final)
-2. **Your Response** — The response you filed that worked (amendment, arguments, or both)
-3. **The Outcome** — Allowance, or a subsequent Office Action showing progress
+1. **The Office Action**. The examiner's rejection (non-final or final)
+2. **Your Response**. The response you filed that worked (amendment, arguments, or both)
+3. **The Outcome**. Allowance, or a subsequent Office Action showing progress
 
 That is it. If you have the documents, submitting takes under 10 minutes per case.
 
@@ -42,7 +42,7 @@ That is it. If you have the documents, submitting takes under 10 minutes per cas
 - Double patenting rejections requiring terminal disclaimers or creative amendments
 - Any rejection you found unusually challenging or where your response was particularly strategic
 
-**We accept cases from any technology area:** software, electrical, mechanical, chemical, biotech, pharma, business methods — the more diverse, the better.
+**We accept cases from any technology area:** software, electrical, mechanical, chemical, biotech, pharma, business methods, the more diverse, the better.
 
 ---
 
@@ -61,15 +61,15 @@ Use our web form at [SUBMISSION FORM URL] for a guided upload experience.
 
 ### What You Get
 
-- **Named credit as a dataset contributor** — Your name appears in the PatentBench contributor list, citable in academic publications and professional contexts
-- **Early access to benchmark results** — See how AI tools perform on your specific submissions before anyone else
-- **The satisfaction of knowing your hardest case is now the standard** — If AI cannot handle your rejection, that says something important about where the technology actually stands
+- **Named credit as a dataset contributor**. Your name appears in the PatentBench contributor list, citable in academic publications and professional contexts
+- **Early access to benchmark results**. See how AI tools perform on your specific submissions before anyone else
+- **The satisfaction of knowing your hardest case is now the standard**. If AI cannot handle your rejection, that says something important about where the technology actually stands
 
 ---
 
 ### Why This Matters
 
-Every patent AI vendor claims their tool can handle Office Actions. None of them publish scores on a standardized test. PatentBench changes that — but only if the test cases are genuinely challenging and representative of real prosecution work.
+Every patent AI vendor claims their tool can handle Office Actions. None of them publish scores on a standardized test. PatentBench changes that, but only if the test cases are genuinely challenging and representative of real prosecution work.
 
 Your contributions directly determine the quality and rigor of the benchmark. Easy cases produce meaningless scores. Hard cases produce honest ones.
 
@@ -100,7 +100,7 @@ Creator, PatentBench
 
 Patent attorneys: I am building **PatentBench**, the first open benchmark for evaluating patent AI tools.
 
-I need your hardest Office Actions — the 101 rejections, complex 103 combinations, tricky restriction requirements. The cases that actually test whether AI can do this work.
+I need your hardest Office Actions, the 101 rejections, complex 103 combinations, tricky restriction requirements. The cases that actually test whether AI can do this work.
 
 **What to submit:** Office Action + your response + outcome
 **Time:** ~10 min per case
@@ -110,7 +110,7 @@ All submissions use publicly available prosecution histories. Submit at [SUBMISS
 
 The benchmark is only as good as the test cases. Help make it rigorous.
 
-— Roger Hahn, USPTO Reg. Pat. Atty.
+Roger Hahn, USPTO Reg. Pat. Atty.
 
 ---
 
@@ -118,7 +118,7 @@ The benchmark is only as good as the test cases. Help make it rigorous.
 
 ### Can AI Handle Your Hardest Office Action? Let's Find Out.
 
-I am building **PatentBench** — the first standardized, open benchmark for measuring how well AI responds to USPTO Office Actions.
+I am building **PatentBench**, the first standardized, open benchmark for measuring how well AI responds to USPTO Office Actions.
 
 The problem: every patent AI tool claims to be the best. None of them prove it on a common test.
 
@@ -135,7 +135,7 @@ The solution: a curated dataset of real, challenging Office Actions evaluated by
 **What you get:** Named contributor credit + early access to benchmark results
 **Time:** ~10 minutes per case
 
-All cases are based on public prosecution histories — no confidential materials needed.
+All cases are based on public prosecution histories, no confidential materials needed.
 
 Submit at: [SUBMISSION URL]
 Questions: [EMAIL]

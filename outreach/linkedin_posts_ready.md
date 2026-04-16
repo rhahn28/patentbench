@@ -1,4 +1,4 @@
-# LinkedIn Posts — Ready to Publish
+# LinkedIn Posts. Ready to Publish
 ## Simultaneous: Roger's Personal + ABIGAIL Company Page
 
 ---
@@ -102,7 +102,7 @@ Open-source code and data: github.com/rhahn28/patentbench
 
 Yesterday I shared PatentBench results. Today, let me show you what a Tier 3 prosecution argument actually looks like.
 
-Here is a real test case: An examiner rejects claims under 103 as obvious over two references — one teaching a surgical stapler with an articulating head, the other teaching force feedback in surgical instruments. The combination supposedly renders the claims obvious.
+Here is a real test case: An examiner rejects claims under 103 as obvious over two references, one teaching a surgical stapler with an articulating head, the other teaching force feedback in surgical instruments. The combination supposedly renders the claims obvious.
 
 The AI identified three critical gaps:
 
@@ -114,7 +114,7 @@ The AI identified three critical gaps:
 
 The AI cited KSR v. Teleflex and MPEP 2143. It identified the engineering challenges of miniaturized multi-sensor arrays that the examiner's combination does not address.
 
-Would I file this argument as-is? No — I would add specification support, examiner interview strategy, and potentially a dependent claim fallback. But as a first draft for attorney review? This saves hours.
+Would I file this argument as-is? No. I would add specification support, examiner interview strategy, and potentially a dependent claim fallback. But as a first draft for attorney review? This saves hours.
 
 That is the point of PatentBench. Not to replace attorneys. To give them data about which tools actually work.
 
@@ -136,15 +136,15 @@ Because we believe in what we call the Glass Box Standard.
 
 Five pillars that every AI benchmark should follow:
 
-1. Test Set Publication — Public release of test sets so anyone can verify results
-2. Rubric Transparency — All evaluation criteria and scoring methods published
-3. Output Availability — Sample outputs published, including failures
-4. Failure Mode Analysis — Documented failure modes with root causes
-5. Continuous Reporting — Regular public updates with performance trends
+1. Test Set Publication. Public release of test sets so anyone can verify results
+2. Rubric Transparency. All evaluation criteria and scoring methods published
+3. Output Availability. Sample outputs published, including failures
+4. Failure Mode Analysis. Documented failure modes with root causes
+5. Continuous Reporting. Regular public updates with performance trends
 
 We are not the first to call for transparency in AI evaluation. LegalBench (Stanford/HazyResearch, NeurIPS 2023) set the standard for legal AI benchmarks. The Stanford hallucination study exposed accuracy problems in leading legal research tools.
 
-But patent prosecution — the $7B+ market where attorneys rely on AI to draft arguments, compute deadlines, and analyze examiner behavior — has had zero benchmarks. Until now.
+But patent prosecution, the $7B+ market where attorneys rely on AI to draft arguments, compute deadlines, and analyze examiner behavior, has had zero benchmarks. Until now.
 
 PatentBench brings the same rigor to patent AI that LegalBench brought to legal reasoning and SWE-bench brought to coding agents.
 
@@ -159,7 +159,7 @@ Read the methodology: abigail.app/blog/guides/introducing-patentbench
 
 | Date | Roger (Personal) | ABIGAIL (Company) |
 |------|------------------|-------------------|
-| Mar 21 (Fri) — Launch | Post 1: Results + Challenge | Post 2: Formal Announcement + Carousel |
+| Mar 21 (Fri). Launch | Post 1: Results + Challenge | Post 2: Formal Announcement + Carousel |
 | Mar 24 (Mon) | Post 3: Tier 3 Reasoning Example | Post 4: Glass Box Standard |
 | Mar 26 (Wed) | Share blog: Why No Benchmarks | Share blog: Methodology Deep-Dive |
 | Mar 28 (Fri) | Tag patent attorneys for feedback | Share blog: Transparency Crisis |

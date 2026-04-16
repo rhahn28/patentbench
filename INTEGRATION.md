@@ -2,10 +2,10 @@
 
 This guide explains how to evaluate any patent AI system on PatentBench, whether it's:
 
-- **A direct-API LLM** (OpenAI, Anthropic, Google) — already supported
-- **A commercial patent tool** (SOLV, PatSnap, LexisNexis PatentAdvisor, Clarivate Derwent, etc.) — supported via custom adapters
-- **A web-only tool with no API** — supported via CSV round-trip or browser automation
-- **A proprietary internal system** — supported via any of the above
+- **A direct-API LLM** (OpenAI, Anthropic, Google), already supported
+- **A commercial patent tool** (SOLV, PatSnap, LexisNexis PatentAdvisor, Clarivate Derwent, etc.), supported via custom adapters
+- **A web-only tool with no API**, supported via CSV round-trip or browser automation
+- **A proprietary internal system**, supported via any of the above
 
 Every evaluation path produces the same `results/<run_id>.json` file format, so results are directly comparable regardless of how the system was accessed.
 
@@ -26,7 +26,7 @@ Every evaluation path produces the same `results/<run_id>.json` file format, so 
 
 ## Core Architecture: The Adapter Pattern
 
-PatentBench's benchmark runner doesn't care how a response is produced — it only cares about the text that comes back. Every "model" conforms to one interface:
+PatentBench's benchmark runner doesn't care how a response is produced, it only cares about the text that comes back. Every "model" conforms to one interface:
 
 ```python
 class BaseModelAdapter:
@@ -52,7 +52,7 @@ As long as it returns text containing the answer, the evaluator can score it.
 
 ## What the Evaluator Actually Checks
 
-The evaluator reads the model's text output and looks for specific substrings or patterns that match the reference answer. **This is crucial for adapter design** — your adapter's job is to produce text containing these signals, not to match any particular format.
+The evaluator reads the model's text output and looks for specific substrings or patterns that match the reference answer. **This is crucial for adapter design**, your adapter's job is to produce text containing these signals, not to match any particular format.
 
 | Task Type | Evaluator Looks For |
 |-----------|---------------------|
@@ -75,7 +75,7 @@ Since the evaluator does **substring containment**, your adapter has enormous fl
 
 ## Pattern 1: Direct API Integration
 
-Use this when the system has any kind of network-accessible API — REST, GraphQL, gRPC, SOAP, whatever.
+Use this when the system has any kind of network-accessible API. REST, GraphQL, gRPC, SOAP, whatever.
 
 ### 1.1 Built-in Adapters
 
@@ -339,7 +339,7 @@ out.save(Path("results") / f"{out.run_id}_csv.json")
 print(out.summary())
 ```
 
-Output goes to `results/csv_<timestamp>_csv.json` — same format as API-based runs, so it's directly comparable on the leaderboard.
+Output goes to `results/csv_<timestamp>_csv.json`, same format as API-based runs, so it's directly comparable on the leaderboard.
 
 ---
 
@@ -358,7 +358,7 @@ from patentbench.models.base import BaseModelAdapter
 class BrowserDrivenAdapter(BaseModelAdapter):
     """Drive a web UI to get responses.
 
-    This is the most fragile integration — it depends on the target
+    This is the most fragile integration. It depends on the target
     site's HTML structure. Expect to update selectors periodically.
     """
 
@@ -474,7 +474,7 @@ For application 16100000, the shortened statutory response deadline is
 statutory deadline with extensions is 2021-02-27 (six months).
 ```
 
-Both score identically. Prefer readable output — it makes debugging easier.
+Both score identically. Prefer readable output, it makes debugging easier.
 
 ### Key Rule: Include Dates in Multiple Formats if Unsure
 
@@ -497,20 +497,20 @@ Once you have a `results/run_*.json` file:
 2. **Run the full `mini` subset** (300 cases) at minimum. Partial runs won't be comparable.
 
 3. **Document your methodology**:
-   - What system version was tested?
-   - Which adapter pattern (API / CSV / browser)?
-   - Any special configuration (temperature, model size, etc.)?
-   - Date range of the evaluation?
+ - What system version was tested?
+ - Which adapter pattern (API / CSV / browser)?
+ - Any special configuration (temperature, model size, etc.)?
+ - Date range of the evaluation?
 
 4. **Open a pull request** adding your results:
-   - Your results file: `results/your-system-name_YYYY-MM-DD.json`
-   - An entry in the leaderboard table in `README.md`
-   - A methodology note in the PR description
+ - Your results file: `results/your-system-name_YYYY-MM-DD.json`
+ - An entry in the leaderboard table in `README.md`
+ - A methodology note in the PR description
 
 5. **For reproducibility**:
-   - If it's API-based: share your adapter source code (minus the API key)
-   - If it's CSV-based: share the CSV files so scores can be recomputed
-   - If it's browser-based: share the selector config and a note about site version tested
+ - If it's API-based: share your adapter source code (minus the API key)
+ - If it's CSV-based: share the CSV files so scores can be recomputed
+ - If it's browser-based: share the selector config and a note about site version tested
 
 ---
 
@@ -572,7 +572,7 @@ def generate(self, prompt: str) -> str:
 
 ### Q: Does PatentBench prevent my tool from cheating (memorizing test cases)?
 
-Partially. The benchmark includes poison-pill MPEP citations and fabricated case law that only appear in test data — a system that's memorized the benchmark will leak these signals. See [METHODOLOGY.md](METHODOLOGY.md) for the full anti-contamination protocol.
+Partially. The benchmark includes poison-pill MPEP citations and fabricated case law that only appear in test data, a system that's memorized the benchmark will leak these signals. See [METHODOLOGY.md](METHODOLOGY.md) for the full anti-contamination protocol.
 
 ### Q: Can I run the benchmark against a local/offline LLM?
 

@@ -1,10 +1,10 @@
 /**
- * PatentBench Sonnet Benchmark Runner — Uses Claude CLI OAuth
+ * PatentBench Sonnet Benchmark Runner. Uses Claude CLI OAuth.
  *
  * Runs each test case through `claude -p --model sonnet` which uses the
  * user's Pro Max OAuth subscription. Zero API cost.
  *
- * Sequential processing — one request at a time to be safe with rate limits.
+ * Sequential processing, one request at a time to be safe with rate limits.
  * Saves progress after each test so it can be resumed if interrupted.
  */
 const fs = require('fs');
@@ -71,7 +71,7 @@ function callClaude(systemPrompt, question) {
   }
 }
 
-// Fuzzy option matching — each ground truth option has key phrases
+// Fuzzy option matching : each ground truth option has key phrases
 const OPTION_KEYWORDS = {
   'File response with amendments under 37 CFR 1.116': ['1.116', 'amendment'],
   'File RCE under 37 CFR 1.114': ['1.114', 'RCE', 'continued examination'],
@@ -229,7 +229,7 @@ function main() {
 
   console.log('\n');
   console.log('='.repeat(60));
-  console.log('  CLAUDE SONNET — PATENTBENCH RESULTS (OAuth)');
+  console.log('  CLAUDE SONNET : PATENTBENCH RESULTS (OAuth)');
   console.log('='.repeat(60));
   console.log(`  Overall: ${(totalScore/totalMax*100).toFixed(1)}%`);
   console.log(`  Parse errors: ${parseErrors}/${tests.length}`);

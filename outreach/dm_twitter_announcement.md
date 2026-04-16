@@ -6,7 +6,7 @@
 
 **Option 1: The Declaration**
 
-We just open-sourced PatentBench — the first standardized benchmark for patent AI.
+We just open-sourced PatentBench, the first standardized benchmark for patent AI.
 
 Every patent AI tool claims to be the best. None of them prove it.
 
@@ -43,7 +43,7 @@ If your patent AI tool is good, prove it.
 
 To every patent AI company:
 
-We tested your tool on PatentBench — [NUMBER] real Office Actions scored by practicing patent attorneys.
+We tested your tool on PatentBench, [NUMBER] real Office Actions scored by practicing patent attorneys.
 
 Your scores are public.
 
@@ -116,7 +116,7 @@ PatentBench tested [NUMBER] tools on [NUMBER] real cases. Full results: [LINK]
 
 Patent attorneys: I need your hardest Office Actions.
 
-Building PatentBench — the first AI benchmark for patent prosecution. Easy cases tell us nothing. I need the 101 rejections you barely overcame, the 6-reference 103 combinations, the restriction requirements from hell.
+Building PatentBench, the first AI benchmark for patent prosecution. Easy cases tell us nothing. I need the 101 rejections you barely overcame, the 6-reference 103 combinations, the restriction requirements from hell.
 
 Submit a case: [LINK]
 Get: named credit + early access to results
@@ -169,9 +169,9 @@ The results are almost ready.
 
 Here's what I can tell you so far (thread):
 
-1/ [FIRST INSIGHT — e.g., "No tool scored above X on Alice rejections"]
-2/ [SECOND INSIGHT — e.g., "The best tool on 103 rejections was not who you'd expect"]
-3/ [THIRD INSIGHT — e.g., "Claim amendment quality was the weakest dimension across all tools"]
+1/ [FIRST INSIGHT, e.g., "No tool scored above X on Alice rejections"]
+2/ [SECOND INSIGHT, e.g., "The best tool on 103 rejections was not who you'd expect"]
+3/ [THIRD INSIGHT, e.g., "Claim amendment quality was the weakest dimension across all tools"]
 4/ Full results: [DATE]. Follow for the drop.
 
 ---
@@ -189,6 +189,6 @@ Here's what I can tell you so far (thread):
 ## Posting Strategy Notes
 
 - **Launch day:** Post A (announcement) in the morning, C (stat) in the afternoon, E (teaser thread) the day before
-- **Engagement bait:** B (challenge) posts get the most engagement — patent AI companies will feel compelled to respond
+- **Engagement bait:** B (challenge) posts get the most engagement, patent AI companies will feel compelled to respond
 - **Best times:** Tuesday-Thursday, 8-10am ET for attorney audience; 10am-12pm ET for tech/research audience
 - **Quote-tweet strategy:** When patent AI companies post marketing claims, quote-tweet with a link to their PatentBench score

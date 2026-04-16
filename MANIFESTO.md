@@ -1,11 +1,11 @@
 # The PatentBench Manifesto
 
-### Why Patent Prosecution AI Has a Credibility Crisis — and How We Fix It
+### Why Patent Prosecution AI Has a Credibility Crisis, and How We Fix It
 
 ---
 
 *"In God we trust. All others must bring data."*
-— W. Edwards Deming
+W. Edwards Deming
 
 ---
 
@@ -31,7 +31,7 @@ Let us be specific, because specificity is what this industry lacks.
 
 **Patlytics** raised **$21 million**. Their proof of efficacy? "18x customer growth." Customer growth is a business metric. It tells you nothing about whether the AI drafts accurate claims, identifies relevant prior art, or produces arguments that survive examiner scrutiny. Eighteen-times-more customers buying a product you cannot independently verify is not evidence. It is salesmanship.
 
-**DeepIP** publishes zero benchmarks. What they offer instead is self-authored feature comparison charts — the vendor grading its own homework. No independent evaluation. No reproducible methodology. No public test set.
+**DeepIP** publishes zero benchmarks. What they offer instead is self-authored feature comparison charts, the vendor grading its own homework. No independent evaluation. No reproducible methodology. No public test set.
 
 **PatSnap** comes closest with a single reported metric: an **81% "X Hit Rate"** for prior art search. One metric. For one task. With no public methodology, no reproducible test set, and no coverage of the other four-fifths of patent prosecution. And even that number cannot be independently verified.
 
@@ -49,7 +49,7 @@ In 2024, researchers at Stanford published a landmark study evaluating AI-powere
 
 One in three responses from Westlaw's AI contained fabricated legal citations, invented case holdings, or hallucinated reasoning. One in six from a tool that cost $650 million to acquire.
 
-These are not patent prosecution tools specifically. But they are the **same underlying technology** — large language models applied to legal text — and they demonstrate a fundamental problem: without rigorous, domain-specific benchmarks, you cannot distinguish a tool that works from a tool that confidently fabricates.
+These are not patent prosecution tools specifically. But they are the **same underlying technology**, large language models applied to legal text, and they demonstrate a fundamental problem: without rigorous, domain-specific benchmarks, you cannot distinguish a tool that works from a tool that confidently fabricates.
 
 In patent prosecution, hallucination is not an academic concern. A fabricated prior art reference in an Information Disclosure Statement is a potential fraud on the USPTO. An invented claim construction in an office action response can estop future claim scope. A hallucinated examiner citation in a pre-appeal brief is malpractice.
 
@@ -67,7 +67,7 @@ No.
 
 **legalbenchmarks.ai** focuses on contract drafting and review. Patent prosecution is entirely absent.
 
-**Patent-CE** (NAACL 2025) evaluates claim construction and claim evaluation — one narrow slice of prosecution. It does not cover office action response, claim amendment strategy, prior art analysis, argument construction, or any of the other skills that constitute actual patent prosecution practice.
+**Patent-CE** (NAACL 2025) evaluates claim construction and claim evaluation, one narrow slice of prosecution. It does not cover office action response, claim amendment strategy, prior art analysis, argument construction, or any of the other skills that constitute actual patent prosecution practice.
 
 This is the state of the field: a **$7 billion market** with **zero published, reproducible benchmarks** covering the core work of patent prosecution.
 
@@ -79,28 +79,28 @@ The coding AI community has SWE-bench. The math AI community has GSM8K and MATH.
 
 ## V. What PatentBench Is
 
-PatentBench is the benchmark this industry should have built years ago — and didn't.
+PatentBench is the benchmark this industry should have built years ago, and didn't.
 
 ### The Numbers
 
 - **7,200 test cases** across 5 prosecution domains
-- **Built from real USPTO prosecution histories** — not synthetic examples, not hand-crafted toy problems, but actual office actions, actual responses, and actual outcomes from the public patent record
+- **Built from real USPTO prosecution histories**, not synthetic examples, not hand-crafted toy problems, but actual office actions, actual responses, and actual outcomes from the public patent record
 - **5 difficulty tiers** calibrated to attorney experience levels, from junior associate tasks to partner-level strategic decisions
 - **4-layer evaluation architecture** that measures not just whether an AI produces plausible-sounding text, but whether it produces *correct, strategically sound, and legally defensible* work product
 
 ### The Five Domains
 
-1. **Office Action Analysis** — Can the AI correctly identify every rejection, its legal basis, and the specific claims affected?
-2. **Claim Amendment** — Can the AI propose amendments that overcome rejections without unnecessarily narrowing scope?
-3. **Argument Construction** — Can the AI build persuasive legal arguments grounded in actual MPEP authority and case law?
-4. **Prior Art Analysis** — Can the AI distinguish material prior art from noise and assess anticipation vs. obviousness?
-5. **Prosecution Strategy** — Can the AI recommend optimal prosecution paths considering the full landscape of options?
+1. **Office Action Analysis**. Can the AI correctly identify every rejection, its legal basis, and the specific claims affected?
+2. **Claim Amendment**. Can the AI propose amendments that overcome rejections without unnecessarily narrowing scope?
+3. **Argument Construction**. Can the AI build persuasive legal arguments grounded in actual MPEP authority and case law?
+4. **Prior Art Analysis**. Can the AI distinguish material prior art from noise and assess anticipation vs. obviousness?
+5. **Prosecution Strategy**. Can the AI recommend optimal prosecution paths considering the full landscape of options?
 
 ### What Makes It Different
 
 **Outcome-Based Evaluation.** Because PatentBench is built from real prosecution histories, we know what actually happened. Did the examiner allow the claims? Was the patent granted? Did the response succeed? We do not merely ask whether the AI's output looks reasonable. We test whether it would have worked.
 
-**Anti-Hallucination Testing.** PatentBench includes poison pill detection — fabricated citations, invented MPEP sections, and hallucinated case law are planted in test scenarios. If your AI cites them, we catch it. If your AI invents its own, we catch that too. Every factual assertion is verified against ground truth.
+**Anti-Hallucination Testing.** PatentBench includes poison pill detection, fabricated citations, invented MPEP sections, and hallucinated case law are planted in test scenarios. If your AI cites them, we catch it. If your AI invents its own, we catch that too. Every factual assertion is verified against ground truth.
 
 **Economic Validity.** Performance on PatentBench maps to real economic outcomes. We connect accuracy scores to prosecution cost, time-to-allowance, and claim scope preservation. A benchmark that cannot tell you what a 10-point score improvement is worth in dollars is a benchmark that cannot guide investment decisions.
 
@@ -134,11 +134,11 @@ The answer is straightforward.
 
 **Roger Hahn is a USPTO-registered patent attorney.** PatentBench was not designed by machine learning researchers who read a patent textbook. It was designed by someone who has prosecuted patents, responded to office actions, and argued before examiners. Domain expertise is not optional when you are building a domain-specific benchmark. It is the prerequisite.
 
-**ABIGAIL has nothing to hide.** We are building Glass Box architecture because we believe the best way to prove your product works is to let the world verify it. If our AI has weaknesses — and every AI does — we would rather find them in a benchmark than in a client's abandoned patent application.
+**ABIGAIL has nothing to hide.** We are building Glass Box architecture because we believe the best way to prove your product works is to let the world verify it. If our AI has weaknesses, and every AI does, we would rather find them in a benchmark than in a client's abandoned patent application.
 
 **Defining the standard is the highest-leverage contribution we can make.** SWE-bench did not just measure coding agents. It defined what it *means* to be good at automated software engineering. Every coding AI company now reports SWE-bench scores. PatentBench will do the same for patent prosecution. The company that defines how the world evaluates patent AI shapes the entire market's direction.
 
-We are not doing this despite being a competitor. We are doing this *because* we are a competitor — one that believes the market is better when customers can make informed decisions based on real data.
+We are not doing this despite being a competitor. We are doing this *because* we are a competitor, one that believes the market is better when customers can make informed decisions based on real data.
 
 ---
 
@@ -160,7 +160,7 @@ To **every patent AI startup, every legal tech platform, every LLM wrapper with 
 >
 > **If your AI is accurate, prove it.**
 >
-> **If you will not submit to independent evaluation, ask yourself why — and know that your customers will ask the same question.**
+> **If you will not submit to independent evaluation, ask yourself why, and know that your customers will ask the same question.**
 
 ---
 
@@ -168,7 +168,7 @@ To **every patent AI startup, every legal tech platform, every LLM wrapper with 
 
 Patent attorneys are fiduciaries. They owe a duty of candor to the USPTO and a duty of competence to their clients. When an attorney relies on an AI tool to draft claim amendments or construct arguments, that tool becomes part of the attorney's professional obligation. The attorney is staking their license on the AI's output.
 
-Those attorneys deserve to know — with data, not marketing — how reliable that output is. They deserve benchmarks built by practitioners who understand what competent prosecution looks like. They deserve transparency.
+Those attorneys deserve to know, with data, not marketing, how reliable that output is. They deserve benchmarks built by practitioners who understand what competent prosecution looks like. They deserve transparency.
 
 The Stanford hallucination study proved that even $650 million acquisitions can produce tools that fabricate one in six responses. In a profession where a single fabrication can constitute fraud on the patent office, "pretty good most of the time" is not a standard. It is a liability.
 
@@ -194,7 +194,7 @@ The benchmark exists. The methodology is published. The test cases are real.
 
 ---
 
-<p align="center"><em>PatentBench is a project of ABIGAIL — Artificial Benchmarking & Intelligence for Grading AI in Law</em></p>
+<p align="center"><em>PatentBench is a project of ABIGAIL. Artificial Benchmarking & Intelligence for Grading AI in Law</em></p>
 
 <p align="center"><strong>patentbench.org</strong> | <strong>github.com/abigail-ai/patentbench</strong></p>
 

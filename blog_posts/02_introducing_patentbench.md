@@ -5,24 +5,24 @@ author: Roger Hahn
 category: guides
 meta_description: "PatentBench is the first open, reproducible benchmark for patent prosecution AI. 300 real USPTO Office Actions, 5 difficulty tiers, 4-layer evaluation, and anti-hallucination testing."
 tags:
-  - patent AI
-  - AI benchmark
-  - patent prosecution
-  - legal AI
-  - hallucination
-  - open source
-  - PatentBench
-  - SWE-bench
-  - evaluation
+ - patent AI
+ - AI benchmark
+ - patent prosecution
+ - legal AI
+ - hallucination
+ - open source
+ - PatentBench
+ - SWE-bench
+ - evaluation
 ---
 
 # Introducing PatentBench: The First Reproducible Benchmark for Patent Prosecution AI
 
 Every serious AI domain has a benchmark that keeps it honest. Computer vision has ImageNet. Code generation has SWE-bench. Question answering has SQuAD. Legal contract analysis has CUAD.
 
-Patent prosecution — a \$7 billion market being rapidly reshaped by AI — has had nothing.
+Patent prosecution, a \$7 billion market being rapidly reshaped by AI, has had nothing.
 
-Today we are announcing PatentBench: the first open, reproducible benchmark for evaluating AI systems on patent prosecution tasks. PatentBench measures what matters to practicing attorneys: Can the AI correctly parse an Office Action? Can it construct a legally sound 103 argument? Can it draft a claim amendment that actually overcomes the rejection? And critically — does it hallucinate?
+Today we are announcing PatentBench: the first open, reproducible benchmark for evaluating AI systems on patent prosecution tasks. PatentBench measures what matters to practicing attorneys: Can the AI correctly parse an Office Action? Can it construct a legally sound 103 argument? Can it draft a claim amendment that actually overcomes the rejection? And critically, does it hallucinate?
 
 This post explains what PatentBench measures, how it works, and how you can use it.
 
@@ -32,7 +32,7 @@ Patent prosecution is fundamentally different from other legal tasks that have r
 
 A system that excels at identifying indemnification clauses in contracts tells you nothing about whether it can distinguish a patent claim over a combination of three prior art references under 35 U.S.C. 103.
 
-Existing benchmarks also fail to capture a critical dimension of patent prosecution quality: hallucination. When a legal research AI hallucinates a case citation, the attorney can verify it with a simple search. When a patent prosecution AI fabricates a teaching in a prior art reference — claiming that "Smith et al. disclose a thermally conductive adhesive layer" when the reference says nothing of the sort — the error is far harder to catch. The attorney must re-read the cited reference, compare the AI's characterization against the actual text, and assess whether the fabricated teaching materially affects the argument.
+Existing benchmarks also fail to capture a critical dimension of patent prosecution quality: hallucination. When a legal research AI hallucinates a case citation, the attorney can verify it with a simple search. When a patent prosecution AI fabricates a teaching in a prior art reference, claiming that "Smith et al. disclose a thermally conductive adhesive layer" when the reference says nothing of the sort, the error is far harder to catch. The attorney must re-read the cited reference, compare the AI's characterization against the actual text, and assess whether the fabricated teaching materially affects the argument.
 
 Stanford's research found 17-33% hallucination rates in production legal AI tools. Patent prosecution AI has never been measured. PatentBench changes that.
 
@@ -102,7 +102,7 @@ Each test case in PatentBench includes the complete prior art references, allowi
 
 ## Five Difficulty Tiers
 
-Not all patent prosecution tasks are equally challenging. A system that correctly parses a simple single-reference 102 rejection but fails on a complex multi-reference 103 combination is not "accurate" — it is accurate on easy cases.
+Not all patent prosecution tasks are equally challenging. A system that correctly parses a simple single-reference 102 rejection but fails on a complex multi-reference 103 combination is not "accurate", it is accurate on easy cases.
 
 PatentBench stratifies test cases across five difficulty tiers:
 
@@ -199,7 +199,7 @@ Systems are scored separately on each hallucination category, providing granular
 
 ## PatentBench-Mini: What Ships First
 
-The initial release — PatentBench-Mini — includes:
+The initial release. PatentBench-Mini, includes:
 
 - **300 test cases** drawn from real USPTO Office Actions
 - **Tiers 1-3** difficulty coverage
@@ -273,7 +273,7 @@ PatentBench is fully open source under the Apache 2.0 license.
 - **Baseline results:** Published with the initial release
 - **Methodology paper:** Available on arXiv (link available at launch)
 
-We chose open source deliberately. A benchmark that only one company can run is not a benchmark — it is a marketing tool. PatentBench must be independently verifiable to have value.
+We chose open source deliberately. A benchmark that only one company can run is not a benchmark, it is a marketing tool. PatentBench must be independently verifiable to have value.
 
 ## How to Contribute
 
@@ -285,7 +285,7 @@ PatentBench is a community effort. We are actively seeking contributions in seve
 
 **Technology domain expansion.** PatentBench-Mini covers eight technology domains. We aim to expand to fifteen domains in the full release, including pharma, semiconductors, AI/ML, fintech, clean energy, aerospace, and agricultural technology.
 
-**Benchmark extension.** Researchers interested in adding new evaluation dimensions — for example, international prosecution (EPO, CNIPA, JPO) or post-grant proceedings (IPR, PGR) — are welcome to propose extensions.
+**Benchmark extension.** Researchers interested in adding new evaluation dimensions, for example, international prosecution (EPO, CNIPA, JPO) or post-grant proceedings (IPR, PGR), are welcome to propose extensions.
 
 To contribute, open an issue on [GitHub](https://github.com/abigail-ai/patentbench) or email patentbench@abigail.app.
 
@@ -293,7 +293,7 @@ To contribute, open an issue on [GitHub](https://github.com/abigail-ai/patentben
 
 PatentBench is built on design principles drawn from the benchmarks that have most successfully advanced their respective fields:
 
-**SWE-bench's realism.** SWE-bench transformed code generation evaluation by using real GitHub issues from real repositories, not synthetic problems. PatentBench uses real USPTO Office Actions, not hypothetical scenarios. The messy complexity of real prosecution — ambiguous examiner reasoning, missing references, unusual procedural postures — is a feature, not a bug.
+**SWE-bench's realism.** SWE-bench transformed code generation evaluation by using real GitHub issues from real repositories, not synthetic problems. PatentBench uses real USPTO Office Actions, not hypothetical scenarios. The messy complexity of real prosecution, ambiguous examiner reasoning, missing references, unusual procedural postures, is a feature, not a bug.
 
 **MMLU's stratification.** MMLU demonstrated the value of difficulty-stratified evaluation for identifying capability boundaries. PatentBench's five tiers serve the same purpose: we care less about average performance than about where performance degrades.
 
@@ -308,7 +308,7 @@ Intellectual honesty requires acknowledging what PatentBench does not cover:
 - **Client communication quality.** How well a system explains its recommendations to a non-technical client is important but out of scope.
 - **Prior art search.** PatentBench evaluates responses to Office Actions where prior art is already identified. Evaluating the quality of prior art search is a separate (and important) problem.
 - **Patent drafting.** Writing patent applications from invention disclosures is a distinct skill from prosecution. A drafting benchmark is on our roadmap but not included in the initial release.
-- **Prosecution economics.** Whether AI-assisted prosecution is cost-effective depends on pricing, workflow integration, and attorney review time — factors that a benchmark cannot capture.
+- **Prosecution economics.** Whether AI-assisted prosecution is cost-effective depends on pricing, workflow integration, and attorney review time, factors that a benchmark cannot capture.
 
 ## The Road Ahead
 
@@ -323,7 +323,7 @@ We will publish updated leaderboard results quarterly, tracking the field's prog
 
 ## A Standard the Industry Deserves
 
-Patent attorneys make high-stakes decisions based on AI-generated analysis. They deserve to know how well these tools actually work — not how well the marketing department says they work.
+Patent attorneys make high-stakes decisions based on AI-generated analysis. They deserve to know how well these tools actually work, not how well the marketing department says they work.
 
 PatentBench is our contribution toward making that possible. It is not perfect, and it will improve with community input. But it exists, it is open, and it measures what matters.
 

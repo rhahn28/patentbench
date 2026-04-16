@@ -1,27 +1,27 @@
 # Newsletter Announcement: PatentBench
 
 **Audience:** Existing abigail.app subscribers
-**Send via:** [EMAIL PLATFORM — e.g., Resend, Mailchimp, ConvertKit]
+**Send via:** [EMAIL PLATFORM, e.g., Resend, Mailchimp, ConvertKit]
 
 ---
 
 ## Email
 
 **From:** Roger Hahn <roger@abigail.app>
-**Subject:** We're building the standard for patent AI — and you can help shape it
+**Subject:** We're building the standard for patent AI, and you can help shape it
 **Preview text:** Introducing PatentBench: the first open benchmark for patent prosecution AI
 
 ---
 
 Hi [FIRST_NAME],
 
-I want to share something we've been working on that goes beyond Abigail — and I think it matters to everyone who cares about the future of patent prosecution.
+I want to share something we've been working on that goes beyond Abigail, and I think it matters to everyone who cares about the future of patent prosecution.
 
 ### Introducing PatentBench
 
 **PatentBench is the first open, standardized benchmark for measuring how well AI handles patent Office Action responses.**
 
-Here's the problem: every patent AI tool (including ours) claims to be effective. But there has been no independent, standardized way to test those claims. No common exam. No public scores. No way for you — the practitioner — to compare tools on equal footing.
+Here's the problem: every patent AI tool (including ours) claims to be effective. But there has been no independent, standardized way to test those claims. No common exam. No public scores. No way for you, the practitioner, to compare tools on equal footing.
 
 We decided to build that standard ourselves, and make it open to everyone.
 
@@ -29,13 +29,13 @@ We decided to build that standard ourselves, and make it open to everyone.
 
 PatentBench is a curated dataset of real USPTO Office Actions paired with an evaluation framework scored by practicing patent attorneys. We test AI tools on the same cases, under the same conditions, and publish the results.
 
-Think of it as a **standardized test for patent AI** — except the questions are real rejections from real examiners, and the graders are real patent attorneys.
+Think of it as a **standardized test for patent AI**, except the questions are real rejections from real examiners, and the graders are real patent attorneys.
 
 ### Why We Built It (Even Though It Means Publishing Our Own Scores)
 
 Yes, Abigail's scores are in the benchmark. Publicly. Alongside every other tool we tested.
 
-We believe that if you're going to trust an AI tool with your prosecution work, you deserve to see exactly how it performs — measured independently, not marketed selectively. If our tool is good, the benchmark proves it. If there are areas to improve, the benchmark shows us where.
+We believe that if you're going to trust an AI tool with your prosecution work, you deserve to see exactly how it performs, measured independently, not marketed selectively. If our tool is good, the benchmark proves it. If there are areas to improve, the benchmark shows us where.
 
 Transparency benefits the entire profession, and it keeps us honest.
 
@@ -43,7 +43,7 @@ Transparency benefits the entire profession, and it keeps us honest.
 
 **If you're evaluating patent AI tools:** PatentBench gives you objective, comparable data. No more relying on vendor demos. Check the scores, see the methodology, make informed decisions.
 
-**If you're already using Abigail:** You'll see exactly how Abigail performs across different rejection types, technology areas, and quality dimensions — and you'll see how it compares. We'll use the benchmark results to drive targeted improvements.
+**If you're already using Abigail:** You'll see exactly how Abigail performs across different rejection types, technology areas, and quality dimensions, and you'll see how it compares. We'll use the benchmark results to drive targeted improvements.
 
 **If you care about the profession's future:** Patent AI is coming regardless. The question is whether we measure it rigorously or let marketing decide. PatentBench is our answer.
 
@@ -93,16 +93,16 @@ P.S. If you know a patent attorney who should see this, forward this email. The 
 
 Add after "What This Means for You" section:
 
-> **A note for our most active users:** You've already seen what Abigail can do on your cases. PatentBench lets you see how it performs on a standardized test — and gives us a public commitment to keep improving. Your feedback on Abigail has driven every major update. The benchmark formalizes that feedback loop across the entire industry.
+> **A note for our most active users:** You've already seen what Abigail can do on your cases. PatentBench lets you see how it performs on a standardized test, and gives us a public commitment to keep improving. Your feedback on Abigail has driven every major update. The benchmark formalizes that feedback loop across the entire industry.
 
 ### For inactive subscribers (haven't engaged in 60+ days)
 
 Replace opening with:
 
-> Hi [FIRST_NAME], it's been a while since we've been in touch. I wanted to reach out with something bigger than a product update — something that affects the entire patent prosecution profession.
+> Hi [FIRST_NAME], it's been a while since we've been in touch. I wanted to reach out with something bigger than a product update, something that affects the entire patent prosecution profession.
 
 ### For subscribers who are not patent attorneys (inventors, founders, etc.)
 
 Add context paragraph:
 
-> **What does this mean if you're not a patent attorney?** If you're filing patents (or paying someone to file them), AI tools are increasingly involved in the process. PatentBench tells you whether those tools are actually good — so you can make sure your patents are being prosecuted competently, whether by a human, an AI, or both.
+> **What does this mean if you're not a patent attorney?** If you're filing patents (or paying someone to file them), AI tools are increasingly involved in the process. PatentBench tells you whether those tools are actually good, so you can make sure your patents are being prosecuted competently, whether by a human, an AI, or both.

@@ -378,7 +378,7 @@ class OfficeActionParser:
                 part = part.strip()
                 if not part:
                     continue
-                range_match = re.match(r"(\d+)\s*[-–]\s*(\d+)", part)
+                range_match = re.match(r"(\d+)\s*[-\u2013\u2014]\s*(\d+)", part)
                 if range_match:
                     start = int(range_match.group(1))
                     end = int(range_match.group(2))

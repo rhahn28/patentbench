@@ -80,7 +80,7 @@ def add_months(date: datetime, months: int) -> datetime:
 
 
 def get_office_actions(app: dict) -> list[dict]:
-    """Extract OA events from an application (deduplicated — prefer CTNF/CTFR over M* variants)."""
+    """Extract OA events from an application (deduplicated, prefer CTNF/CTFR over M* variants)."""
     seen_dates: dict[tuple, dict] = {}
     for ev in app.get("prosecution_events", []):
         code = ev.get("code", "")

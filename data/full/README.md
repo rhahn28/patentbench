@@ -30,7 +30,7 @@ configs:
 
 ## Overview
 
-PatentBench evaluates AI systems on real patent prosecution tasks — from parsing USPTO Office Actions to drafting legally sound arguments under 35 U.S.C. sections 101, 102, 103, and 112.
+PatentBench evaluates AI systems on real patent prosecution tasks, from parsing USPTO Office Actions to drafting legally sound arguments under 35 U.S.C. sections 101, 102, 103, and 112.
 
 Every test case derives from actual USPTO proceedings. Tasks map to billable activities at patent law firms.
 
@@ -127,10 +127,10 @@ cases = loader.load_all()
 
 PatentBench uses a 4-layer evaluation framework:
 
-1. **Deterministic** — Binary correctness for objective tasks (deadlines, fees)
-2. **LLM-as-Judge** — Calibrated rubric-based scoring (legal accuracy, argument strength)
-3. **Comparative** — Blind side-by-side ranking
-4. **Human Calibration** — Expert attorney scores
+1. **Deterministic**. Binary correctness for objective tasks (deadlines, fees)
+2. **LLM-as-Judge**. Calibrated rubric-based scoring (legal accuracy, argument strength)
+3. **Comparative**. Blind side-by-side ranking
+4. **Human Calibration**. Expert attorney scores
 
 ## Links
 

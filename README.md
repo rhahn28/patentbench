@@ -1,20 +1,20 @@
 <p align="center">
-  <h1 align="center">PatentBench</h1>
-  <p align="center">The First Reproducible Benchmark for Patent Prosecution AI</p>
+ <h1 align="center">PatentBench</h1>
+ <p align="center">The First Reproducible Benchmark for Patent Prosecution AI</p>
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/XXXX.XXXXX"><img src="https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg" alt="arXiv"></a>
-  <a href="https://huggingface.co/datasets/rhahn28/patentbench"><img src="https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow.svg" alt="HuggingFace"></a>
-  <a href="https://github.com/rhahn28/patentbench/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
-  <a href="https://abigail.app/patentbench"><img src="https://img.shields.io/badge/Leaderboard-abigail.app-purple.svg" alt="Leaderboard"></a>
+ <a href="https://arxiv.org/abs/XXXX.XXXXX"><img src="https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg" alt="arXiv"></a>
+ <a href="https://huggingface.co/datasets/rhahn28/patentbench"><img src="https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow.svg" alt="HuggingFace"></a>
+ <a href="https://github.com/rhahn28/patentbench/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
+ <a href="https://abigail.app/patentbench"><img src="https://img.shields.io/badge/Leaderboard-abigail.app-purple.svg" alt="Leaderboard"></a>
 </p>
 
 ---
 
 ## Overview
 
-**PatentBench** is the first open, reproducible benchmark for evaluating AI systems on patent prosecution tasks. Inspired by [SWE-bench](https://www.swebench.com/) for software engineering, PatentBench measures whether AI can perform the real work of patent attorneys -- from parsing USPTO Office Actions to drafting legally sound arguments under 35 U.S.C. sections 101, 102, 103, and 112.
+**PatentBench** is the first open, reproducible benchmark for evaluating AI systems on patent prosecution tasks. Inspired by [SWE-bench](https://www.swebench.com/) for software engineering, PatentBench measures whether AI can perform the real work of patent attorneys, from parsing USPTO Office Actions to drafting legally sound arguments under 35 U.S.C. sections 101, 102, 103, and 112.
 
 Patent prosecution has remained one of the last untouched domains for AI benchmarking despite being a $15B+ annual market. Existing evaluations are ad hoc, non-reproducible, and disconnected from the economic reality of patent practice. PatentBench changes this.
 
@@ -62,10 +62,10 @@ PatentBench contains 7,200 expert-curated test cases spanning all five domains. 
 
 PatentBench uses a rigorous 4-layer evaluation framework:
 
-1. **Deterministic Evaluation** -- Binary correctness for objective tasks (deadlines, fees, format compliance)
-2. **LLM-as-Judge** -- Calibrated rubric-based scoring for subjective quality (legal accuracy, argument strength, completeness)
-3. **Comparative Evaluation** -- Blind side-by-side ranking of model outputs by domain experts
-4. **Human Calibration** -- Expert attorney scores on a subset to anchor and validate automated metrics
+1. **Deterministic Evaluation**. Binary correctness for objective tasks (deadlines, fees, format compliance)
+2. **LLM-as-Judge**. Calibrated rubric-based scoring for subjective quality (legal accuracy, argument strength, completeness)
+3. **Comparative Evaluation**. Blind side-by-side ranking of model outputs by domain experts
+4. **Human Calibration**. Expert attorney scores on a subset to anchor and validate automated metrics
 
 ## Quick Start
 
@@ -126,26 +126,26 @@ Results on PatentBench-Mini (300 cases). Last updated: 2026-03-19.
 | ABIGAIL v3 | **100.0%** | **100.0%** | **100.0%** | **100.0%** | **100.0%** |
 | ABIGAIL v3 (Variant B) | 92.7% | 94.2% | 100.0% | 99.0% | 95.9% |
 
-> Layer 1 (deterministic) results only. Layer 2-4 evaluation in progress. Submit your system for evaluation — see [METHODOLOGY.md](METHODOLOGY.md). Underlying model architectures are not disclosed; results measure system-level output quality.
+> Layer 1 (deterministic) results only. Layer 2-4 evaluation in progress. Submit your system for evaluation, see [METHODOLOGY.md](METHODOLOGY.md). Underlying model architectures are not disclosed; results measure system-level output quality.
 
 ## Glass Box Standard
 
 PatentBench adheres to the **Glass Box Standard** for AI evaluation transparency:
 
-1. **Data Provenance** -- Every test case traces back to a specific USPTO application number, Office Action date, and MPEP section
-2. **Evaluation Reproducibility** -- Deterministic scoring with pinned LLM-judge versions and published rubrics
-3. **Contamination Prevention** -- Held-out test cases never published in training data; canary strings embedded
-4. **Economic Validity** -- Tasks map to real billable activities with known market rates
-5. **Human Calibration** -- Expert attorney scores anchor all automated metrics with published inter-rater reliability
+1. **Data Provenance**. Every test case traces back to a specific USPTO application number, Office Action date, and MPEP section
+2. **Evaluation Reproducibility**. Deterministic scoring with pinned LLM-judge versions and published rubrics
+3. **Contamination Prevention**. Held-out test cases never published in training data; canary strings embedded
+4. **Economic Validity**. Tasks map to real billable activities with known market rates
+5. **Human Calibration**. Expert attorney scores anchor all automated metrics with published inter-rater reliability
 
 ## Anti-Hallucination Testing
 
 PatentBench includes dedicated anti-hallucination checks:
 
-- **Poison Pill MPEP Citations** -- Fabricated MPEP section numbers inserted to detect confabulation
-- **Case Law Verification** -- All cited cases validated against published USPTO and Federal Circuit decisions
-- **Statute Accuracy** -- 35 U.S.C. section references verified against current patent law
-- **Examiner Name Verification** -- Cross-referenced against USPTO PEDS records
+- **Poison Pill MPEP Citations**. Fabricated MPEP section numbers inserted to detect confabulation
+- **Case Law Verification**. All cited cases validated against published USPTO and Federal Circuit decisions
+- **Statute Accuracy**, 35 U.S.C. section references verified against current patent law
+- **Examiner Name Verification**. Cross-referenced against USPTO PEDS records
 
 ## Citation
 
@@ -173,7 +173,7 @@ To benchmark a commercial tool (SOLV, PatSnap, etc.), a proprietary system, or a
 - Writing custom adapters for direct-API systems
 - CSV round-trip workflow for tools with no API
 - Browser automation for UI-only systems
-- Schema translation — how the evaluator reads text output
+- Schema translation, how the evaluator reads text output
 - Submitting results to the leaderboard
 
 ## Contributing

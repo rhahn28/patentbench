@@ -14,27 +14,27 @@ const DELAY_MS = 350;
 
 // Ranges targeting specific TC areas and filing series
 const APP_RANGES = [
-  // TC2100 Software — need 50+ (art units 2100-2199)
+  // TC2100 Software , need 50+ (art units 2100-2199)
   // 18M series (2022-2023 filings) likely to land in software TCs
   { tc: 'TC2100_Target', desc: 'Software target (18.1M)', start: 18100000, count: 35 },
   { tc: 'TC2100_Target', desc: 'Software target (18.1M+50)', start: 18100050, count: 35 },
 
-  // TC1600 Biotech — need 30+ (art units 1600-1699)
+  // TC1600 Biotech , need 30+ (art units 1600-1699)
   { tc: 'TC1600_Target', desc: 'Biotech target (17.2M)', start: 17200000, count: 30 },
   { tc: 'TC1600_Target', desc: 'Biotech target (17.2M+30)', start: 17200030, count: 20 },
 
-  // TC2800 Electrical — add 30 more
+  // TC2800 Electrical , add 30 more
   { tc: 'TC2800_Target', desc: 'Electrical target (17.7M)', start: 17700000, count: 30 },
   { tc: 'TC2800_Target', desc: 'Electrical target (17.7M+30)', start: 17700030, count: 20 },
 
-  // TC3700 Mechanical — add 30 more
+  // TC3700 Mechanical , add 30 more
   { tc: 'TC3700_Target', desc: 'Mechanical target (17.8M)', start: 17800000, count: 30 },
   { tc: 'TC3700_Target', desc: 'Mechanical target (17.8M+30)', start: 17800030, count: 20 },
 
-  // TC1700 Chemical — add 20 more
+  // TC1700 Chemical , add 20 more
   { tc: 'TC1700_Target', desc: 'Chemical target (18.5M)', start: 18500000, count: 30 },
 
-  // General mix from 18M and 19M series — 50+ more
+  // General mix from 18M and 19M series , 50+ more
   { tc: 'General_Mix', desc: 'General mix (18.5M+50)', start: 18500050, count: 30 },
   { tc: 'General_Mix', desc: 'General mix (18.1M+100)', start: 18100100, count: 30 },
   { tc: 'General_Mix', desc: 'General mix (17.5M)', start: 17500000, count: 25 },
