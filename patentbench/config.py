@@ -11,7 +11,7 @@ from enum import Enum, IntEnum
 from typing import Any
 
 
-BENCHMARK_VERSION = "0.1.0"
+BENCHMARK_VERSION = "0.2.0"
 BENCHMARK_NAME = "PatentBench"
 MINI_SUBSET_SIZE = 300
 FULL_BENCHMARK_SIZE = 7200

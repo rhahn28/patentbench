@@ -180,6 +180,18 @@ def load_source_files() -> list[dict]:
         assert count > 0, f"No cases found in {path}"
         log.info("  [ok] %4d cases from real_oa/benchmark_cases.jsonl", count)
 
+    # 5. Generated cases from expand_dataset.py (already in DataLoader format)
+    path = DATA_DIR / "real_oa" / "generated_cases.jsonl"
+    if path.exists():
+        count = 0
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    all_cases.append(json.loads(line))
+                    count += 1
+        log.info("  [ok] %4d cases from real_oa/generated_cases.jsonl", count)
+
     return all_cases
 
 
@@ -199,6 +211,40 @@ def write_jsonl(cases: list[dict], path: Path) -> None:
         for c in cases:
             f.write(json.dumps(c, ensure_ascii=False) + "\n")
     log.info("  -> %4d cases to %s", len(cases), path.relative_to(PROJECT_ROOT))
+
+
+def cap_by_task_type(cases: list[dict], target: int = 7200) -> list[dict]:
+    """Stratified cap: keep all rare task types, sample-down the abundant ones.
+
+    Preserves every case for task types with fewer than target/num_task_types
+    cases, then samples the rest to hit the target.
+    """
+    random.seed(42)
+    by_task: dict[str, list[dict]] = {}
+    for c in cases:
+        by_task.setdefault(c["task_type"], []).append(c)
+
+    if len(cases) <= target:
+        return cases
+
+    # Sort task types by count ascending; small ones keep everything, big ones cap
+    sorted_tasks = sorted(by_task.items(), key=lambda x: len(x[1]))
+    kept: list[dict] = []
+    remaining_target = target
+    remaining_tasks = len(sorted_tasks)
+
+    for task_type, pool in sorted_tasks:
+        # Equal share per remaining task type, but never exceed pool size
+        share = remaining_target // remaining_tasks
+        take = min(len(pool), share)
+        # If this pool is small, take everything (rare task types stay intact)
+        if len(pool) <= share:
+            take = len(pool)
+        kept.extend(random.sample(pool, take))
+        remaining_target -= take
+        remaining_tasks -= 1
+
+    return kept
 
 
 def build_mini(all_cases: list[dict], target: int = 300) -> list[dict]:
@@ -228,9 +274,15 @@ def main() -> None:
     log.info("Loading sources:")
     all_cases = deduplicate(load_source_files())
 
+    raw_count = len(all_cases)
+    log.info("\n  Total unique (pre-cap): %d", raw_count)
+
+    # Cap at 7,200 using stratified sampling by task type to preserve diversity
+    all_cases = cap_by_task_type(all_cases, target=7200)
+
     tc = Counter(c["tier"] for c in all_cases)
     tt = Counter(c["task_type"] for c in all_cases)
-    log.info("\n  Total unique: %d", len(all_cases))
+    log.info("  Total after cap: %d (from %d)", len(all_cases), raw_count)
     log.info("  By tier: %s", dict(sorted(tc.items())))
     log.info("  By task: %s", dict(sorted(tt.items())))
 
