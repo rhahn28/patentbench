@@ -54,10 +54,16 @@ all = [
 patentbench = "scripts.run_benchmark:main"
 
 [project.urls]
-Homepage = "https://github.com/salt-holdings/patentbench"
+Homepage = "https://github.com/rhahn28/patentbench"
 Documentation = "https://abigail.app/patentbench"
-Repository = "https://github.com/salt-holdings/patentbench"
-Issues = "https://github.com/salt-holdings/patentbench/issues"
+Repository = "https://github.com/rhahn28/patentbench"
+Issues = "https://github.com/rhahn28/patentbench/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["patentbench", "scripts"]
+
+[tool.hatch.build.targets.wheel.shared-data]
+"data" = "share/patentbench/data"
 
 [tool.ruff]
 target-version = "py310"

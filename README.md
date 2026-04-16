@@ -5,8 +5,8 @@
 
 <p align="center">
   <a href="https://arxiv.org/abs/XXXX.XXXXX"><img src="https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg" alt="arXiv"></a>
-  <a href="https://huggingface.co/datasets/salt-holdings/patentbench"><img src="https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow.svg" alt="HuggingFace"></a>
-  <a href="https://github.com/salt-holdings/patentbench/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
+  <a href="https://huggingface.co/datasets/rhahn28/patentbench"><img src="https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow.svg" alt="HuggingFace"></a>
+  <a href="https://github.com/rhahn28/patentbench/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
   <a href="https://abigail.app/patentbench"><img src="https://img.shields.io/badge/Leaderboard-abigail.app-purple.svg" alt="Leaderboard"></a>
 </p>
 
@@ -78,7 +78,7 @@ pip install patentbench
 Or from source:
 
 ```bash
-git clone https://github.com/salt-holdings/patentbench.git
+git clone https://github.com/rhahn28/patentbench.git
 cd patentbench
 pip install -e ".[dev]"
 ```
@@ -155,14 +155,14 @@ PatentBench includes dedicated anti-hallucination checks:
   author={Salt Holdings LLC},
   journal={arXiv preprint arXiv:XXXX.XXXXX},
   year={2026},
-  url={https://github.com/salt-holdings/patentbench}
+  url={https://github.com/rhahn28/patentbench}
 }
 ```
 
 ## Links
 
 - **Paper**: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)
-- **Dataset**: [HuggingFace](https://huggingface.co/datasets/salt-holdings/patentbench)
+- **Dataset**: [HuggingFace](https://huggingface.co/datasets/rhahn28/patentbench)
 - **Leaderboard**: [abigail.app/patentbench](https://abigail.app/patentbench)
 - **ABIGAIL Patent AI**: [abigail.app](https://abigail.app)
 
