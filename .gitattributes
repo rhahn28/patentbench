@@ -1,0 +1,8 @@
+# Cross-platform byte-identical output for reports and data.
+# The confusion-matrix verifier recomputes SHA-256 of these files; line-ending
+# drift between Windows and Linux checkouts would fail CI.
+
+reports/**/*.json  text eol=lf
+reports/**/*.md    text eol=lf
+data/**/*.json     text eol=lf
+data/**/*.jsonl    text eol=lf
