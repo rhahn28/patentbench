@@ -1,0 +1,1068 @@
+{
+  "classify_16100000": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100000",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "2f557e29983ff768b922f351c5658804e3e2c2b8b7eb889ba64ef93d07e29b14",
+      "retrieved_at": "2026-03-20T22:36:31.381Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16100001": {
+    "has_allowance": true,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100001",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "de398c0872f42c70bf5b23b03ac57fac09a429aa7fc1710a5b4f96d5c8fd5ac8",
+      "retrieved_at": "2026-03-20T22:36:31.823Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16100002": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100002",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "905b4bb54d59f24e3e8d7da9189fdadfb33e6fe0ce7ce839c9d85d5259deb100",
+      "retrieved_at": "2026-03-20T22:36:32.240Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16100003": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100003",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "cdf13290a6ca2701a9b0a1c15275c633a61b26542f00987cbd49b61ed52e4158",
+      "retrieved_at": "2026-03-20T22:36:32.654Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16100006": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100006",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "9620775a6d16b4d07e3b5925102aaf04543e78c212bdaa7e8e2d6370046db9b5",
+      "retrieved_at": "2026-03-20T22:36:33.921Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16100007": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100007",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "b6f3ae1f4f9716b3874f270fd73d5157b8ee6fcf5e0999b767692806d0b1548a",
+      "retrieved_at": "2026-03-20T22:36:34.324Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16100009": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100009",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "86d1300e955a4abbd50bb9356dea1fbd120c360e153992042945ee999b4d0547",
+      "retrieved_at": "2026-03-20T22:36:35.148Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16100010": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100010",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "f7d7ca0aff1966ee52ff586327b2bdbd67f5e7bcf53db490fc81e264fbe8a0a2",
+      "retrieved_at": "2026-03-20T22:36:35.556Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16100011": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100011",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "5d843879228897822d0f32abf2ea4bf4c69bc6be1b20c7356e1214c4474930b3",
+      "retrieved_at": "2026-03-20T22:36:35.989Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16100012": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100012",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "79e0a2a3d0830e4bb8fb97e86defa57c371cd2677345e2c768041c99456b757c",
+      "retrieved_at": "2026-03-20T22:36:36.396Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16100013": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100013",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "b7c1148469c11fb088b0e23facd113405ab0fc3990006f64229be4366d5a43eb",
+      "retrieved_at": "2026-03-20T22:36:36.826Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16100014": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100014",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "49abd30e1ea1366add5c848179f02abf21b66a15870471a90d28414985427cf3",
+      "retrieved_at": "2026-03-20T22:36:37.236Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16100015": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100015",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "8d4cec4e3d0d3826b813faad50500edd42249e314635badb4f57f4a5941bfa8f",
+      "retrieved_at": "2026-03-20T22:36:37.648Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16100016": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100016",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "0005bcc87c31b7f2e2954973fe91da33f7824bdcc6528f5a08e98ab4d63b437f",
+      "retrieved_at": "2026-03-20T22:36:38.146Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16100017": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100017",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "8d77fc51d3e0311b3e09df331b0049af1316416159138b226fc4f1ab152d582e",
+      "retrieved_at": "2026-03-20T22:36:38.578Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16100018": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100018",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "d8587ee027874e2e9a9aaec183e44daeceddec1460bbd995bb487e49b94fd70a",
+      "retrieved_at": "2026-03-20T22:36:38.998Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16100020": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100020",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "3dcdd4c8f0dde4e22239cb87bbf0b69a01a0060ceb509bb80b24579d7e719fee",
+      "retrieved_at": "2026-03-20T22:36:39.818Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16100022": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100022",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "2b2c25747fe631ee29a2e1a0d765f38a360688e9dc7ab0b33a4fb805881e804a",
+      "retrieved_at": "2026-03-20T22:36:40.652Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16100023": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100023",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "2b9777347a9378e99a32b2d23523032a3917f41fbdbff056a688f2247ad4ec6f",
+      "retrieved_at": "2026-03-20T22:36:41.056Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16100024": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16100024",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "5090bcc2e1e57d358d085ad47c9e841857ad8b58945f7eb29d95a6fff5e6aac1",
+      "retrieved_at": "2026-03-20T22:36:41.493Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16500000": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500000",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "bf807a0062ee50e48bd75a2322942e27418ad03260e6496ef168af2b3fb0975e",
+      "retrieved_at": "2026-03-20T22:36:41.899Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500001": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500001",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "878fb9c089c0e9170f3918c3cfeffd3090ebfd8b16ca97e56379fec025e7de07",
+      "retrieved_at": "2026-03-20T22:36:42.311Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16500002": {
+    "has_allowance": true,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500002",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "ec5b3e461d2dc36f9a6eb5e1d42e4f681dae642de894677b779fb666c0608078",
+      "retrieved_at": "2026-03-20T22:36:42.724Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500003": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500003",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "3f2cc70236debabd931e9dcaf751e05f7f74c5e7c92951744856405fd8868d67",
+      "retrieved_at": "2026-03-20T22:36:43.147Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500004": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500004",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "6a2eea9c74c1e2e087bed057b719be64ba9ce3c5c9876a74a5b99c2567c9123a",
+      "retrieved_at": "2026-03-20T22:36:43.559Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500005": {
+    "has_allowance": true,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500005",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "4178eb09eaf00438f0969cfd5ce5ee08ee22e1553c4c6de8445cf5fd41d8d7d6",
+      "retrieved_at": "2026-03-20T22:36:43.989Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16500006": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500006",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "e42064f5663d4613e7bcd5e0283f4d14dd542f5f45c23030de912fd5d748bf81",
+      "retrieved_at": "2026-03-20T22:36:44.406Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16500007": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500007",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "08a2ab78b989f35ef9057441054a7f4770efab7293d588dc5c4a698dc7b483bd",
+      "retrieved_at": "2026-03-20T22:36:44.817Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500008": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500008",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "46cf8d428e3a13b02c64232dba72f97a975bd6b9c8c4e7399254a463c7c35032",
+      "retrieved_at": "2026-03-20T22:36:45.228Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500009": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500009",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "b3797fc638011e1635636512de3f01999003423da0ff7ff50dd987b20ca486d7",
+      "retrieved_at": "2026-03-20T22:36:45.635Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500011": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500011",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "47c5aca57006968d570d4cc960098db7a53838752e2e844a5a668d8d569e813b",
+      "retrieved_at": "2026-03-20T22:36:46.477Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500012": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500012",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "c57a6c610a45ac0e235cab592c40036312887dc06ad3a810c1dc6211b2d574e5",
+      "retrieved_at": "2026-03-20T22:36:46.886Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500013": {
+    "has_allowance": true,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500013",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "d169eb50c822dbc46f0a1ef92caf6ef82d6b5a37ee24c526dcf34fd8cf6daf6a",
+      "retrieved_at": "2026-03-20T22:36:47.290Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500014": {
+    "has_allowance": true,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500014",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "6c97366ed5265de4e537ab38559cee18acdaf8f3a18047c3d3d39542dce68c87",
+      "retrieved_at": "2026-03-20T22:36:47.695Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16500015": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500015",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "1c46ed3f1ed4466b9321fc45dce2b95157f23f44f262eba54e43705ceb28dcac",
+      "retrieved_at": "2026-03-20T22:36:48.110Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16500016": {
+    "has_allowance": true,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500016",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "d5446971656d3c485ee3fc730e6a93a9d0163f1621ebd60560181c93d73a3df4",
+      "retrieved_at": "2026-03-20T22:36:48.538Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16500017": {
+    "has_allowance": true,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500017",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "72069907ecbe24b7786453e05d472c56a5fa59ecfa8050005bd07cef71e8bbec",
+      "retrieved_at": "2026-03-20T22:36:48.987Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500018": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500018",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "a53e70c9db672ca4ae87fcef659eae79da22a14ab28bff8c07e8bba2ec919b9a",
+      "retrieved_at": "2026-03-20T22:36:49.391Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_16500019": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500019",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "5ae07b1a14ecd5fa945a7017b30cf85087ac7fae065a508f5da4be716a502c81",
+      "retrieved_at": "2026-03-20T22:36:49.810Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500021": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500021",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "0a27489b42efb04d39edd88d38b268096f8c6e2372f201da41207caca1d3b11a",
+      "retrieved_at": "2026-03-20T22:36:50.652Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500023": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500023",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "41a7c07796846640e0a4dbb3654527bcca04f673436d719374e6045856cc9796",
+      "retrieved_at": "2026-03-20T22:36:51.496Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_16500024": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "16500024",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "83e012cc0f81d44f412b26f005ba02a9c1525b7e1a6ade9dd7e352d10ca76664",
+      "retrieved_at": "2026-03-20T22:36:51.911Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17100000": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100000",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "cb5cb58c9d16b835dc337feb5ca17742b4d3fb863a96750932482f69f5b30e17",
+      "retrieved_at": "2026-03-20T22:36:52.326Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17100002": {
+    "has_allowance": true,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100002",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "5f6d515dd4356e0246ff7e7953648ad715c0c1276cda1bbc471d6495237c1935",
+      "retrieved_at": "2026-03-20T22:36:53.141Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17100003": {
+    "has_allowance": true,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100003",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "4bd244a3caeb8bacaccc2c7bd56f1720c8b07c38f3a480bb622a7668f7c19049",
+      "retrieved_at": "2026-03-20T22:36:53.557Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17100004": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100004",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "439294299f94b0dbf34effa545ef5fc44c338606730a3ad520e3127b9cfceed4",
+      "retrieved_at": "2026-03-20T22:36:53.974Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17100005": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100005",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "853ee5180b46f292ffb424e7677681526f73e268fa1acd2112376765106b31d8",
+      "retrieved_at": "2026-03-20T22:36:54.374Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17100006": {
+    "has_allowance": true,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100006",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "f06de435f259692257f05f947ed11212d80b92fad5f027602732369879518f93",
+      "retrieved_at": "2026-03-20T22:36:54.781Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17100008": {
+    "has_allowance": true,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100008",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "9e88fdeceae567c43fb401eeb655d41dc0864c9e61b30cea0edfbe418b8fde4c",
+      "retrieved_at": "2026-03-20T22:36:55.625Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17100012": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100012",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "a4c3e20af205947462afcf400d941cf93f9780f73c6f8c3cde269b473a0fb4db",
+      "retrieved_at": "2026-03-20T22:36:57.289Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17100013": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100013",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "7ce6aa5bf29cfdf21411e859bb680af957aaae95134b789e571819e85b42df63",
+      "retrieved_at": "2026-03-20T22:36:57.707Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17100014": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100014",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "02dac30ccd5397d8a9339db23902f3ff39e1ecbdce11d96e7575ee885718bf69",
+      "retrieved_at": "2026-03-20T22:36:58.119Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17100015": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100015",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "e31084b47f3b32cda888b1316f78a4dfc7af418da4d13af90476da5d9de85ade",
+      "retrieved_at": "2026-03-20T22:36:58.528Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17100016": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100016",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "ee1612afaef6e17ddac6533cd942f742d4353a66335a6c71e755935e3d804476",
+      "retrieved_at": "2026-03-20T22:36:58.932Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17100017": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100017",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "dc2a144339a049eb01be7de4c25cb3e7875087696d44b14ae0be5b1997dede04",
+      "retrieved_at": "2026-03-20T22:36:59.358Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17100019": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100019",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "416f63305ece17f18619e79b56c453985f1db8786b42fdd43535e8c8493f5a06",
+      "retrieved_at": "2026-03-20T22:37:00.196Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17100021": {
+    "has_allowance": true,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100021",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "562ed835ac14f17f51a28c54eed81eec641ac35cdc7f3df3e91e8629aac67649",
+      "retrieved_at": "2026-03-20T22:37:00.896Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17100022": {
+    "has_allowance": true,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100022",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "40692284622b6aefc78efd75eadcd9d06e993f7c2b634a4c672550b9c05a8991",
+      "retrieved_at": "2026-03-20T22:37:01.325Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17100023": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100023",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "416f63305ece17f18619e79b56c453985f1db8786b42fdd43535e8c8493f5a06",
+      "retrieved_at": "2026-03-20T22:37:01.734Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17100024": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17100024",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "84b9a695cfe6b2c8c162b464371ece056239dd28448eafc987c682d5755be0c0",
+      "retrieved_at": "2026-03-20T22:37:02.161Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17500000": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500000",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "0b8c36cd5d745cfac36f467e6929eecbbb296d953cb8f584c48c440c28bb04f7",
+      "retrieved_at": "2026-03-20T22:37:02.579Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17500001": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500001",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "95765b96d76546f96929649fde1ee81993042ce694887ba9cc4595717d62fc35",
+      "retrieved_at": "2026-03-20T22:37:02.984Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17500002": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500002",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "587f2d76a945f3ca2c652f5191643f966c4746e87f83ec13b7ada11b4ff36616",
+      "retrieved_at": "2026-03-20T22:37:03.393Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17500004": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500004",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "3e640b9f1ba3d2a9988fdf8e6b02fb4c6ec4646d5f2d48f4ee43ddc31c824f94",
+      "retrieved_at": "2026-03-20T22:37:04.231Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17500006": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500006",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "be29f0a47d772f2dcd337b9d2a0d1211a5fb6b1064aee339179be0cd420a7bf9",
+      "retrieved_at": "2026-03-20T22:37:05.075Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17500007": {
+    "has_allowance": true,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500007",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "f46660e1b35ae4c529f89a3bbf817ae76b9ad9e85d113b14560fd9b6703de30e",
+      "retrieved_at": "2026-03-20T22:37:05.504Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17500009": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500009",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "b9c13dff65e0c90f5cef881ee163a0ece3f10b0dd979bcf0592f1b8e193f1dc1",
+      "retrieved_at": "2026-03-20T22:37:06.392Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17500010": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500010",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "3c98a1cbc8f8e6b5d3629922fe33e20e1799ab893bf76eaaab6c33902feb384f",
+      "retrieved_at": "2026-03-20T22:37:06.795Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17500011": {
+    "has_allowance": true,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500011",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "b051acf7661b774361e40d28de75a5d5f6954c710ac6dff5e095c6d5a351b01c",
+      "retrieved_at": "2026-03-20T22:37:07.219Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17500012": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500012",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "771c61151deff703f9975495ae5789843c6213d3302f818d43443c0a888142c3",
+      "retrieved_at": "2026-03-20T22:37:07.652Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17500013": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500013",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "8d8377922ca3cda7f93fbb3e74b317114b10f920e40ea694551c2321fc4ee84a",
+      "retrieved_at": "2026-03-20T22:37:08.058Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17500014": {
+    "has_allowance": true,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500014",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "703b8ceb26cd530375f0bccdf1fbebf918b958503e8a6e7250c3afce285dcc53",
+      "retrieved_at": "2026-03-20T22:37:08.478Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17500015": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500015",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "3d264a52a27ff04dac4f70c53e14b49c702fa38b694540d74e35bd5f8de49a9d",
+      "retrieved_at": "2026-03-20T22:37:08.877Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17500016": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": false,
+    "peds_source": {
+      "application_number": "17500016",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "21b35828d86b365973af03a9cd7e84543b98491f5e0fdc9ac6e8948e7a23fa81",
+      "retrieved_at": "2026-03-20T22:37:09.286Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 0
+  },
+  "classify_17500017": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500017",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "511de5efae22c229e8679fbb22ba40416f6422de71e922d59a9399084fc74bd8",
+      "retrieved_at": "2026-03-20T22:37:09.703Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17500018": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500018",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "48a1c8856cb18f92c296e37a49c96dfda8fd25ed4d2829aacb9d80b994c23187",
+      "retrieved_at": "2026-03-20T22:37:10.281Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17500019": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500019",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "2cf38e575fb975705fb6819ea5db2ea8114d90881e7aac938ad51612d3b6f76a",
+      "retrieved_at": "2026-03-20T22:37:10.689Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17500020": {
+    "has_allowance": true,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500020",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "65db31405301904a26d9b686c0646716e2f7b2869fa9ddb117fb55925a3ecec5",
+      "retrieved_at": "2026-03-20T22:37:11.101Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17500021": {
+    "has_allowance": false,
+    "has_final": false,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500021",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "ea4d540f2498536ccbdbf0d5009edcb7f16b7366ab79a9eb6903bbbd7c3c8857",
+      "retrieved_at": "2026-03-20T22:37:11.503Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 1
+  },
+  "classify_17500022": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500022",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "7429693beca292f690a8a6d078c8e00577af6c3e0cf45cea55df4e36982450c7",
+      "retrieved_at": "2026-03-20T22:37:11.987Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17500023": {
+    "has_allowance": false,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500023",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "c6b0e5e911d057fd21161baa5debf5b46882c59bc9d20c94c43c3a64152d65cd",
+      "retrieved_at": "2026-03-20T22:37:12.415Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  },
+  "classify_17500024": {
+    "has_allowance": true,
+    "has_final": true,
+    "has_non_final": true,
+    "peds_source": {
+      "application_number": "17500024",
+      "peds_field_path": "prosecution_events",
+      "raw_value_hash": "2477c4ed8999da7c2a59c1154cb5bfce97db0d26853cdcdee24a1a344c68a153",
+      "retrieved_at": "2026-03-20T22:37:12.818Z"
+    },
+    "source": "peds",
+    "total_oa_rounds": 2
+  }
+}
