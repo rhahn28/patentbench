@@ -1,11 +1,19 @@
-"""Ground-truth loading with mandatory PEDS provenance.
+"""Ground-truth loading with mandatory externally-verifiable provenance.
 
-Ground-truth rows MUST carry `peds_source` lineage that identifies which
-USPTO PEDS application, retrieval timestamp, and field path produced the
-reference value. Rows without `peds_source` are rejected. Rows tagged with
-`source: "llm"` or `source: "abigail"` are rejected to prevent the
-SUT-as-labeler circularity flagged during the adversarial review (ADV-001,
-GAP-001).
+Ground-truth rows MUST carry lineage identifying the exact upstream
+authority, retrieval timestamp, and field path that produced the reference
+value. Two source families are accepted:
+
+- `peds_source` (USPTO Patent Examination Data System — prosecution events,
+  examiner, art unit, etc.)
+- `google_patents_source` (Google Patents public pages — claim structure
+  for issued grants)
+
+Rows carrying neither are rejected. Rows tagged with `source: "llm"` or
+`source: "abigail"` are rejected to prevent the SUT-as-labeler circularity
+flagged during the adversarial review (ADV-001, GAP-001). Both lineage
+blocks record the same four invariants so a verifier can detect upstream
+drift: { source_id, retrieved_at, field_path, raw_value_hash }.
 
 Rows may be `quarantined: true` when PEDS provenance is ambiguous or two
 authoritative sources disagree (GAP-R2-001). Quarantined rows are excluded
@@ -56,8 +64,8 @@ REQUIRED_TRUTH_FIELDS: dict[str, tuple[str, ...]] = {
         "cited_references",
     ),
     "paralegal_clm_extraction": (
-        "independent_claims",
-        "dependent_claims",
+        "num_independent_claims",
+        "num_dependent_claims",
     ),
     # Admin-tier deterministic tasks kept for future Admin-matrix work.
     # Admin must be 100% accuracy by design (DB-lookup deterministic
@@ -167,15 +175,29 @@ def _extract_paralegal_oa(row: dict[str, Any]) -> str | None:
 def _extract_paralegal_clm(row: dict[str, Any]) -> str | None:
     """Label = "I{num_indep}_D{num_dep}" — the structural signature of the
     claim set. Diagonal means the model correctly identified both counts.
+
+    Accepts either integer counts (`num_independent_claims`,
+    `num_dependent_claims`) OR list-shaped outputs
+    (`independent_claims`, `dependent_claims`) whose lengths are used. The
+    list form is kept for backward compatibility with earlier case designs
+    that asked the model to return claim references; the integer form is
+    used when ground truth is sourced from Google Patents, which exposes
+    structural counts but not per-claim text.
     """
     parsed = _parse_json_block(row.get("raw_response", ""))
     if not parsed:
         return None
+    indep_n = parsed.get("num_independent_claims")
+    dep_n = parsed.get("num_dependent_claims")
+    if isinstance(indep_n, int) and isinstance(dep_n, int):
+        if indep_n < 0 or dep_n < 0:
+            return None
+        return f"I{indep_n}_D{dep_n}"
     indep = parsed.get("independent_claims")
     dep = parsed.get("dependent_claims")
-    if not isinstance(indep, list) or not isinstance(dep, list):
-        return None
-    return f"I{len(indep)}_D{len(dep)}"
+    if isinstance(indep, list) and isinstance(dep, list):
+        return f"I{len(indep)}_D{len(dep)}"
+    return None
 
 
 def _canonicalize_action_classification(
@@ -228,14 +250,23 @@ def _reference_label(task_type: str, truth_row: dict[str, Any]) -> str:
             )
         return canon
     if task_type == "paralegal_clm_extraction":
+        indep_n = truth_row.get("num_independent_claims")
+        dep_n = truth_row.get("num_dependent_claims")
+        if isinstance(indep_n, int) and isinstance(dep_n, int):
+            if indep_n < 0 or dep_n < 0:
+                raise GroundTruthInvalidError(
+                    f"paralegal_clm_extraction truth row has negative counts: "
+                    f"{truth_row!r}"
+                )
+            return f"I{indep_n}_D{dep_n}"
         indep = truth_row.get("independent_claims")
         dep = truth_row.get("dependent_claims")
-        if not isinstance(indep, list) or not isinstance(dep, list):
-            raise GroundTruthInvalidError(
-                f"paralegal_clm_extraction truth row has bad claim lists: "
-                f"{truth_row!r}"
-            )
-        return f"I{len(indep)}_D{len(dep)}"
+        if isinstance(indep, list) and isinstance(dep, list):
+            return f"I{len(indep)}_D{len(dep)}"
+        raise GroundTruthInvalidError(
+            f"paralegal_clm_extraction truth row has bad claim data: "
+            f"{truth_row!r}"
+        )
     if task_type == "action_classification":
         label = _canonicalize_action_classification(
             truth_row.get("has_non_final"),
@@ -313,21 +344,44 @@ def load_ground_truth(path: Path, task_type: str) -> dict[str, GroundTruthRow]:
                 "PatentBench ground truth may not be produced by the SUT."
             )
         peds = row.get("peds_source")
-        if not isinstance(peds, dict):
+        gp = row.get("google_patents_source")
+        if peds is None and gp is None:
             raise GroundTruthInvalidError(
-                f"{path} row for {test_id} missing peds_source object"
+                f"{path} row for {test_id} missing provenance: expected "
+                "either peds_source or google_patents_source"
             )
-        for peds_field in (
-            "application_number",
-            "retrieved_at",
-            "peds_field_path",
-            "raw_value_hash",
-        ):
-            if peds_field not in peds:
+        if peds is not None:
+            if not isinstance(peds, dict):
                 raise GroundTruthInvalidError(
-                    f"{path} row for {test_id} peds_source missing "
-                    f"{peds_field!r}"
+                    f"{path} row for {test_id} peds_source must be an object"
                 )
+            for peds_field in (
+                "application_number",
+                "retrieved_at",
+                "peds_field_path",
+                "raw_value_hash",
+            ):
+                if peds_field not in peds:
+                    raise GroundTruthInvalidError(
+                        f"{path} row for {test_id} peds_source missing "
+                        f"{peds_field!r}"
+                    )
+        if gp is not None:
+            if not isinstance(gp, dict):
+                raise GroundTruthInvalidError(
+                    f"{path} row for {test_id} google_patents_source must be an object"
+                )
+            for gp_field in (
+                "patent_number",
+                "patent_url",
+                "retrieved_at",
+                "raw_html_sha256",
+            ):
+                if gp_field not in gp:
+                    raise GroundTruthInvalidError(
+                        f"{path} row for {test_id} google_patents_source missing "
+                        f"{gp_field!r}"
+                    )
         if not row.get("quarantined"):
             missing = [f for f in required if f not in row]
             if missing:
