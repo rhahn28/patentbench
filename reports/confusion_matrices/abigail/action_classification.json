@@ -1,0 +1,176 @@
+{
+  "cell_traces": [
+    {
+      "ground_truth": "NF0-F0-A0",
+      "predicted": "NF0-F0-A0",
+      "test_ids": [
+        "classify_17500016"
+      ]
+    },
+    {
+      "ground_truth": "NF1-F0-A0",
+      "predicted": "NF1-F0-A0",
+      "test_ids": [
+        "classify_16100006",
+        "classify_16100007",
+        "classify_16100010",
+        "classify_16100011",
+        "classify_16100012",
+        "classify_16100013",
+        "classify_16100015",
+        "classify_16100016",
+        "classify_16100023",
+        "classify_16100024",
+        "classify_16500001",
+        "classify_16500006",
+        "classify_16500015",
+        "classify_16500018",
+        "classify_17100004",
+        "classify_17100012",
+        "classify_17100013",
+        "classify_17100015",
+        "classify_17100017",
+        "classify_17100019",
+        "classify_17100023",
+        "classify_17500001",
+        "classify_17500002",
+        "classify_17500006",
+        "classify_17500009",
+        "classify_17500010",
+        "classify_17500012",
+        "classify_17500018",
+        "classify_17500019",
+        "classify_17500021"
+      ]
+    },
+    {
+      "ground_truth": "NF1-F0-A1",
+      "predicted": "NF1-F0-A1",
+      "test_ids": [
+        "classify_16500005",
+        "classify_16500014",
+        "classify_16500016",
+        "classify_17100002",
+        "classify_17100006",
+        "classify_17500007",
+        "classify_17500020"
+      ]
+    },
+    {
+      "ground_truth": "NF1-F1-A0",
+      "predicted": "NF1-F1-A0",
+      "test_ids": [
+        "classify_16100000",
+        "classify_16100002",
+        "classify_16100003",
+        "classify_16100009",
+        "classify_16100014",
+        "classify_16100017",
+        "classify_16100018",
+        "classify_16100020",
+        "classify_16100022",
+        "classify_16500000",
+        "classify_16500003",
+        "classify_16500004",
+        "classify_16500007",
+        "classify_16500008",
+        "classify_16500009",
+        "classify_16500011",
+        "classify_16500012",
+        "classify_16500019",
+        "classify_16500021",
+        "classify_16500023",
+        "classify_16500024",
+        "classify_17100000",
+        "classify_17100005",
+        "classify_17100014",
+        "classify_17100016",
+        "classify_17100024",
+        "classify_17500000",
+        "classify_17500004",
+        "classify_17500013",
+        "classify_17500015",
+        "classify_17500017",
+        "classify_17500022",
+        "classify_17500023"
+      ]
+    },
+    {
+      "ground_truth": "NF1-F1-A1",
+      "predicted": "NF1-F1-A1",
+      "test_ids": [
+        "classify_16100001",
+        "classify_16500002",
+        "classify_16500013",
+        "classify_16500017",
+        "classify_17100003",
+        "classify_17100008",
+        "classify_17100021",
+        "classify_17100022",
+        "classify_17500011",
+        "classify_17500014",
+        "classify_17500024"
+      ]
+    }
+  ],
+  "generated_at": "2026-04-20T11:17:07+00:00",
+  "ground_truth_file": "data\\ground_truth\\action_classification.json",
+  "ground_truth_sha256": "346acbe7427f2c3ee071c50945d3d5e1001400c5a83f81254646e0948aaee40f",
+  "hallucinated_labels": [],
+  "labels": [
+    "NF0-F0-A0",
+    "NF1-F0-A0",
+    "NF1-F0-A1",
+    "NF1-F1-A0",
+    "NF1-F1-A1"
+  ],
+  "matrix": [
+    [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      30,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      7,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      33,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      11
+    ]
+  ],
+  "model": "ABIGAIL v3 (Variant B)",
+  "quarantined": 0,
+  "quarantined_test_ids": [],
+  "run_date": "2026-03-21T04:26:26.591Z",
+  "schema_version": 1,
+  "source_run_file": "data\\benchmark_results_sonnet.json",
+  "source_sha256": "5920174466f3e2b8848dc8472f820f135479fdaf8f266563f26f6e8f58e34fe0",
+  "task_type": "action_classification",
+  "total": 82,
+  "unparseable": 0,
+  "unparseable_test_ids": [],
+  "verifier_version": "1.0.0"
+}

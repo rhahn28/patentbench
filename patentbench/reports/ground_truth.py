@@ -67,7 +67,17 @@ REQUIRED_TRUTH_FIELDS: dict[str, tuple[str, ...]] = {
         "max_deadline",
         "action_type",
     ),
-    "action_classification": ("action_type",),
+    # action_classification asks the model to emit a structured tuple
+    # describing the prosecution history shape. The confusion-matrix label
+    # is derived from has_non_final, has_final, has_allowance; total_oa_rounds
+    # is recorded for provenance but is a count, not a class, so it does
+    # not enter the matrix axis.
+    "action_classification": (
+        "has_non_final",
+        "has_final",
+        "has_allowance",
+        "total_oa_rounds",
+    ),
 }
 
 
@@ -168,10 +178,37 @@ def _extract_paralegal_clm(row: dict[str, Any]) -> str | None:
     return f"I{len(indep)}_D{len(dep)}"
 
 
+def _canonicalize_action_classification(
+    has_nf: Any, has_f: Any, has_a: Any
+) -> str | None:
+    """Project the three booleans into a deterministic label.
+
+    Label format: `NF{0|1}-F{0|1}-A{0|1}`. Any non-bool value short-circuits
+    to None so the row lands in the unparseable bucket rather than silently
+    producing a misleading class.
+    """
+    if not isinstance(has_nf, bool) or not isinstance(has_f, bool):
+        return None
+    if not isinstance(has_a, bool):
+        return None
+    return f"NF{int(has_nf)}-F{int(has_f)}-A{int(has_a)}"
+
+
+def _extract_action_classification(row: dict[str, Any]) -> str | None:
+    parsed = _parse_json_block(row.get("raw_response", ""))
+    if not parsed:
+        return None
+    return _canonicalize_action_classification(
+        parsed.get("has_non_final"),
+        parsed.get("has_final"),
+        parsed.get("has_allowance"),
+    )
+
+
 EXTRACTORS: dict[str, Any] = {
     "paralegal_oa_extraction": _extract_paralegal_oa,
     "paralegal_clm_extraction": _extract_paralegal_clm,
-    "action_classification": _extract_action_type,
+    "action_classification": _extract_action_classification,
     "deadline_calculation": _extract_action_type,
 }
 
@@ -199,7 +236,18 @@ def _reference_label(task_type: str, truth_row: dict[str, Any]) -> str:
                 f"{truth_row!r}"
             )
         return f"I{len(indep)}_D{len(dep)}"
-    if task_type == "action_classification" or task_type == "deadline_calculation":
+    if task_type == "action_classification":
+        label = _canonicalize_action_classification(
+            truth_row.get("has_non_final"),
+            truth_row.get("has_final"),
+            truth_row.get("has_allowance"),
+        )
+        if label is None:
+            raise GroundTruthInvalidError(
+                f"action_classification truth row has non-bool booleans: {truth_row!r}"
+            )
+        return label
+    if task_type == "deadline_calculation":
         value = truth_row.get("action_type")
         if not isinstance(value, str) or not value.strip():
             raise GroundTruthInvalidError(

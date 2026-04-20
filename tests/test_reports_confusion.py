@@ -333,3 +333,175 @@ def test_run_file_missing_top_level_keys_raises(tmp_path: Path):
         build_confusion_matrix(
             run_file=run_file, task_type=TASK, ground_truth_file=truth_file
         )
+
+
+# -- action_classification (Stage 2 additions) --
+#
+# These tests cover the new extractor and reference label for the
+# action_classification task. The label projection is
+# `NF{has_non_final}-F{has_final}-A{has_allowance}`. total_oa_rounds is
+# preserved in the truth file for audit but is not a matrix axis.
+
+AC_TASK = "action_classification"
+
+
+def _ac_peds_block(app: str) -> dict:
+    return {
+        "application_number": app,
+        "retrieved_at": "2026-03-20T22:36:31.381Z",
+        "peds_field_path": "prosecution_events",
+        "raw_value_hash": hashlib.sha256(app.encode("utf-8")).hexdigest(),
+    }
+
+
+def _ac_truth_row(nf: bool, f: bool, a: bool, rounds: int, app: str) -> dict:
+    return {
+        "has_non_final": nf,
+        "has_final": f,
+        "has_allowance": a,
+        "total_oa_rounds": rounds,
+        "peds_source": _ac_peds_block(app),
+        "source": "peds",
+    }
+
+
+def _ac_run_row(test_id: str, nf: bool, f: bool, a: bool, rounds: int) -> dict:
+    payload = {
+        "has_non_final": nf,
+        "has_final": f,
+        "has_allowance": a,
+        "total_oa_rounds": rounds,
+    }
+    return {
+        "test_id": test_id,
+        "task_type": AC_TASK,
+        "raw_response": "```json\n" + json.dumps(payload) + "\n```",
+    }
+
+
+def test_action_classification_label_projection_diagonal(tmp_path: Path):
+    """Perfect prediction on three representative cases produces a 3x3 diagonal."""
+    run_file = tmp_path / "run.json"
+    truth_file = tmp_path / "truth.json"
+    _write_json(
+        run_file,
+        {
+            "model": "ABIGAIL v3",
+            "run_date": "2026-04-20",
+            "detailed_results": [
+                _ac_run_row("classify_100", True, False, False, 1),
+                _ac_run_row("classify_200", True, True, False, 2),
+                _ac_run_row("classify_300", True, True, True, 3),
+            ],
+        },
+    )
+    _write_json(
+        truth_file,
+        {
+            "classify_100": _ac_truth_row(True, False, False, 1, "100"),
+            "classify_200": _ac_truth_row(True, True, False, 2, "200"),
+            "classify_300": _ac_truth_row(True, True, True, 3, "300"),
+        },
+    )
+    matrix = build_confusion_matrix(
+        run_file=run_file, task_type=AC_TASK, ground_truth_file=truth_file
+    )
+    assert matrix.labels == ("NF1-F0-A0", "NF1-F1-A0", "NF1-F1-A1")
+    assert matrix.cell("NF1-F0-A0", "NF1-F0-A0") == 1
+    assert matrix.cell("NF1-F1-A0", "NF1-F1-A0") == 1
+    assert matrix.cell("NF1-F1-A1", "NF1-F1-A1") == 1
+    assert matrix.total == 3
+    assert matrix.unparseable == 0
+
+
+def test_action_classification_mismatch_records_off_diagonal(tmp_path: Path):
+    run_file = tmp_path / "run.json"
+    truth_file = tmp_path / "truth.json"
+    # Truth says both NF and F; model emits only NF.
+    _write_json(
+        run_file,
+        {
+            "model": "ABIGAIL v3",
+            "run_date": "2026-04-20",
+            "detailed_results": [
+                _ac_run_row("classify_501", True, False, False, 1),
+            ],
+        },
+    )
+    _write_json(
+        truth_file,
+        {
+            "classify_501": _ac_truth_row(True, True, False, 2, "501"),
+        },
+    )
+    matrix = build_confusion_matrix(
+        run_file=run_file, task_type=AC_TASK, ground_truth_file=truth_file
+    )
+    assert matrix.cell("NF1-F1-A0", "NF1-F0-A0") == 1
+    stats = per_class_stats(matrix)
+    by_label = {s["label"]: s for s in stats}
+    assert by_label["NF1-F1-A0"]["recall"] == 0.0
+    assert by_label["NF1-F0-A0"]["precision"] == 0.0
+
+
+def test_action_classification_non_bool_truth_raises(tmp_path: Path):
+    """Truth row with a non-bool boolean must fail loud (no silent coercion)."""
+    run_file = tmp_path / "run.json"
+    truth_file = tmp_path / "truth.json"
+    _write_json(
+        run_file,
+        {
+            "model": "m",
+            "run_date": "2026-04-20",
+            "detailed_results": [_ac_run_row("classify_1", True, False, False, 1)],
+        },
+    )
+    bad = _ac_truth_row(True, False, False, 1, "1")
+    bad["has_non_final"] = "yes"  # string, not bool
+    _write_json(truth_file, {"classify_1": bad})
+    with pytest.raises(GroundTruthInvalidError, match="non-bool"):
+        build_confusion_matrix(
+            run_file=run_file, task_type=AC_TASK, ground_truth_file=truth_file
+        )
+
+
+def test_action_classification_non_bool_prediction_is_unparseable(tmp_path: Path):
+    """Model emits string booleans (e.g. "true"); row lands in unparseable."""
+    run_file = tmp_path / "run.json"
+    truth_file = tmp_path / "truth.json"
+    _write_json(
+        run_file,
+        {
+            "model": "m",
+            "run_date": "2026-04-20",
+            "detailed_results": [
+                {
+                    "test_id": "classify_9",
+                    "task_type": AC_TASK,
+                    "raw_response": (
+                        "```json\n"
+                        + json.dumps(
+                            {
+                                "has_non_final": "true",
+                                "has_final": False,
+                                "has_allowance": False,
+                                "total_oa_rounds": 1,
+                            }
+                        )
+                        + "\n```"
+                    ),
+                }
+            ],
+        },
+    )
+    _write_json(
+        truth_file,
+        {"classify_9": _ac_truth_row(True, False, False, 1, "9")},
+    )
+    matrix = build_confusion_matrix(
+        run_file=run_file, task_type=AC_TASK, ground_truth_file=truth_file
+    )
+    assert matrix.unparseable == 1
+    assert matrix.unparseable_test_ids == ("classify_9",)
+    assert matrix.total == 1
+    assert sum(sum(row) for row in matrix.matrix) == 0
